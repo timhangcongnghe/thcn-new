@@ -1,0 +1,40 @@
+<div id="wpisset-woo-sub-cart" class="wpisset-woo-sub-cart">
+    <div class="wpisset-woo-sub-cart-wrap">
+        <div class="wpisset-woo-sub-cart-inner">
+            <div class="wpisset-woo-cart-table">
+                <% (0..4).each do |product| %>
+                    <div class="wpisset-woo-cart-product">
+                        <div class="wpisset-woo-cart-product-image">
+                            <%= link_to image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
+                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
+                                                      title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail'),
+                                        '', title: '' %>
+                        </div>
+                        <div class="wpisset-woo-cart-product-content">
+                            <%= link_to 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)', '', title: '' %>
+                            <div class="wpisset-woo-cart-product-price-wrap">1 × <%= format_price(21990000) %></div>
+                        </div>
+                        <div class="wpisset-woo-cart-product-remove">
+                            <%= link_to '', '', title: 'Xóa khỏi giỏ hàng', aria: {label: 'Xóa khỏi giỏ hàng'}, data: {product_id: '', product_sku: ''} %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <div class="wpisset-woo-cart-summary-wrap">
+                <div class="wpisset-woo-cart-summary">
+                    <div>TỔNG TIỀN (5 sản phẩm)</div>
+                    <div><span class="thcn-Price-amount amount"><bdi><%= format_price(109950000) %></bdi></span></div>
+                </div>
+                <div class="wpisset-woo-cart-buttons">
+                    <div><%= link_to '<span>'.html_safe + 'XEM GIỎ HÀNG' + '</span>'.html_safe, '', title: '', class: 'wpisset-button' %></div>
+                    <div><%= link_to '<span>'.html_safe + 'ĐẶT HÀNG NGAY' + '</span>'.html_safe, '', title: '', class: 'wpisset-button' %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

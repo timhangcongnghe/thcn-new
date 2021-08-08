@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi-VN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <%= csrf_meta_tags %><%= csp_meta_tag %>
+        <link rel="profile" href="//gmpg.org/xfn/11" />
+        <script>document.documentElement.className=document.documentElement.className+' yes-js js_active js';</script>
+        <meta name='robots' content='noindex, follow, nofollow' />
+        <title><% if content_for?(:title) %><%= yield(:title) %> - Tìm Hàng Công Nghệ<% end %></title>
+        <%= favicon_link_tag '/img/favicon.png', rel: 'shortcut icon' %>
+        <link rel='dns-prefetch' href='//s.w.org' />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="//cdnjs.cloudflare.com">
+        <%= render partial: 'frontend/modules/head_include' %>
+    </head>
+    <body<% if @class.present? %> class="<%= @class %>"<% end %>>
+        <!-- <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="FptTY1dV"></script> -->
+        <div id="container" class="wpisset-page">
+            <div class="wpisset-overlay"></div>
+            <!-- @todo subcription_popup -->
+            <!-- @todo promo_banner -->
+            <!-- @todo cookie_notice -->
+            <%= render 'frontend/modules/extension/myaccount_header_login' %>
+            <%= render 'frontend/modules/extension/sub_cart' %>
+            <%= render 'frontend/modules/extension/recent_viewed_menu' %>
+            <%= render 'frontend/modules/header' %>
+            <div id="content"><div id="inner-content" class="wpisset-container wpisset-container-center wpisset-container-fluid"><%= yield %></div></div>
+            <%= render 'frontend/modules/footer' %>
+            <%= render partial: 'frontend/modules/scrolltop', cached: true %>
+        </div>
+        <%= render partial: 'frontend/modules/cursor', cached: true %>
+        <%= render partial: 'frontend/modules/javascripts' %>
+    </body>
+</html>

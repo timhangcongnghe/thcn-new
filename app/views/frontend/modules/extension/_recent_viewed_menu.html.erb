@@ -1,0 +1,33 @@
+<div id="wpisset-recent-viewed-menu" class="wpisset-recent-viewed-menu">
+    <div class="wpisset-recent-viewed-menu-wrap">
+        <div class="wpisset-recent-viewed-menu-inner">
+            <div class="wpisset-woo-recent-viewed-menu-inner">
+                <% (0..5).each do |product| %>
+                    <div class="product-type-simple wpisset-woo-recent-viewed-menu-item sale">
+                        <div class="wpisset-woo-recent-viewed-menu-item-img">
+                            <%= link_to image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg',
+                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
+                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
+                                                      title: '', alt: '', size: '1000x1000', sizes: '(max-width: 1000px) 100vw, 1000px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
+                                        '', title: '' %>
+                        </div>
+                        <div class="wpisset-woo-recent-viewed-menu-item-title">
+                            <%= link_to 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)', '', title: '' %>
+                        </div>
+                        <div class="wpisset-woo-recent-viewed-menu-item-price wpisset-woo-price">
+                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
+                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="wpisset-woo-recent-viewed-menu-btn">
+                    <%= link_to '<span>'.html_safe + 'XEM TOÀN BỘ' + '</span>'.html_safe, '', title: '', class: 'wpisset-button' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
