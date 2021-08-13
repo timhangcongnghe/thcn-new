@@ -1,2 +1,187 @@
-<h1>Cart#checkout</h1>
-<p>Find me in app/views/cart/checkout.html.erb</p>
+<% title 'Đặt Hàng' %>
+
+<div class="wpisset-row wpisset-main-grid">
+    <main id="main" class="wpisset-main wpisset-col-xs-12">
+        <div class="wpisset_yoast_breadcrumb">
+            <p id="breadcrumbs">
+                <span>
+                    <span>
+                        <%= link_to 'Trang Chủ', root_link, title: '' %> » 
+                        <span class="breadcrumb_last" aria-current="page">Đặt Mua Hàng</span>
+                    </span>
+                </span>
+            </p>
+        </div>
+        <h1 class="entry-title">Đặt Mua Hàng</h1>
+        <div class="entry-content">
+            <div class="thcn">
+                <div class="thcn-notices-wrapper"></div>
+                <form name="" method="post" class="checkout thcn-checkout" action="" enctype="">
+                    <div class="col2-set" id="customer_details">
+                        <div class="col-1">
+                            <div class="thcn-billing-fields">
+                                <h3>Thông Tin Khách Hàng</h3>
+                                <div class="thcn-billing-fields__field-wrapper">
+                                    <p class="form-row form-row-wide" id="" data-priority="">
+                                        <label for="" class="">Họ tên&nbsp;<abbr class="required">*</span></label>
+                                        <span class="thcn-input-wrapper">
+                                            <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                        </span>
+                                    </p>
+                                    <p class="form-row form-row-first validate-required" id="" data-priority="">
+                                        <label for="" class="">Email&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                        <span class="thcn-input-wrapper">
+                                            <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                        </span>
+                                    </p>
+                                    <p class="form-row form-row-last validate-required" id="" data-priority="">
+                                        <label for="" class="">Điện thoại&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                        <span class="thcn-input-wrapper">
+                                            <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                        </span>
+                                    </p>
+                                    <p class="form-row form-row-wide address-field validate-required" id="" data-priority="">
+                                        <label for="" class="">Địa chỉ giao hàng&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                        <span class="thcn-input-wrapper">
+                                            <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="thcn-shipping-fields">
+                                <h3 id="ship-to-different-address">
+                                    <label class="thcn-form__label thcn-form__label-for-checkbox checkbox">
+                                        <input id="" class="thcn-form__input thcn-form__input-checkbox input-checkbox" type="checkbox" name="" value="1" />
+                                        <span>Xuất hóa đơn VAT công ty?</span>
+                                    </label>
+                                </h3>
+                                <div class="shipping_address">
+                                    <div class="thcn-shipping-fields__field-wrapper">
+                                        <p class="form-row form-row-wide" id="" data-priority="">
+                                            <label for="" class="">Tên công ty&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                            <span class="thcn-input-wrapper">
+                                                <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                            </span>
+                                        </p>
+                                        <p class="form-row form-row-first validate-required" id="" data-priority="">
+                                            <label for="" class="">Mã số thuế&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                            <span class="thcn-input-wrapper">
+                                                <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                            </span>
+                                        </p>
+                                        <p class="form-row form-row-last validate-required" id="" data-priority="">
+                                            <label for="shipping_last_name" class="">Email tiếp nhận&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                            <span class="thcn-input-wrapper">
+                                                <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                            </span>
+                                        </p>
+                                        <p class="form-row form-row-wide address-field validate-required" id="" data-priority="">
+                                            <label for="" class="">Địa chỉ công ty&nbsp;<abbr class="required" title="required">*</abbr></label>
+                                            <span class="thcn-input-wrapper">
+                                                <input type="text" class="input-text " name="" id="" placeholder=""  value="" autocomplete="" />
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thcn-additional-fields">
+                                <div class="thcn-additional-fields__field-wrapper">
+                                    <p class="form-row notes" id="" data-priority="">
+                                        <label for="order_comments" class="">Ghi chú</label>
+                                        <span class="thcn-input-wrapper">
+                                            <textarea name="" class="input-text " id="" placeholder="Nhập ghi chú cho đơn hàng này..." rows="2" cols="5"></textarea>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="order_review_heading">Giỏ Hàng Của Bạn</h3>
+                    <div id="order_review" class="thcn-checkout-review-order">
+                        <table class="shop_table thcn-checkout-review-order-table">
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Tên Sản Phẩm</th>
+                                    <th class="product-total">Giá Bán</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% (0..5).each do |product| %>
+                                    <tr class="cart_item">
+                                        <td class="product-name">
+                                            <%= link_to 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)', product_link, title: '' %>&nbsp;
+                                            <strong class="product-quantity">&times;&nbsp;1</strong>											
+                                        </td>
+                                        <td class="product-total">
+                                            <span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span>					
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Tạm tính</th>
+                                    <td><span class="thcn-Price-amount amount"><bdi><%= format_price(109950000) %></bdi></span></td>
+                                </tr>
+                                <tr class="thcn-shipping-totals shipping">
+                                    <th>Phí vận chuyển</th>
+                                    <td data-title="Shipping">
+                                        <ul id="shipping_method" class="thcn-shipping-methods">
+                                            <li>
+                                                <input type="hidden" name="" data-index="0" id="" value="" class="shipping_method" />
+                                                <label for="shipping_method_0_flat_rate1"><%= format_price(0) %></label>					
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>THÀNH TIỀN</th>
+                                    <td><strong><span class="thcn-Price-amount amount"><bdi><%= format_price(109950000) %></bdi></span></strong> </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div id="payment" class="thcn-checkout-payment">
+                            <ul class="wc_payment_methods payment_methods methods">
+                                <li class="wc_payment_method payment_method_bacs">
+                                    <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value=""  checked='checked' data-order_button_text="" />
+                                    <label for="payment_method_bacs">Chuyển khoản (Khuyên dùng)</label>
+                                    <div class="payment_box payment_method_bacs" >
+                                        <p>Thanh toán chuyển khoản theo thông tin sau. <%= link_to 'Hướng dẫn thanh toán', '', title: '' %></p>
+                                    </div>
+                                </li>
+                                <li class="wc_payment_method payment_method_cheque">
+                                    <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value=""  data-order_button_text="" />
+                                    <label for="payment_method_cheque">Tiền mặt</label>
+                                    <div class="payment_box payment_method_cheque" style="display:none;">
+                                        <p>Thanh toán tiền mặt khi nhận hàng (Tiền mặt, Quẹt thẻ ATM, Visa, Mastercard). Lưu ý: Phương thức này chỉ áp dụng trong khu vực TP. Hồ Chí Minh</p>
+                                    </div>
+                                </li>
+                                <li class="wc_payment_method payment_method_nganluong">
+                                    <input id="payment_method_nganluong" type="radio" class="input-radio" name="payment_method" value=""  data-order_button_text="" />
+                                    <label for="payment_method_nganluong">Cổng thanh toán NgânLượng.vn<img src="/img/icons/nganluong.png" alt="" />
+                                      <a href="" class="about_nganluong" onclick="javascript:window.open('https://www.nganluong.vn/vn/home.html','WIPaypal','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=1060,height=700');return false;">NgânLượng.vn?</a></label>
+                                    <div class="payment_box payment_method_nganluong" style="display:none;">
+                                        <p>Thông qua cổng thanh toán Ngân Lượng.vn</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="form-row place-order">
+                                <div class="thcn-terms-and-conditions-wrapper">
+                                    <div class="thcn-privacy-policy-text">
+                                        <p>Chính sách, quy định chung khi mua hàng tại website. <a href="" class="thcn-privacy-policy-link" target="_blank">Xem tại đây</a></p>
+                                    </div>
+                                </div>
+                                <button type="submit" class="button alt" name="" id="place_order" value="Xác Nhận Đặt Hàng" data-value="Xác Nhận Đặt Hàng">Xác Nhận Đặt Hàng</button>
+                                <input type="hidden" id="" name="" value="" />
+                                <input type="hidden" name="" value="" />	
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="entry-content-clear"></div>
+        </div>
+    </main>
+</div>
