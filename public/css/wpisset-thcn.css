@@ -1,9 +1,11 @@
 .entry-content>.thcn p {
-	margin: 1rem 0
+	margin: 1rem 0 .5rem 0;
 }
-
+.thcn table.shop_table td em {
+	font-size: 90%;
+}
 .thcn .star-rating {
-	color: #ffc421;
+	color: #ee9d01;
 	font-weight: 400
 }
 
@@ -224,14 +226,14 @@
 
 .thcn table.shop_table td,
 .thcn table.shop_table th {
-	padding: 1.5rem 0;
+	padding: .75rem 0;
 	border-top: none;
 	border-right: none;
 	border-left: none
 }
 
 .thcn table.shop_table th {
-	font-weight: 500
+	font-weight: 500;
 }
 
 .thcn table.shop_table {
@@ -524,7 +526,7 @@
 }
 
 .thcn nav.thcn-pagination ul li span.current {
-	color: #959595
+	color: #3f4254
 }
 
 .thcn nav.thcn-pagination ul li a,
@@ -793,7 +795,7 @@
 .thcn ul.products li.product .price del,
 .wpisset-product-sticky-price .price del,
 .wpisset-woo-price del {
-	color: #959595;
+	color: #3f4254;
 	opacity: 1
 }
 
@@ -1129,7 +1131,7 @@
 }
 
 .wpisset-woo-loop-status>span:first-child {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-woo-loop-status.out-of-stock>span:last-child {
@@ -1156,7 +1158,7 @@
 .wpisset-woo-loop-desc>ul {
 	display: flex!important;
 	font-size: 90%;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-woo-loop-desc>ul li {
@@ -1170,7 +1172,7 @@
 	content: "";
 	width: 4px;
 	height: 4px;
-	background-color: #959595;
+	background-color: #3f4254;
 	display: block;
 	border-radius: 50%;
 	position: absolute;
@@ -1210,7 +1212,7 @@
 }
 
 .wpisset-woo-loop-nav-icon-border ellipse.circle {
-	stroke: #ffc421
+	stroke: #ee9d01
 }
 
 .wpisset-add-to-cart-button:hover .wpisset-woo-loop-nav-icon-border .circle,
@@ -1659,7 +1661,7 @@
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	will-change: transform
 }
 
@@ -1872,7 +1874,7 @@ ul.products li.wpisset-woo-has-gallery:hover .wpisset-woo-loop-thumbnail-wrapper
 }
 
 .product_list_widget del {
-	color: #959595
+	color: #3f4254
 }
 
 .product_list_widget .thcn-Price-amount {
@@ -2150,7 +2152,7 @@ ul.products li.wpisset-woo-has-gallery:hover .wpisset-woo-loop-thumbnail-wrapper
 }
 
 .thcn div.product div.images .flex-control-thumbs li img:hover {
-	border-color: #959595
+	border-color: #3f4254
 }
 
 .thcn div.product div.images .flex-control-thumbs li img.flex-active {
@@ -2374,8 +2376,8 @@ body.single-product #inner-content {
 	border-radius: 6px;
 	height: 12px;
 	width: 12px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	top: 0;
 	right: 0;
@@ -2442,7 +2444,7 @@ body.single-product #inner-content {
 
 .wpisset-sku-wrapper {
 	font-size: 95%;
-	color: #959595
+	color: #3f4254
 }
 
 .thcn-product-details__short-description {
@@ -2481,7 +2483,7 @@ body.single-product #inner-content {
 .thcn div.product .summary span.price del,
 .thcn div.product .wpisset-sp-extented-price-cart p.price del,
 .thcn div.product .wpisset-sp-extented-price-cart span.price del {
-	color: #959595;
+	color: #3f4254;
 	opacity: 1
 }
 
@@ -2612,7 +2614,7 @@ body.single-product #inner-content {
 	}
 	.wpisset-sp-extented-price-cart-save-was {
 		font-size: 95%;
-		color: #959595
+		color: #3f4254
 	}
 }
 
@@ -2696,7 +2698,7 @@ body.single-product #inner-content {
 }
 
 .thcn div.product.product-type-variable p.price {
-	color: #959595
+	color: #3f4254
 }
 
 .thcn div.product form.cart div.quantity {
@@ -2910,7 +2912,7 @@ body.single-product #inner-content {
 }
 
 .thcn div.product .grouped_form .thcn-grouped-product-list-item__price del {
-	color: #959595;
+	color: #3f4254;
 	opacity: 1
 }
 
@@ -3043,8 +3045,8 @@ body.single-product #inner-content {
 	border-radius: 6px;
 	height: 12px;
 	width: 12px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	top: 50%;
 	left: calc(100% + 4rem);
@@ -3112,7 +3114,7 @@ body:not(.wpisset-product-type-extented) .thcn #reviews #comments ol.commentlist
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -3169,7 +3171,7 @@ body:not(.wpisset-product-type-extented) .thcn #reviews #comments ol.commentlist
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -3265,7 +3267,7 @@ body:not(.wpisset-product-type-extented) .thcn #reviews #comments ol.commentlist
 
 .thcn #reviews #comments ol.commentlist li .comment-text p.meta {
 	font-size: 95%;
-	color: #959595
+	color: #3f4254
 }
 
 .thcn-review__published-date {
@@ -3421,7 +3423,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 	position: absolute;
 	height: 2px;
 	width: 50%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	content: '';
 	bottom: -1px;
 	left: 50%
@@ -3515,7 +3517,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 }
 
 .wpisset-product-sticky-item-nav span {
-	color: #959595;
+	color: #3f4254;
 	cursor: pointer;
 	margin-right: .5rem;
 	-webkit-transition: all .2s;
@@ -3642,7 +3644,8 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 #add_payment_method .cart-collaterals .cart_totals table,
 .thcn-cart .cart-collaterals .cart_totals table,
 .thcn-checkout .cart-collaterals .cart_totals table {
-	margin: 0 0 1rem
+	margin: 0 0 1rem;
+	font-size: 16px;
 }
 
 #add_payment_method .cart-collaterals .cart_totals tr td,
@@ -3687,7 +3690,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 }
 
 .thcn table.shop_table.thcn-cart-form__contents {
-	margin-bottom: 1rem
+	margin-bottom: .5rem
 }
 
 .thcn .cart .button,
@@ -3800,7 +3803,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 	margin: 0;
 	padding: 0 1rem 1rem;
 	background: 0 0;
-	color: #959595;
+	color: #3f4254;
 	font-weight: 500;
 	font-size: inherit
 }
@@ -4367,7 +4370,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 }
 
 .thcn div.product .yith-wfbt-items .price del {
-	color: #959595;
+	color: #3f4254;
 	opacity: 1
 }
 
@@ -4412,7 +4415,7 @@ body:not(.wpisset-product-type-extented) .thcn #review_form #respond form>p.form
 }
 
 .yith-wfbt-section .yith-wfbt-images td a:hover img {
-	border-color: #ffc421
+	border-color: #ee9d01
 }
 
 .yith-wfbt-submit-block .yith-wfbt-submit-button {

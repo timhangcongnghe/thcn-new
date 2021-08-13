@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   
   get '/chi-tiet-san-pham' => 'frontend/product#index', as: :product
   get '/tim-kiem' => 'frontend/product#list', as: :product_search
+  
+  get '/gio-hang' => 'frontend/cart#cart', as: :cart
+  get '/dat-hang' => 'frontend/cart#checkout', as: :checkout
 end

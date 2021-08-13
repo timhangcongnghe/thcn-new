@@ -5,7 +5,8 @@
 <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/jquery.selectbox/1.2.0/jquery.selectBox.min.css', id: 'jquery-selectBox-css', media: 'all' %>
 <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css', id: 'yith-wcwl-font-awesome-css', media: 'all' %>
 <% if (params[:controller] == 'frontend/category' && params[:action] == 'list') ||
-      (params[:controller] == 'frontend/product' && params[:action] == 'index') %>
+      (params[:controller] == 'frontend/product' && params[:action] == 'index') ||
+      (params[:controller] == 'frontend/cart' && params[:action] == 'cart') %>
     <%= stylesheet_link_tag '/css/thcn-prettyPhoto?ver=5.7.2', id: 'thcn_prettyPhoto_css-css', media: 'all' %>
 <% end %>
 <%= stylesheet_link_tag '/css/yith-wcwl-main?ver=3.0.20', id: 'yith-wcwl-main-css', media: 'all' %>
@@ -17,6 +18,9 @@
 <% if params[:controller] == 'frontend/product' && params[:action] == 'index' %>
     <%= stylesheet_link_tag '/css/photoswipe.min.css?ver=5.5.1', id: 'photoswipe-css', media: 'all' %>
     <%= stylesheet_link_tag '/css/default-skin.min.css?ver=5.5.1', id: 'photoswipe-default-skin-css', media: 'all' %>
+<% end %>
+<% if params[:controller] == 'frontend/cart' && params[:action] == 'cart' %>
+    <%= stylesheet_link_tag '/css/select2.css?ver=5.5.1', id: 'select2-css', media: 'all' %>
 <% end %>
 <%= stylesheet_link_tag '/css/thcn-layout?ver=5.2.3', id: 'thcn-layout-css', media: 'all' %>
 <%= stylesheet_link_tag '/css/thcn-smallscreen?ver=5.2.3', id: 'thcn-smallscreen-css', media: 'only screen and (max-width: 768px)' %>

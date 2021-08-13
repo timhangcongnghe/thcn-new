@@ -1,0 +1,105 @@
+<% title 'Giỏ Hàng Của Bạn' %>
+
+<div class="wpisset-row wpisset-main-grid">
+    <main id="main" class="wpisset-main wpisset-col-xs-12">
+        <div class="wpisset_yoast_breadcrumb">
+            <p id="breadcrumbs">
+                <span>
+                    <span>
+                        <%= link_to 'Trang Chủ', root_link, title: '' %> » 
+                        <span class="breadcrumb_last" aria-current="page">Giỏ Hàng Của Bạn</span>
+                    </span>
+                </span>
+            </p>
+        </div>
+        <h1 class="entry-title">Giỏ Hàng Của Bạn</h1>
+        <div class="entry-content">
+            <div class="thcn">
+                <div class="thcn-notices-wrapper"></div>
+                <!-- <p class="cart-empty thcn-info">Giỏ hàng của bạn hiện chưa có sản phẩm nào.</p>
+                <p class="return-to-shop">
+                    <%= link_to 'Mua sắm ngay', category_list_link, title: '', class: 'button wc-backward' %>
+                </p> -->
+                <form class="thcn-cart-form" action="" method="post">
+                    <table class="shop_table shop_table_responsive cart thcn-cart-form__contents" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="product-remove">&nbsp;</th>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">TÊN SẢN PHẨM</th>
+                                <th class="product-price">GIÁ BÁN</th>
+                                <th class="product-quantity">SỐ LƯỢNG</th>
+                                <th class="product-subtotal">THÀNH TIỀN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% (0..4).each do |product| %>
+                                <tr class="thcn-cart-form__cart-item cart_item">
+                                    <td class="product-remove">
+                                        <a href="" class="remove" aria-label="Xóa khỏi giỏ hàng" data-product_id="" data-product_sku="">&times;</a>						
+                                    </td>
+                                    <td class="product-thumbnail">
+                                        <%= link_to image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
+                                                                  {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
+                                                                   '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
+                                                                   '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
+                                                                   '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
+                                                                   '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
+                                                                   '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
+                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail'),
+                                                    product_link, title: '' %>	
+                                    </td>
+                                    <td class="product-name" data-title="Product">
+                                        <%= link_to 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)', product_link, title: '' %></br >
+                                        <em>Intel Core i3 (Thế hệ 11)</em>, <em>4GB | 128GB SSD</em>, <em>Intel UHD Graphics</em><br /><em>13.3-Inch Full HD (1920 x 1080)</em>, <em>Windows 10 Home</em><br />
+                                        <em><strong>Bảo hành: </strong>12 tháng</em>
+                                    </td>
+                                    <td class="product-price" data-title="Price">
+                                        <span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span>						
+                                    </td>
+                                    <td class="product-quantity" data-title="Quantity">
+                                        <div class="quantity">
+                                            <label class="screen-reader-text" for="">Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)</label>
+                                            <input type="number" id="" class="input-text qty text" step="1" min="1" max="" name="" value="1" title="" size="4" placeholder="" inputmode="numeric"/>
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal" data-title="Subtotal">
+                                        <span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span>						
+                                    </td>
+                                </tr>
+                            <% end %>
+                            <tr>
+                                <td colspan="6" class="actions">
+                                    <div class="coupon">
+                                        <label for="coupon_code">Mã giảm giá</label>
+                                        <input type="text" name="" class="input-text" id="" value="" placeholder="" />
+                                        <button type="submit" class="button" name="" value="">ÁP DỤNG NGAY</button>
+                                    </div>
+                                    <button type="submit" class="button" name="" value="">CẬP NHẬT GIỎ HÀNG</button>
+                                    <input type="hidden" id="" name="" value="" />
+                                    <input type="hidden" name="" value="" />				
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <div class="cart-collaterals">
+                    <div class="cart_totals ">
+                        <h2>Tổng Tiền Mua Hàng</h2>
+                        <table cellspacing="0" class="shop_table shop_table_responsive">
+                            <tr class="order-total">
+                                <th>THÀNH TIỀN</th>
+                                <td data-title="Total">
+                                    <strong><span class="thcn-Price-amount amount"><bdi><%= format_price(109950000) %></bdi></span></strong>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="wc-proceed-to-checkout">
+                            <%= link_to 'ĐẶT HÀNG NGAY', checkout_link, title: '', class: 'checkout-button button alt wc-forward' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -572,7 +572,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-banner-desc {
-	color: #959595;
+	color: #3f4254;
 	font-size: 95%;
 	margin-right: .5rem;
 	display: inline-flex
@@ -598,7 +598,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -655,7 +655,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -1049,7 +1049,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -1106,7 +1106,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -1274,7 +1274,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-banner5 .wpisset-ele-es-banner5-content-text-2 {
-	color: #959595;
+	color: #3f4254;
 	-moz-transition: all .2s ease-out;
 	-o-transition: all .2s ease-out;
 	-webkit-transition: all .2s ease-out;
@@ -1629,10 +1629,10 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 .wpisset-ele-es-icons1-item-content>span {
 	font-size: 95%;
 	position: relative;
-	color: #959595
+	color: #3f4254
 }
 
-.wpisset-ele-es-icons1-item-content>span:after {
+/* .wpisset-ele-es-icons1-item-content>span:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1645,9 +1645,9 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #959595;
+	background-color: #3f4254;
 	will-change: transform
-}
+} */
 
 .wpisset-ele-es-icons1-item:hover .wpisset-ele-es-icons1-item-content>span:after {
 	-webkit-animation: wpisset-underline-animation2 1s cubic-bezier(.77, 0, .175, 1) forwards;
@@ -1829,7 +1829,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 50%;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-icons2-item-wrap {
@@ -1946,7 +1946,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-icons3-item-desc {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-icons3-item-desc span {
@@ -1966,7 +1966,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #959595;
+	background-color: #3f4254;
 	will-change: transform
 }
 
@@ -2102,7 +2102,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -2159,7 +2159,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -2381,7 +2381,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	font-weight: 500;
 	font-size: 18px;
 	position: relative;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset_ele_es_producttabs ul.wpisset-ele-es-producttabs-tabs li span {
@@ -2450,7 +2450,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset_ele_es_producttabs ul.wpisset-ele-es-producttabs-tabs li.current:after {
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset_ele_es_producttabs .wpisset-ele-es-producttabs-tab-content {
@@ -2517,7 +2517,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	font-size: 95%;
 	display: flex;
 	justify-content: center;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-header1-left .wpisset-ele-es-header1-desc-nav {
@@ -2529,7 +2529,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-header1-desc-nav a {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-header1-desc-nav a:hover {
@@ -2697,7 +2697,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 0%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: all .4s;
 	-moz-transition: all .4s;
 	-o-transition: all .4s;
@@ -2716,7 +2716,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 50%;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-header2-variant1 .wpisset-ele-es-header2-title span:after {
@@ -2724,8 +2724,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -2784,7 +2784,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 0%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: all .4s;
 	-moz-transition: all .4s;
 	-o-transition: all .4s;
@@ -2800,8 +2800,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -2902,11 +2902,11 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	font-size: 95%;
 	display: flex;
 	justify-content: center;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-header4-desc-nav a {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-header4-sep1 {
@@ -2963,7 +2963,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 
 .wpisset-ele-es-header4-desc {
 	font-size: 95%;
-	color: #959595;
+	color: #3f4254;
 	margin-left: 1rem
 }
 
@@ -3348,7 +3348,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-slick-dots li.slick-active button {
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-slick-dots li.slick-active:after {
@@ -3397,7 +3397,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-slick-arrows-border ellipse.circle {
-	stroke: #ffc421
+	stroke: #ee9d01
 }
 
 .wpisset-slick-arrows:hover .wpisset-slick-arrows-border .circle {
@@ -3421,7 +3421,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-slick-arrows svg:first-child path {
-	stroke: #959595
+	stroke: #3f4254
 }
 
 .wpisset-slick-sec-arrows {
@@ -3456,7 +3456,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-slick-sec-arrows-border ellipse.circle {
-	stroke: #ffc421
+	stroke: #ee9d01
 }
 
 .wpisset-slick-sec-arrows:hover .wpisset-slick-sec-arrows-border .circle {
@@ -3472,7 +3472,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-slick-sec-arrows svg:first-child path {
-	stroke: #959595
+	stroke: #3f4254
 }
 
 .wpisset-ele-es-productcarousel1-title-wrap {
@@ -3520,7 +3520,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 0%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: all .4s;
 	-moz-transition: all .4s;
 	-o-transition: all .4s;
@@ -3536,8 +3536,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -3582,7 +3582,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	font-weight: 500;
 	font-size: 18px;
 	position: relative;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-productcarousel1-title-wrap .product-cat-filter-nav .product-cat-filter span {
@@ -3657,7 +3657,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-productcarousel1-title-wrap .product-cat-filter-nav .product-cat-filter.product-cat-filter-active:after {
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-productcarousel1 .thcn .products:after {
@@ -3719,7 +3719,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 0%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: all .4s;
 	-moz-transition: all .4s;
 	-o-transition: all .4s;
@@ -3735,8 +3735,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -3812,7 +3812,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-productcarousel2-status>span:first-child {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-productcarousel2-status.out-of-stock>span:last-child {
@@ -3903,7 +3903,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 2px;
 	width: 0%;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: all .4s;
 	-moz-transition: all .4s;
 	-o-transition: all .4s;
@@ -3919,8 +3919,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -4982,7 +4982,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 
 .wpisset-ele-es-categorybanner3-nav-menu>ul>li>a:hover {
 	color: #111;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-categorybanner3-nav-menu>ul>li>a>img {
@@ -5325,7 +5325,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -5361,7 +5361,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 	transform: translateY(50%) translateX(0);
 	padding: 0 .5rem;
 	font-size: 95%;
-	color: #959595;
+	color: #3f4254;
 	z-index: 1
 }
 
@@ -5382,7 +5382,7 @@ a.wpisset-ele-es-categorybanner4-desc span:after {
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #959595;
+	background-color: #3f4254;
 	will-change: transform
 }
 
@@ -5392,7 +5392,7 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 }
 
 .wpisset-ele-es-categorybanner4-desc:hover {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-categorybanner4 .wpisset-ele-es-categorybanner4-bv:before {
@@ -5442,7 +5442,7 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -5659,7 +5659,7 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 
 .wpisset-ele-es-categorybanner5-nav-menu>ul>li>a:hover {
 	color: #111;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-categorybanner5-nav-menu>ul>li.wpisset-selected-menu-item>a {
@@ -5953,7 +5953,7 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -5993,8 +5993,8 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 	border-radius: 6px;
 	height: 12px;
 	width: 12px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	top: 50%;
 	right: 0;
@@ -6020,7 +6020,7 @@ a.wpisset-ele-es-categorybanner4-desc:hover span:after {
 	transform: translateY(50%) translateX(0);
 	padding: 0 .5rem;
 	font-size: 95%;
-	color: #959595;
+	color: #3f4254;
 	z-index: 1
 }
 
@@ -6041,7 +6041,7 @@ a.wpisset-ele-es-infobanner1-desc span:after {
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #959595;
+	background-color: #3f4254;
 	will-change: transform
 }
 
@@ -6051,7 +6051,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-infobanner1-desc:hover {
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-infobanner1 .wpisset-ele-es-infobanner1-bv:before {
@@ -6101,7 +6101,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ffc421;
+	background-color: #ee9d01;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -6193,7 +6193,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	display: block;
 	height: 2px;
 	width: 50%;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-categoryblock-title-variant1 .wpisset-ele-es-categoryblock-title span:after {
@@ -6201,8 +6201,8 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -6543,7 +6543,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	display: block;
 	height: 2px;
 	width: 50%;
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-categoryblock-carousel-title-variant1 .wpisset-ele-es-categoryblock-carousel-title span:after {
@@ -6551,8 +6551,8 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	border-radius: 50%;
 	height: 16px;
 	width: 16px;
-	background: #ffc421;
-	background: linear-gradient(90deg, #ffc421 50%, #187de4 50%);
+	background: #ee9d01;
+	background: linear-gradient(90deg, #ee9d01 50%, #187de4 50%);
 	content: '';
 	bottom: 0;
 	left: 50%;
@@ -6595,7 +6595,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	font-weight: 500;
 	font-size: 18px;
 	position: relative;
-	color: #959595
+	color: #3f4254
 }
 
 .wpisset-ele-es-categoryblock-carousel-title-wrap .product-cat-filter-nav .product-cat-filter span {
@@ -6670,7 +6670,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-categoryblock-carousel-title-wrap .product-cat-filter-nav .product-cat-filter.product-cat-filter-active:after {
-	background-color: #ffc421
+	background-color: #ee9d01
 }
 
 .wpisset-ele-es-categoryblock-right {
@@ -6878,7 +6878,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-dealproduct-icon svg path {
-	fill: #ffc421
+	fill: #ee9d01
 }
 
 .wpisset-ele-es-dealproduct-img-wrap {
@@ -6918,7 +6918,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-dealproduct-status>span:first-child {
-	color: #959595;
+	color: #3f4254;
 	margin-right: .25rem
 }
 
@@ -7017,7 +7017,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 
 .wpisset-ele-es-recentviewedproducts-inner {
 	display: flex;
-	padding: 1rem;
+	padding: .5rem;
 	background-color: #fff;
 	flex-wrap: wrap
 }
@@ -7241,7 +7241,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-recentviewedproducts2-item:hover .wpisset-ele-es-recentviewedproducts2-item-img img {
-	border-color: #ffc421
+	border-color: #ee9d01
 }
 
 .wpisset-ele-es-recentviewedproducts2-item-title {
@@ -7563,11 +7563,11 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	padding-top: 1rem;
 	border-top: 1px solid #ebebeb!important;
 	align-items: center;
-	color: #959595!important
+	color: #3f4254!important
 }
 
 .widget_wpisset_posts_widget span.wpisset-lpw-date:after {
-	background-color: #959595!important;
+	background-color: #3f4254!important;
 	bottom: 2px!important
 }
 
@@ -7590,7 +7590,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 
 .widget_wpisset_posts_widget.widget ul li>a:hover .wpisset-lpw-post-featured-image img {
 	opacity: 1;
-	border: 1px solid #ffc421
+	border: 1px solid #ee9d01
 }
 
 .widget_wpisset_posts_widget .wpisset-lpw-post-content {

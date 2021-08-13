@@ -19,6 +19,14 @@ module ApplicationHelper
     product_search_path
   end
   
+  def cart_link
+    cart_path
+  end
+  
+  def checkout_link
+    checkout_path
+  end
+  
   def image_set_tag(source, srcset = {}, options = {})
     srcset = srcset.map { |src, size| "#{path_to_image(src)} #{size}" }.join(', ')
     image_tag(source, options.merge(srcset: srcset))
