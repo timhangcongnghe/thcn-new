@@ -34,3 +34,8 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/app/uploaders
+/Gemfile
+/Gemfile.lock
+/config/database.yml

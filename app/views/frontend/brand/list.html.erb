@@ -1,0 +1,123 @@
+<% title 'Thương Hiệu Sản Phẩm' %>
+
+<div class="wpisset-row wpisset-main-grid">
+    <main id="main" class="wpisset-main wpisset-col-xs-12">
+        <div class="wpisset_yoast_breadcrumb">
+            <p id="breadcrumbs"><span><span><a href="http://eletra-dokan.lpdthemesdemo2.com/">Home</a> » <span class="breadcrumb_last" aria-current="page">Store List</span></span></span></p>
+        </div>
+        <h1 class="entry-title">Thương Hiệu Sản Phẩm</h1>
+        <div class="entry-content">
+            <div id="dokan-store-listing-filter-wrap">
+                <div class="left">
+                    <p class="item store-count">Total stores showing: 29</p>
+                </div>
+                <div class="right">
+                    <div class="item">
+                        <div class="dokan-icons">
+                            <div class="dokan-icon-div"></div>
+                            <div class="dokan-icon-div"></div>
+                            <div class="dokan-icon-div"></div>
+                        </div>
+                        <button class="dokan-store-list-filter-button dokan-btn dokan-btn-theme">
+                        Filter            </button>
+                    </div>
+                    <form name="stores_sorting" class="sort-by item" method="get">
+                        <label>Sort by:</label>
+                        <select name="stores_orderby" id="stores_orderby" aria-label="Sort by">
+                            <option value='most_recent'>Most Recent</option>
+                            <option value='total_orders'>Most Popular</option>
+                            <option value='top_rated'>Top Rated</option>
+                            <option value='most_reviewed'>Most Reviewed</option>
+                        </select>
+                    </form>
+                    <div class="toggle-view item">
+                        <span class="dashicons dashicons-screenoptions" data-view="grid-view"></span>
+                        <span class="dashicons dashicons-menu-alt" data-view="list-view"></span>
+                    </div>
+                </div>
+            </div>
+            <form role="store-list-filter" name="dokan_store_lists_filter_form" id="dokan-store-listing-filter-form-wrap" style="display: none">
+                <div class="store-search grid-item">
+                    <input type="search" class="store-search-input" name="dokan_seller_search" placeholder="Search Vendors">
+                </div>
+                <div class="store-lists-other-filter-wrap">
+                    <div class="featured item">
+                        <label for="featured">
+                        Featured:
+                        </label>
+                        <input type="checkbox" class="dokan-toogle-checkbox" id="featured" name="featured">
+                    </div>
+                    <div class="open-now item">
+                        <label for="open-now">
+                        Open Now:
+                        </label>
+                        <input type="checkbox" class="dokan-toogle-checkbox" id="open-now" name="open_now">
+                    </div>
+                    <div class="store-ratings item">
+                        <label>
+                        Rating:    </label>
+                        <p class="dokan-stars">
+                            <i class="star-1 dashicons dashicons-star-empty" data-rating="1"></i><i class="star-2 dashicons dashicons-star-empty" data-rating="2"></i><i class="star-3 dashicons dashicons-star-empty" data-rating="3"></i><i class="star-4 dashicons dashicons-star-empty" data-rating="4"></i><i class="star-5 dashicons dashicons-star-empty" data-rating="5"></i>
+                            <span class="up">& Up</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="apply-filter">
+                    <button id="cancel-filter-btn" class="dokan-btn dokan-btn-theme">Cancel</button>
+                    <button id="apply-filter-btn" class="dokan-btn dokan-btn-theme" type="submit">Apply</button>
+                </div>
+            </form>
+            <div id="dokan-seller-listing-wrap" class="grid-view">
+                <div class="seller-listing-content">
+                    <ul class="dokan-seller-wrap">
+                        <% (0..38).each do |brand| %>
+                            <li class="dokan-single-seller thcn coloum-3 no-banner-img">
+                                <div class="store-wrapper">
+                                    <div class="store-header">
+                                        <div class="store-banner" style="opacity:.5;">
+                                            <%= link_to image_tag('/img/logo-brand/hp-banner-768x462.png', alt: '', title: ''), brand_detail_link, title: '' %>
+                                        </div>
+                                    </div>
+                                    <div class="store-content default-store-banner">
+                                        <div class="store-data-container">
+                                            <div class="featured-favourite">
+                                            </div>
+                                            <div class="store-data ">
+                                                <h2><%= link_to 'HP', brand_detail_link, title: '' %></h2>
+                                                <p class="store-phone"><i class="fa fa-phone" aria-hidden="true"></i> (028) 3984 7690</p>
+                                                <p class="store-phone"><i class="fa fa-envelope" aria-hidden="true"></i> kinhdoanh@hoangkhang.com.vn</p>
+                                                <p class="store-phone"><i class="fa fa-globe" aria-hidden="true"></i> timhangcongnghe.com | hp.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="store-footer">
+                                        <div class="seller-avatar">
+                                            <%= link_to image_tag('/img/logo-brand/hp-150x150.png', size: '150', alt: '', title: ''), brand_detail_link, title: '' %>
+                                        </div>
+                                        <%= link_to '<span class="dashicons dashicons-arrow-right-alt2 dokan-btn-theme dokan-btn-round"></span>'.html_safe, brand_detail_link, title: '' %>
+                                        <button type="button" class="dokan-btn dokan-btn-theme dokan-follow-store-button" data-vendor-id="39" data-status="" data-is-logged-in="0" >
+                                            <span class="dokan-follow-store-button-label-current">Theo dõi</span>
+                                            <span class="dokan-follow-store-button-label-unfollow">Ngưng theo dõi</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        <% end %>
+                        <div class="dokan-clearfix"></div>
+                    </ul>
+                    <div class="pagination-container clearfix">
+                        <div class="pagination-wrap">
+                            <ul class="pagination">
+                                <li><span aria-current="page" class="page-numbers current">1</span></li>
+                                <li><a class="page-numbers" href="http://eletra-dokan.lpdthemesdemo2.com/store-listing/page/2/">2</a></li>
+                                <li><a class="page-numbers" href="http://eletra-dokan.lpdthemesdemo2.com/store-listing/page/3/">3</a></li>
+                                <li><a class="next page-numbers" href="http://eletra-dokan.lpdthemesdemo2.com/store-listing/page/2/">&rarr;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="entry-content-clear"></div>
+        </div>
+    </main>
+</div>
