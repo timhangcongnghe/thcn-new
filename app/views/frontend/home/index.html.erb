@@ -97,7 +97,7 @@
                                                 <span class="wpisset-ele-es-dealproduct-badge-small">Giảm</span> 10%
                                             </div>
                                             <%= link_to image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg',
-                                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
+                                                                      {Product.first.main_image.image(:thumb650) => '1000w',
                                                                        '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
                                                                        '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
                                                                        '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
@@ -447,7 +447,7 @@
                                     <div class="wpisset-ele-es-categorybanner1-products">
                                         <div class="thcn columns-3 ">
                                             <ul class="products columns-3">
-                                                <% (0..5).each_with_index do |product, index| %>
+                                                <% @products.each_with_index do |product, index| %>
                                                     <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 5 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                                                         <div class="wpisset-woo-loop-wrapper">
                                                             <div class="wpisset-woo-loop-inner">
@@ -489,7 +489,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                        <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                         <div class="wpisset-woo-loop-desc">
                                                                             <ul>
                                                                                 <li>Intel Core i3 (Thế hệ 11)</li>
@@ -502,8 +502,8 @@
                                                                     </div>
                                                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                                                         <span class="price">
-                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
+                                                                            <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
+                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(product.product_price) %></bdi></span></ins>
                                                                         </span>
                                                                     </div>
                                                                 </div>

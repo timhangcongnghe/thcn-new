@@ -13,13 +13,13 @@
                             <ul class="wpisset-secondary-nav-menu">
                                 <% (0..8).each do |category| %>
                                     <li class="menu-item menu-item-has-children">
-                                        <%= link_to '<span>'.html_safe + 'Điện Thoại, Thiết Bị Thông Minh' + '</span><u class="wpisset-menu-item-badge">Mới</u>'.html_safe, category_list_link, title: '' %>
+                                        <%= link_to 'Điện Thoại, Thiết Bị Thông Minh', category_list_link, title: '' %>
                                         <ul class="sub-menu">
                                             <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Điện Thoại Di Động' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                <%= link_to 'Điện Thoại Di Động', category_list_link, title: '' %>
                                                 <ul class="sub-menu">
                                                     <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'iPhone' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                        <%= link_to 'iPhone', category_list_link, title: '' %>
                                                     </li>
                                                     <li class="menu-item">
                                                         <%= link_to '<span>'.html_safe + 'SAMSUNG' + '</span>'.html_safe, category_list_link, title: '' %>
@@ -97,7 +97,7 @@
                             </div>
                             <ul class="wpisset-secondary-nav-menu">
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Hướng dẫn mua hàng' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Hướng dẫn mua hàng' + '</span>'.html_safe, shopping_guide_link, title: '' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                     <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Hướng dẫn thanh toán' + '</span>'.html_safe, '', title: '' %>
@@ -142,10 +142,10 @@
                             </div>
                             <ul class="wpisset-secondary-nav-menu">
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Giới thiệu công ty' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Giới thiệu công ty' + '</span>'.html_safe, about_link, title: '' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Thông tin liên hệ' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Thông tin liên hệ' + '</span>'.html_safe, contact_link, title: '' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                     <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Tin tức công nghệ' + '</span>'.html_safe, '', title: '' %>
@@ -225,49 +225,31 @@
                                     <%= link_to 'Xem toàn bộ', category_list_link, title: '', class: 'wpisset-category-menu-view-all' %>
                                 </div>
                                 <ul class="wpisset-category-menu wpisset-sub-menu wpisset-start-xs wpisset-sub-menu-animation-fade">
-                                    <% (0...9).each do |menu| %>
+                                    <% Menu.get_menus.each do |menu| %>
                                         <li class="wpisset-cat-mega-menu wpisset-cat-mega-menu-4 wpisset-cat-mega-menu-full-height wpisset-cat-mega-menu-bg-image-1 menu-item menu-item-has-children">
-                                            <%= link_to image_tag('/img/icons_menu/laptop.png', alt: '', title: '') + '<span>'.html_safe + 'Laptop, Máy Tính Xách Tay' + '</span>'.html_safe, category_list_link, title: '' %>
+                                            <%= link_to image_tag('/img/icons_menu/laptop.png', alt: '', title: '') + menu.get_name, '', title: '' %>
                                             <ul class="sub-menu">
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Apple MacBook' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                <% menu.get_children.each do |menu_children_1| %>
+                                                    <% if menu_children_1.style_show? %>
+                                                        <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                                                    <% else %>
+                                                        <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
+                                                    <% end %>
+                                                        <%= link_to menu_children_1.get_name, category_list_link, title: '' %>
+                                                        <ul class="sub-menu">
+                                                            <% menu_children_1.get_children.each do |menu_children_2| %>
+                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                    <%= link_to menu_children_2.get_name, '', title: '' %>
+                                                                </li>
+                                                            <% end %>
+                                                        </ul>
+                                                    </li>
+                                                <% end %>
+                                                <!-- <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                                                    <%= link_to 'Laptop Theo Hãng', category_list_link, title: '' %>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'MacBook' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'MacBook Air' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'MacBook Pro' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Microsoft Surface' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Surface Pro' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Surface Pro X' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Surface Book' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Surface Laptop' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Surface Go' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Laptop Theo Hãng' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Acer' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                            <%= link_to 'Acer', category_list_link, title: '' %>
                                                         </li>
                                                         <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                             <%= link_to '<span>'.html_safe + 'Adata XPG' + '</span>'.html_safe, category_list_link, title: '' %>
@@ -300,102 +282,7 @@
                                                             <%= link_to '<span>'.html_safe + 'MSI' + '</span>'.html_safe, category_list_link, title: '' %>
                                                         </li>
                                                     </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Laptop Gaming' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Acer' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Asus' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Dell' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Gigabyte' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'HP' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Lenovo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'MSI' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Laptop Workstation' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Dell' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'HP' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Lenovo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Laptop Theo Nhu Cầu' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Làm việc, Học tập' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Cảm Ứng' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Chip AMD' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Chơi Game' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Doanh Nhân' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Mỏng Nhẹ' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                                    <%= link_to '<span>'.html_safe + 'Laptop CPU' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'AMD Ryzen 3' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'AMD Ryzen 5' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'AMD Ryzen 7' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'AMD Ryzen 9' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Intel Celeron/Pentium' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Intel Core i3' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Intel Core i5' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Intel Core i7' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                            <%= link_to '<span>'.html_safe + 'Intel Core i9' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                                </li> -->
                                                 <li class="hide-menu-item-heading menu-item menu-item-type-custom menu-item-object-custom">
                                                     <%= link_to '<span>'.html_safe + 'Hình Ảnh Laptop, Máy Tính Xách Tay' + '</span>'.html_safe, category_list_link, title: '' %>
                                                     <div class="wpisset-menu-description">
@@ -406,20 +293,20 @@
                                         </li>
                                     <% end %>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <%= link_to image_tag('/img/icons_menu/bell.png', alt: '', title: '') + '<span>'.html_safe + 'Sản Phẩm Khuyến Mãi' + '</span>'.html_safe, '', title: '' %>
+                                        <%= link_to image_tag('/img/icons_menu/bell.png', alt: '', title: '') + 'Sản Phẩm Khuyến Mãi', '', title: '' %>
                                     </li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <%= link_to image_tag('/img/icons_menu/star.png', alt: '', title: '') + '<span>'.html_safe + 'Sản Phẩm Mới' + '</span><u class="wpisset-menu-item-badge" style="background-color:#1bc5bd">Năm 2021</u>'.html_safe, '', title: '' %>
+                                        <%= link_to image_tag('/img/icons_menu/star.png', alt: '', title: '') + 'Sản Phẩm Mới' + '<u class="wpisset-menu-item-badge" style="background-color:#1bc5bd">Năm 2021</u>'.html_safe, '', title: '' %>
                                     </li>
                                 </ul>
                             </div>
                             <div class="wpisset-main-navigation-bottom-wrap">
                                 <ul class="wpisset-menu wpisset-sub-menu wpisset-start-xs wpisset-sub-menu-animation-fade">
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <span><%= link_to '<span>'.html_safe + 'Trang Chủ' + '</span>'.html_safe, root_link, title: '' %></span>
+                                        <span><%= link_to 'Trang Chủ', root_link, title: '' %></span>
                                     </li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <span><%= link_to '<span>'.html_safe + 'Giới Thiệu' + '</span>'.html_safe, '', title: '' %></span>
+                                        <span><%= link_to 'Giới Thiệu', about_link, title: '' %></span>
                                     </li>
                                     <li class="wpisset-mega-menu wpisset-mega-menu-3 wpisset-mega-menu-bg-image-1 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
                                         <span><%= link_to '<span>'.html_safe + 'Chính Sách - Hướng Dẫn' + '</span>'.html_safe, '', title: '' %></span>
@@ -431,7 +318,7 @@
                                                         <span><%= link_to '<span>'.html_safe + 'Hỗ Trợ Khách Hàng' + '</span>'.html_safe, '#', title: '' %></span>
                                                         <ul class="sub-menu">
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                                <span><%= link_to '<span>'.html_safe + 'Hướng dẫn mua hàng' + '</span>'.html_safe, '', title: '' %></span>
+                                                                <span><%= link_to '<span>'.html_safe + 'Hướng dẫn mua hàng' + '</span>'.html_safe, shopping_guide_link, title: '' %></span>
                                                             </li>
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                                 <span><%= link_to '<span>'.html_safe + 'Hướng dẫn thanh toán' + '</span>'.html_safe, '', title: '' %></span>
@@ -525,10 +412,10 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <span><%= link_to '<span>'.html_safe + 'Thương Hiệu' + '</span>'.html_safe, '', title: '' %></span>
+                                        <span><%= link_to '<span>'.html_safe + 'Thương Hiệu' + '</span>'.html_safe, brand_list_link, title: '' %></span>
                                     </li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <span><%= link_to '<span>'.html_safe + 'Liên Hệ' + '</span>'.html_safe, '', title: '' %></span>
+                                        <span><%= link_to '<span>'.html_safe + 'Liên Hệ' + '</span>'.html_safe, contact_link, title: '' %></span>
                                     </li>
                                 </ul>
                                 <div class="wpisset-secondary-menu-wrap">
@@ -537,7 +424,7 @@
                                             <%= link_to '<span>'.html_safe + 'Sản Phẩm Đã Xem' + '</span>'.html_safe, '#wpisset-recent-viewed-menu', title: 'SẢN PHẨM ĐÃ XEM' %>
                                         </li>
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <%= link_to '<span><strong>'.html_safe + 'Tra Cứu Đơn Hàng' + '</strong></span>'.html_safe, '', title: 'Tra cứu đơn hàng' %>
+                                            <%= link_to '<span><strong>'.html_safe + 'Tra Cứu Đơn Hàng' + '</strong></span>'.html_safe, track_link, title: 'Tra cứu đơn hàng' %>
                                         </li>
                                     </ul>
                                 </div>

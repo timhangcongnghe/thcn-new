@@ -1680,8 +1680,9 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 .wpisset-cat-mega-menu>.sub-menu>.menu-item>a[href="#"],
 .wpisset-mega-menu>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-heading>span>a,
 .wpisset-mega-menu>.sub-menu>.menu-item>.sub-menu>.menu-item>span>a[href="#"] {
-	color: #1bc5bd;
-	font-weight: 500
+	color: #181c32;
+	font-weight: 600;
+	font-size: 100%;
 }
 
 .wpisset-cat-mega-menu>.sub-menu>.menu-item>a[href="#"],
@@ -2197,7 +2198,7 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 }
 
 .wpisset-footer-newsletter {
-	background-color: #ee2d41;
+	/* background-color: #ee2d41; */
 	color: #fff;
 	padding: 0.5rem 0
 }
@@ -2272,7 +2273,7 @@ ul.wpisset-footer-menu li a:hover span:after {
 }
 
 .entry-content>.vc_row p {
-	margin: 1rem 0;
+	margin: .5rem 0;
 	max-width: 100%
 }
 
