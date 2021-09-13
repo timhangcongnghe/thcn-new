@@ -4,12 +4,12 @@ class ProductImage < ActiveRecord::Base
   mount_uploader :image_url, ProductImageUploader
   
   def image_path(version = nil)
-    if self.image_url.nil?
+    if self.image_url_url.nil?
       return '/img/tmp_products/laptop-dell-latitude-3320.jpg'
     elsif !version.nil?
-      return self.image_url(version)
+      return self.image_url_url(version)
     else
-      return self.image_url
+      return self.image_url_url
     end
   end
   
