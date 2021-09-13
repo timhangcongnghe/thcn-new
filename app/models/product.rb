@@ -17,8 +17,13 @@ class Product < ActiveRecord::Base
   end
   
   # lay hinh anh chinh
-  def main_image
-		product_images.first
+  def get_all_images
+    product_images.where.not(image_url: nil).order('id desc')
+  end
+  
+  def get_main_image
+		img = get_all_images.first
+    return img.nil? ? ProductImage.new : img
 	end
   
   # tra ve ten
