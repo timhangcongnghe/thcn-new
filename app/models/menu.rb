@@ -1,4 +1,4 @@
-class Menu < ActiveRecord::Base
+class Menu < ApplicationRecord
   self.table_name = 'erp_menus_menus'
   belongs_to :parent, class_name: "Menu", optional: true
   has_many :children, -> {order(custom_order: :asc)}, class_name: 'Menu', foreign_key: 'parent_id'
@@ -10,7 +10,7 @@ class Menu < ActiveRecord::Base
     if params[:sort_by].present?
 			records = records.order(params[:sort_by].gsub('_', ' '))
 		else
-			records = records.order("created_at DESC")
+			records = records.order("created_at desc")
 		end
 		return records
 	end
@@ -73,8 +73,18 @@ class Menu < ActiveRecord::Base
     self.get_active.where(parent_id: nil)
   end
   
+  # lay menu id may tinh xach tay
+  def self.get_laptop_menu
+    return self.find(464)
+  end
+  
+  # lay danh sach menu hien thi ngoai trang home
+  def self.get_hot_menus
+     self.get_active.where(is_hot: true).where(parent_id: nil)
+  end
+  
   # loc menu voi archived la false va sap xep asc cot custom order
   def self.get_active
-    self.where(archived: false).order("custom_order ASC")
+    self.where(archived: false).order("custom_order asc")
   end
 end

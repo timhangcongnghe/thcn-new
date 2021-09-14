@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   
   get '/loi-404' => 'frontend/error#index', as: :error_404
   
-  get "hinh-anh(/:title)(/:id)/(:thumb)" => "product_images#image", as: :product_image
+  get "hinh-anh/:title-:id-:thumb" => "product_images#image", as: :product_image
 end

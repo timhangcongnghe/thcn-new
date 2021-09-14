@@ -1,4 +1,4 @@
-class ProductImage < ActiveRecord::Base
+class ProductImage < ApplicationRecord
   self.table_name = 'erp_products_product_images'
   belongs_to :product
   mount_uploader :image_url, ProductImageUploader

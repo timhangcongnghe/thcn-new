@@ -1,7 +1,51 @@
-class Product < ActiveRecord::Base
+class Product < ApplicationRecord
   self.table_name = 'erp_products_products'
   belongs_to :category
   has_many :product_images
+  has_many :products_values, -> {order 'erp_products_products_values.id'}
+  
+  # ok
+  def get_product_property_array
+		arr = []
+		self.get_properties.each do |property|
+			row = {
+				name: property.name,
+				values: self.products_values_by_property(property).map {|products_value|
+					products_value.properties_value.value
+				}
+			}
+			arr << row
+		end
+		arr
+	end
+  
+  # ok
+  def products_values_by_property(property)
+		self.products_values.joins(:properties_value).where(erp_products_properties_values: {property_id: property.id})
+	end
+  
+  def product_short_descipriton_values_array_new_specs
+    groups = []
+    return [] if self.category.nil?
+    
+    # property_group = self.category.property_groups.where(is_filter_specs: true).first
+    property_group = self.category.property_groups.first
+    property_group.properties.where(is_show_detail: true).each do |property|
+      row = {}
+      row[:name] = property.name
+      row[:values] = []
+      
+      values = self.products_values_by_property(property).map {|pv| pv.properties_value.value }
+      row[:values] += values if !values.empty?
+      groups << row if !row[:values].empty?
+    end
+    return groups
+  end
+  
+  # lay danh sanh thuoc tinh
+  def get_properties
+		Property.where(id: (self.products_values.joins(:properties_value).select('erp_products_properties_values.property_id as property_id').map {|pv| pv.property_id}).uniq)
+	end
   
   # tra ve ket qua gia ban
   def product_price
@@ -33,6 +77,6 @@ class Product < ActiveRecord::Base
   
   # tra ve danh sach san pham duoc hien thi
   def self.get_active
-  	self.where(archived: false)
+  	self.where(archived: false).where(is_sold_out: false)
   end
 end

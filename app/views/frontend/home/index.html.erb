@@ -396,42 +396,11 @@
                                             <h3 class="wpisset-ele-es-categorybanner1-title"><span>THƯƠNG HIỆU LAPTOP</span></h3>
                                             <div class="wpisset-ele-es-categorybanner1-menu">
                                                 <ul class="">
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Apple' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Microsoft' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'HP' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Dell' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Lenovo' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Dynabook' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'MSI' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Gigabyte' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Acer' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Asus' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'Avita' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                        <span><%= link_to '<span>'.html_safe + 'LG' + '</span>'.html_safe, '', title: '' %></span>
-                                                    </li>
+                                                    <% @laptop_brands.each do |brand| %>
+                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                            <%= link_to brand.get_name, '', title: '' %>
+                                                        </li>
+                                                    <% end %>
                                                 </ul>
                                             </div>
                                             <%= link_to '<span>'.html_safe + 'XEM TOÀN BỘ' + '</span>'.html_safe, '', title: '', class: 'wpisset-button' %>
@@ -447,29 +416,49 @@
                                     <div class="wpisset-ele-es-categorybanner1-products">
                                         <div class="thcn columns-3 ">
                                             <ul class="products columns-3">
-                                                <% @products.each_with_index do |product, index| %>
+                                                <% @laptop_products.each_with_index do |product, index| %>
                                                     <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 5 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                                                         <div class="wpisset-woo-loop-wrapper">
                                                             <div class="wpisset-woo-loop-inner">
                                                                 <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                                    <%= link_to '<span class="onsale">'.html_safe + 'Mới 2021' + '</span>'.html_safe +
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                    <% if product.is_new? %>
+                                                                        <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
+                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                                   product.get_main_image.image(:thumb650) => '800w',
+                                                                                                   product.get_main_image.image(:thumb650) => '768w',
+                                                                                                   product.get_main_image.image(:thumb650) => '600w',
+                                                                                                   product.get_main_image.image(:thumb650) => '300w',
+                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
+                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                                   product.get_main_image.image(:thumb650) => '800w',
+                                                                                                   product.get_main_image.image(:thumb650) => '768w',
+                                                                                                   product.get_main_image.image(:thumb650) => '600w',
+                                                                                                   product.get_main_image.image(:thumb650) => '300w',
+                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
+                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                                    '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                    <% else %>
+                                                                        <%= link_to image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                                   product.get_main_image.image(:thumb650) => '800w',
+                                                                                                   product.get_main_image.image(:thumb650) => '768w',
+                                                                                                   product.get_main_image.image(:thumb650) => '600w',
+                                                                                                   product.get_main_image.image(:thumb650) => '300w',
+                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
+                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                                   product.get_main_image.image(:thumb650) => '800w',
+                                                                                                   product.get_main_image.image(:thumb650) => '768w',
+                                                                                                   product.get_main_image.image(:thumb650) => '600w',
+                                                                                                   product.get_main_image.image(:thumb650) => '300w',
+                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
+                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                                    '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                    <% end %>
                                                                 </div>
                                                                 <div class="wpisset-woo-loop-content-wrapper">
                                                                     <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
@@ -492,18 +481,26 @@
                                                                         <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                         <div class="wpisset-woo-loop-desc">
                                                                             <ul>
-                                                                                <li>Intel Core i3 (Thế hệ 11)</li>
-                                                                                <li>4GB | 128GB SSD</li>
-                                                                                <li>Intel UHD Graphics</li>
-                                                                                <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                                                <li>Windows 10 Home</li>
+                                                                                <% product.product_short_descipriton_values_array_new_specs.each do |row| %>
+                                                                                    <li><%= row[:values].join(", ") %></li>
+                                                                                <% end %>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
                                                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                                                         <span class="price">
                                                                             <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
-                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(product.product_price) %></bdi></span></ins>
+                                                                            <ins>
+                                                                                <span class="thcn-Price-amount amount">
+                                                                                    <bdi>
+                                                                                        <% if product.product_price.nil? %>
+                                                                                            Đang cập nhật
+                                                                                        <% else %>
+                                                                                            <%= format_price(product.product_price) %>
+                                                                                        <% end %>
+                                                                                    </bdi>
+                                                                                </span>
+                                                                            </ins>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -521,50 +518,66 @@
                     </div>
                 </div>
             </div>
-            <% (0..4).each do |menu| %>
+            <%= render 'frontend/modules/home/apple_category', category: @apple, title: 'Sản Phẩm Apple' %>
+            <% @hot_menus.each do |menu| %>
                 <div class="vc_row wpb_row vc_row-fluid wpisset-product-loop-grid-big wpisset-woo-enable-loop-desc wpisset-ele-es-animate-fadein vc_custom_1612943782715">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner">
                             <div class="wpb_wrapper">
                                 <div class=" wpisset_ele_es_header3 wpisset-ele-es-header3-variant2 wpisset_ele_es_header3-1466549668 vc_custom_1610096811046" >
-                                    <h2 class="wpisset-ele-es-header3-title">
-                                        <span>Máy Tính Để Bàn</span>
-                                    </h2>
+                                    <h2 class="wpisset-ele-es-header3-title"><%= menu.get_name %></h2>
                                     <div class="wpisset-ele-es-header3-nav">
-                                        <%= link_to '<span>'.html_safe + 'PC HP' + '</span>'.html_safe, '', title: '' %>
-                                        <%= link_to '<span>'.html_safe + 'PC Dell' + '</span>'.html_safe, '', title: '' %>
-                                        <%= link_to '<span>'.html_safe + 'PC Lenovo' + '</span>'.html_safe, '', title: '' %>
-                                        <%= link_to '<span>'.html_safe + 'PC Acer' + '</span>'.html_safe, '', title: '' %>
-                                        <%= link_to '<span>'.html_safe + 'PC Asus' + '</span>'.html_safe, '', title: '' %>
-                                        <%= link_to '<span>'.html_safe + 'PC Fujitsu' + '</span>'.html_safe, '', title: '' %>
+                                        <% menu.children.get_active.limit(6).each do |menu_child| %>
+                                            <%= link_to menu_child.get_name, '', title: menu_child.get_name %>
+                                        <% end %>
                                     </div>
                                 </div>
                                 <svg class="wpssiet-es-cs"><style></style></svg>
                                 <div class="thcn columns-3 ">
                                     <ul class="products columns-3">
-                                        <% (0..5).each_with_index do |product, index| %>
+                                        <% menu.get_products_for_categories(params).limit(6).each_with_index do |product, index| %>
                                             <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 5 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                                                 <div class="wpisset-woo-loop-wrapper">
                                                     <div class="wpisset-woo-loop-inner">
                                                         <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                            <%= link_to '<span class="onsale">'.html_safe + 'Mới 2021' + '</span>'.html_safe +
-                                                                                    image_set_tag('/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg',
-                                                                                                  {'/img/tmp_products/pc-dell-optiplex-7090-mff-1000x1000.jpg' => '1000w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg' => '800w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-768x768.jpg' => '768w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-600x600.jpg' => '600w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-300x300.jpg' => '300w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-150x150.jpg' => '150w'},
-                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag('/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg',
-                                                                                                  {'/img/tmp_products/pc-dell-optiplex-7090-mff-1000x1000.jpg' => '1000w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg' => '800w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-768x768.jpg' => '768w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-600x600.jpg' => '600w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-300x300.jpg' => '300w',
-                                                                                                   '/img/tmp_products/pc-dell-optiplex-7090-mff-150x150.jpg' => '150w'},
-                                                                                                  title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                    '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                            <% if product.is_new? %>
+                                                                <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
+                                                                            image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                          {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                           product.get_main_image.image(:thumb650) => '800w',
+                                                                                           product.get_main_image.image(:thumb650) => '768w',
+                                                                                           product.get_main_image.image(:thumb650) => '600w',
+                                                                                           product.get_main_image.image(:thumb650) => '300w',
+                                                                                           product.get_main_image.image(:thumb650) => '150w'},
+                                                                                          title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                            image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                          {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                           product.get_main_image.image(:thumb650) => '800w',
+                                                                                           product.get_main_image.image(:thumb650) => '768w',
+                                                                                           product.get_main_image.image(:thumb650) => '600w',
+                                                                                           product.get_main_image.image(:thumb650) => '300w',
+                                                                                           product.get_main_image.image(:thumb650) => '150w'},
+                                                                                          title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                            '', title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                              <% else %>
+                                                                  <%= link_to image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                            {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                             product.get_main_image.image(:thumb650) => '800w',
+                                                                                             product.get_main_image.image(:thumb650) => '768w',
+                                                                                             product.get_main_image.image(:thumb650) => '600w',
+                                                                                             product.get_main_image.image(:thumb650) => '300w',
+                                                                                             product.get_main_image.image(:thumb650) => '150w'},
+                                                                                            title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                              image_set_tag(product.get_main_image.image(:thumb650),
+                                                                                            {product.get_main_image.image(:thumb650) => '1000w',
+                                                                                             product.get_main_image.image(:thumb650) => '800w',
+                                                                                             product.get_main_image.image(:thumb650) => '768w',
+                                                                                             product.get_main_image.image(:thumb650) => '600w',
+                                                                                             product.get_main_image.image(:thumb650) => '300w',
+                                                                                             product.get_main_image.image(:thumb650) => '150w'},
+                                                                                            title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                              '', title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                              <% end %>
                                                         </div>
                                                         <div class="wpisset-woo-loop-content-wrapper">
                                                             <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
@@ -584,23 +597,33 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'PC Dell OptiPlex 7090 MFF (i5 11500T/8GB RAM/256GB SSD/WLAN/Win 10/Đen)' + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, '', title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                 <div class="wpisset-woo-loop-desc">
                                                                     <ul>
-                                                                        <li>Intel Core i5 (Thế hệ 11)</li>
-                                                                        <li>8GB | 256GB SSD</li>
-                                                                        <li>Intel UHD Graphics 750</li>
-                                                                        <li>Windows 10 Home</li>
+                                                                        <% product.product_short_descipriton_values_array_new_specs.each do |row| %>
+                                                                            <li><%= row[:values].join(", ") %></li>
+                                                                        <% end %>
                                                                     </ul>
                                                                 </div>
                                                             </div>
                                                             <div class="wpisset-woo-loop-nav-price-wrap">
                                                                 <span class="price">
-                                                                    <del><span class="thcn-Price-amount amount"><bdi><%= format_price(24990000) %></bdi></span></del>
-                                                                    <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(22990000) %></bdi></span></ins>
+                                                                    <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(24990000) %></bdi></span></del> -->
+                                                                    <ins>
+                                                                        <span class="thcn-Price-amount amount">
+                                                                            <bdi>
+                                                                                <% if product.product_price.nil? %>
+                                                                                    Đang cập nhật
+                                                                                <% else %>
+                                                                                    <%= format_price(product.product_price) %>
+                                                                                <% end %>
+                                                                            </bdi>
+                                                                        </span>
+                                                                    </ins>
                                                                 </span> 
                                                             </div>
                                                         </div>
+                                                        <div class="wpisset-woo-loop-nav"></div>
                                                     </div>
                                                 </div>
                                             </li>

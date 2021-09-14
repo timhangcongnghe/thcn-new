@@ -715,6 +715,10 @@
 	min-height: 1px
 }
 
+.wpisset-woo-loop-wrapper:hover .wpisset-woo-loop-inner .wpisset-woo-loop-content-wrapper .thcn-loop-product__link .thcn-loop-product__title {
+	 color: #1bc5bd;
+}
+
 .wpisset-woo-loop-inner {
 	margin: 0 .125rem;
 	border: 1px solid transparent;
@@ -1186,7 +1190,8 @@
 
 .wpisset-woo-loop-desc>ul li:first-child,
 .wpisset-woo-loop-desc>ul li:nth-child(2),
-.wpisset-woo-loop-desc>ul li:nth-child(3) {
+.wpisset-woo-loop-desc>ul li:nth-child(3),
+.wpisset-woo-loop-desc>ul li:nth-child(4) {
 	white-space: nowrap;
 	display: inline-block;
 	overflow: hidden;

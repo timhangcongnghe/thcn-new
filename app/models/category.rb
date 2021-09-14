@@ -1,6 +1,8 @@
-class Category < ActiveRecord::Base
+class Category < ApplicationRecord
   self.table_name = 'erp_products_categories'
   has_many :children, class_name: 'Category', foreign_key: 'parent_id'
+  has_many :products
+  has_and_belongs_to_many :property_groups, -> {order 'erp_products_property_groups.custom_order'}, class_name: 'PropertyGroup', join_table: 'erp_products_categories_pgroups'
   
   def get_self_and_children_ids
     ids = [self.id]
