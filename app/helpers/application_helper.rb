@@ -11,7 +11,7 @@ module ApplicationHelper
     category_list_path
   end
   
-  def product_link
+  def product_link(product)
     product_path
   end
   

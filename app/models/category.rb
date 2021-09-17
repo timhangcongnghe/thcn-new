@@ -4,6 +4,10 @@ class Category < ApplicationRecord
   has_many :products
   has_and_belongs_to_many :property_groups, -> {order 'erp_products_property_groups.custom_order'}, class_name: 'PropertyGroup', join_table: 'erp_products_categories_pgroups'
   
+  def get_products_home_page
+    self.products.get_active.order('created_at desc').limit(6)
+  end
+  
   def get_self_and_children_ids
     ids = [self.id]
     ids += get_children_ids_recursive
