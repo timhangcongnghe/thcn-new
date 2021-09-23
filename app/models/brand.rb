@@ -12,8 +12,8 @@ class Brand < ApplicationRecord
     return self.where(id: arr).get_active.order('name asc')
   end
   
-  def get_products
-    self.products.get_active.order('created_at desc')
+  def get_products_home_page
+    self.products.get_active.order('created_at desc').limit(6)
   end
   
   def self.get_active

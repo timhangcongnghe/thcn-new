@@ -4,6 +4,25 @@ class Product < ApplicationRecord
   has_many :product_images
   has_many :products_values, -> {order 'erp_products_products_values.id'}
   
+  def self.get_computer_components
+    arr = [100, 127, 128, 214, 215, 10, 56, 210, 211]
+    return self.get_active.order('created_at desc').joins(:category).where('category.id': arr).limit(6)
+  end
+  
+  def self.get_computer_accessories
+    arr = [14, 12, 4, 65, 219, 141, 104, 57, 236]
+    return self.get_active.order('created_at desc').joins(:category).where('category.id': arr).limit(6)
+  end
+  
+  def self.get_network_products
+    arr = [50, 132, 69]
+    return self.get_active.order('created_at desc').joins(:category).where('category.id': arr).limit(6)
+  end
+  
+  def self.get_newest_products
+    return self.get_active.order('created_at desc').where(is_new: true).limit(10)
+  end
+  
   # ok
   def get_product_property_array
 		arr = []
@@ -26,9 +45,8 @@ class Product < ApplicationRecord
   
   def product_short_descipriton_values_array_new_specs
     groups = []
-    return [] if self.category.nil?
+    return [] if self.category.nil? || self.category.property_groups.count == 0
     
-    # property_group = self.category.property_groups.where(is_filter_specs: true).first
     property_group = self.category.property_groups.first
     property_group.properties.where(is_show_detail: true).each do |property|
       row = {}

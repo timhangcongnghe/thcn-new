@@ -6,9 +6,25 @@ module Frontend
       @laptop_brands = Brand.get_laptop_brands
       @laptop_products = Menu.get_laptop_menu.get_products_for_categories(params).limit(6)
       
+      @sale_product = Product.find(9341)
+      
       @hot_menus = Menu.get_hot_menus
       
       @apple = Brand.find(16)
+      @desktop = Category.find(242)
+      @workstation = Category.find(33)
+      @server = Category.find(90)
+      @aio = Category.find(32)
+      @monitor_pc = Category.find(196)
+      @monitor_signage = Category.find(134)
+      @laser_printer = Category.find(221)
+      @inkjet_printer = Category.find(237)
+      @camera = Category.find(204)
+      @computer_components = Product.get_computer_components
+      @computer_accessories = Product.get_computer_accessories
+      @network = Product.get_network_products
+      
+      @newest_products = Product.get_newest_products
     end
   end
 end
