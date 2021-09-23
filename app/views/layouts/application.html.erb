@@ -18,13 +18,8 @@
         <%= render partial: 'frontend/modules/head_include' %>
     </head>
     <body<% if @class.present? %> class="<%= @class %>"<% end %>>
-        <!-- <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="FptTY1dV"></script> -->
         <div id="container" class="wpisset-page">
             <div class="wpisset-overlay"></div>
-            <!-- @todo subcription_popup -->
-            <!-- @todo promo_banner -->
-            <!-- @todo cookie_notice -->
             <%= render 'frontend/modules/extension/myaccount_header_login' %>
             <%= render 'frontend/modules/extension/sub_cart' %>
             <%= render 'frontend/modules/extension/recent_viewed_menu' %>

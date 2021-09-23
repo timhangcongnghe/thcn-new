@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   self.table_name = 'erp_products_products'
-  belongs_to :category
+  belongs_to :category, class_name: 'Category'
+  belongs_to :brand, class_name: 'Brand'
   has_many :product_images
   has_many :products_values, -> {order 'erp_products_products_values.id'}
   
@@ -16,6 +17,11 @@ class Product < ApplicationRecord
   
   def self.get_network_products
     arr = [50, 132, 69]
+    return self.get_active.order('created_at desc').joins(:category).where('category.id': arr).limit(6)
+  end
+  
+  def self.get_printer_products
+    arr = [221, 237, 82]
     return self.get_active.order('created_at desc').joins(:category).where('category.id': arr).limit(6)
   end
   
@@ -59,6 +65,28 @@ class Product < ApplicationRecord
     end
     return groups
   end
+
+  def product_long_descipriton_values_array
+    groups = []
+    return [] if self.category.nil? || self.category.property_groups.count == 0
+
+    property_group = self.category.property_groups
+
+    property_group.where(is_filter_specs: false).each do |group|
+      row = {}
+      row[:group] = group
+      row[:properties] = []
+      group.properties.each do |property|
+        row2 = {}
+        row2[:property] = property
+        row2[:values] = self.products_values_by_property(property).map {|pv| pv.properties_value.value }
+
+        row[:properties] << row2 if !row2[:values].empty?
+      end
+      groups << row if !row[:properties].empty?
+    end
+    return groups
+  end
   
   # lay danh sanh thuoc tinh
   def get_properties
@@ -77,6 +105,22 @@ class Product < ApplicationRecord
       return self.price
     end
   end
+
+  def find_all_menus
+		self.category.nil? ? nil : self.category.menus
+	end
+
+  def find_menu
+		if !self.find_all_menus.nil?
+			all_menus = self.find_all_menus
+			if self.brand_id?
+				menus = all_menus.where(brand_id: self.brand_id)
+			end
+			menus = all_menus if menus.empty?
+	
+			menus.last
+		end
+	end
   
   # lay hinh anh chinh
   def get_all_images
@@ -92,6 +136,11 @@ class Product < ApplicationRecord
   def get_name
     return self.short_name
   end
+
+  def get_brand_name
+    return self.brand.get_name
+  end
+
   
   # tra ve danh sach san pham duoc hien thi
   def self.get_active

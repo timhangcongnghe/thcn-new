@@ -7,12 +7,16 @@ module ApplicationHelper
     root_path
   end
   
-  def category_list_link
-    category_list_path
+  def category_link
+    category_path
+  end
+
+  def category_list_link(category)
+    category_list_path(category_id: category.id, category_alias: category.alias)
   end
   
   def product_link(product)
-    product_path
+    product_path(product_id: product.id, product_alias: product.alias)
   end
   
   def product_search_link

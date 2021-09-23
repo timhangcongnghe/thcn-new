@@ -11,12 +11,16 @@
 						<%= link_to 'Epson', '', title: '' %>
 						<%= link_to 'Ricoh', '', title: '' %>
 						<%= link_to 'Fuji Xerox', '', title: '' %>
+						<%= link_to 'Máy In Laser', '', title: '' %>
+						<%= link_to 'Máy In Phun', '', title: '' %>
+						<%= link_to 'Mực In', '', title: '' %>
+						<%= link_to 'Linh Kiện', '', title: '' %>
 					</div>
 				</div>
 				<svg class="wpssiet-es-cs"><style></style></svg>
 				<div class="thcn columns-3 ">
 					<ul class="products columns-3">
-						<%= render 'frontend/home/list_products', data: category.get_products_home_page %>
+						<%= render 'frontend/home/list_products', data: products %>
 					</ul>
 				</div>
 			</div>

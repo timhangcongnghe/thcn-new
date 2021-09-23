@@ -3,6 +3,23 @@ class Category < ApplicationRecord
   has_many :children, class_name: 'Category', foreign_key: 'parent_id'
   has_many :products
   has_and_belongs_to_many :property_groups, -> {order 'erp_products_property_groups.custom_order'}, class_name: 'PropertyGroup', join_table: 'erp_products_categories_pgroups'
+  has_and_belongs_to_many :menus, class_name: 'Menu'
+
+  def category_get_properties_array
+    groups = []
+    return [] if self.nil?
+    property_group = self.property_groups.where(is_filter_specs: true).first
+    property_group.properties.each do |property|
+      row = {}
+      row[:name] = property.name
+      row[:values] = []
+      values = property.properties_values.order("custom_order ASC").get_property_values_for_filter.map {|pv| pv }
+      row[:values] += values if !values.empty?
+      groups << row if !row[:values].empty?
+    end
+
+    return groups
+  end
   
   def get_products_home_page
     self.products.get_active.order('created_at desc').limit(6)

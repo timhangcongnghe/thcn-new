@@ -10,9 +10,6 @@
 						<%= link_to 'PC Asus', '', title: '' %>
 						<%= link_to 'PC Acer', '', title: '' %>
 						<%= link_to 'PC Lenovo', '', title: '' %>
-						<!-- <%= link_to 'PC MSI', '', title: '' %>
-						<%= link_to 'PC Gigabyte', '', title: '' %>
-						<%= link_to 'PC Fujitsu', '', title: '' %> -->
 						<%= link_to 'Linh Kiện PC', '', title: '' %>
 						<%= link_to 'Phụ Kiện PC', '', title: '' %>
 					</div>
@@ -20,7 +17,7 @@
 				<svg class="wpssiet-es-cs"><style></style></svg>
 				<div class="thcn columns-3 ">
 					<ul class="products columns-3">
-						<%= render 'frontend/home/list_products', data: category.get_products_home_page %>
+						<%= render 'frontend/home/list_products', data: category %>
 					</ul>
 				</div>
 			</div>
