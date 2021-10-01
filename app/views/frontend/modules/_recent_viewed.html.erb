@@ -6,42 +6,36 @@
                 <h3>SẢN PHẨM ĐÃ XEM</h3>
             </div>
             <div class="wpisset-woo-recent-viewed-title-btn">
-                <%= link_to '<span>'.html_safe + 'Xem toàn bộ' + '</span>'.html_safe, '', title: '' %>
+                <%= link_to 'Xem toàn bộ', '', title: '' %>
             </div>
         </div>
         <div class="wpisset-woo-recent-viewed-inner">
             <div class="wpisset-woo-recent-viewed-menu-inner">
-                <!-- <div class="wpisset-woo-recent-viewed-no-items">
-                    <div class="wpisset-woo-recent-viewed-no-items-msg">
-                        <div class="wpisset-woo-recent-viewed-no-items-msg-title">
-                            You don&#039;t have any recently viewed items:
-                        </div>
-                        <div class="wpisset-woo-recent-viewed-no-items-message">
-                            <a href="">Sign in </a>or 
-                            <a href="">create an account </a>to see your stuff on all your devices
-                        </div>
-                    </div>
-                </div> -->
                 <div class="wpisset-woo-recent-viewed-no-items-featured">
-                    <% (0..5).each do |product| %>
+                    <% @newest_products.limit(6).each do |product| %>
                         <div class="product-type-simple wpisset-woo-recent-viewed-item sale">
                             <div class="wpisset-woo-recent-viewed-item-img">
-                                <%= link_to image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg',
-                                                          {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                           '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                           '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                           '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                           '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                           '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                          title: '', alt: '', size: '1000x1000', sizes: '(max-width: 1000px) 100vw, 1000px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
-                                            '', title: '' %>
+                                <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                          {product.get_main_image.image(:thumb445) => '445w',
+                                                           product.get_main_image.image(:thumb193) => '193w'},
+                                                          title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
+                                            product_link(product), title: product.get_name %>
                             </div>
                             <div class="wpisset-woo-recent-viewed-item-title">
-                                <%= link_to 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)', '', title: '' %>
+                                <%= link_to product.get_name, product_link(product), title: product.get_name %>
                             </div>
                             <div class="wpisset-woo-recent-viewed-item-price wpisset-woo-price">
-                                <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
+                                <ins>
+                                    <span class="thcn-Price-amount amount">
+                                        <bdi>
+                                            <% if product.product_price.nil? %>
+                                                Đang cập nhật
+                                            <% else %>
+                                                <%= format_price(product.product_price) %>
+                                            <% end %>
+                                        </bdi>
+                                    </span>
+                                </ins>
                             </div>
                         </div>
                     <% end %>

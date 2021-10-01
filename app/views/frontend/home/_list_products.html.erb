@@ -5,42 +5,26 @@
 				<div class="wpisset-woo-loop-thumbnail-wrapper">
 					<% if product.is_new? %>
 						<%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-									image_set_tag(product.get_main_image.image(:thumb650),
-												  {product.get_main_image.image(:thumb650) => '1000w',
-												   product.get_main_image.image(:thumb650) => '800w',
-												   product.get_main_image.image(:thumb650) => '768w',
-												   product.get_main_image.image(:thumb650) => '600w',
-												   product.get_main_image.image(:thumb650) => '300w',
-												   product.get_main_image.image(:thumb650) => '150w'},
-												  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-									image_set_tag(product.get_main_image.image(:thumb650),
-												  {product.get_main_image.image(:thumb650) => '1000w',
-												   product.get_main_image.image(:thumb650) => '800w',
-												   product.get_main_image.image(:thumb650) => '768w',
-												   product.get_main_image.image(:thumb650) => '600w',
-												   product.get_main_image.image(:thumb650) => '300w',
-												   product.get_main_image.image(:thumb650) => '150w'},
-												  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+									image_set_tag(product.get_main_image.image_url_url,
+												  {product.get_main_image.image(:thumb445) => '445w',
+												   product.get_main_image.image(:thumb193) => '193w'},
+												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+									image_set_tag(product.get_main_image.image_url_url,
+												  {product.get_main_image.image(:thumb445) => '445w',
+												   product.get_main_image.image(:thumb193) => '193w'},
+												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
 									product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-					  <% else %>
-						  <%= link_to image_set_tag(product.get_main_image.image(:thumb650),
-													{product.get_main_image.image(:thumb650) => '1000w',
-													 product.get_main_image.image(:thumb650) => '800w',
-													 product.get_main_image.image(:thumb650) => '768w',
-													 product.get_main_image.image(:thumb650) => '600w',
-													 product.get_main_image.image(:thumb650) => '300w',
-													 product.get_main_image.image(:thumb650) => '150w'},
-													title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-									  image_set_tag(product.get_main_image.image(:thumb650),
-													{product.get_main_image.image(:thumb650) => '1000w',
-													 product.get_main_image.image(:thumb650) => '800w',
-													 product.get_main_image.image(:thumb650) => '768w',
-													 product.get_main_image.image(:thumb650) => '600w',
-													 product.get_main_image.image(:thumb650) => '300w',
-													 product.get_main_image.image(:thumb650) => '150w'},
-													title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-									  product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-					  <% end %>
+					<% else %>
+						<%= link_to image_set_tag(product.get_main_image.image_url_url,
+												  {product.get_main_image.image(:thumb445) => '445w',
+												   product.get_main_image.image(:thumb193) => '193w'},
+												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+									image_set_tag(product.get_main_image.image_url_url,
+												  {product.get_main_image.image(:thumb445) => '445w',
+												   product.get_main_image.image(:thumb193) => '193w'},
+												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+									product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+					<% end %>
 				</div>
 				<div class="wpisset-woo-loop-content-wrapper">
 					<div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
@@ -64,7 +48,7 @@
 						<div class="wpisset-woo-loop-desc">
 							<ul>
 								<% product.product_short_descipriton_values_array_new_specs.each do |row| %>
-									<li><%= row[:values].join(", ") %></li>
+									<li><b><%= row[:name] %>: </b><%= row[:values].join(", ") %></li>
 								<% end %>
 							</ul>
 						</div>
@@ -83,9 +67,11 @@
 									</bdi>
 								</span>
 							</ins>
-						</span> 
+						</span>
+						<%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
 					</div>
 				</div>
+				<%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
 				<div class="wpisset-woo-loop-nav"></div>
 			</div>
 		</div>

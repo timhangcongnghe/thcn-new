@@ -8,88 +8,34 @@
                         <div class="wpisset-mobile-navigation-inner">
                             <div class="wpisset-mobile-navigation-title">
                                 <span>DANH MỤC SẢN PHẨM</span>
-                                <%= link_to 'Xem toàn bộ', '', title: '' %>
+                                <%= link_to 'Xem toàn bộ', category_link, title: '' %>
                             </div>
                             <ul class="wpisset-mobile-nav-menu">
-                                <% (0..8).each do |category| %>
+                                <% @categories.each do |category| %>
                                     <li class="menu-item menu-item-has-children">
-                                        <%= link_to '<span>'.html_safe + 'Điện Thoại, Thiết Bị Thông Minh' + '</span><u class="wpisset-menu-item-badge">Mới</u>'.html_safe, category_list_link, title: '' %>
+                                        <%= link_to category.get_name, category_list_link(category), title: category.get_name %>
                                         <ul class="sub-menu">
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Điện Thoại Di Động' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'iPhone' + '</span>'.html_safe, category_list_link, title: '' %>
+                                            <% category.get_children.each do |category_child_1| %>
+                                                <% if category_child_1.get_children.count > 0 %>
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <ul class="sub-menu">
+                                                            <% category_child_1.get_children.each do |category_child_2| %>
+                                                                <li class="menu-item">
+                                                                    <%= link_to category_child_2.get_name, category_list_link(category_child_2), title: category_child_2.get_name %>
+                                                                </li>
+                                                            <% end %>
+                                                        </ul>
                                                     </li>
+                                                <% else %>
                                                     <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Samsung' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
                                                     </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Xiaomi' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Oppo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Huawei' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Máy Tính Bảng, Tablet' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Apple' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Samsung' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Lenovo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Huawei' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'HP' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Dell' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Đồng Hồ Thông Minh' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Apple' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Samsung' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Xiaomi' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Garmin' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Fitbit' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item">
-                                                <%= link_to '<span>'.html_safe + 'Nhà Thông Minh' + '</span>'.html_safe, category_list_link, title: '' %>
-                                            </li>
+                                                <% end %>
+                                            <% end %>
                                         </ul>
                                     </li>
                                 <% end %>
-                                <!-- <li class="menu-item">
-                                    <%= link_to '<span>'.html_safe + 'Sản Phẩm Khuyến Mãi' + '</span><u class="wpisset-menu-item-badge" style="background-color:#1bc5bd">Giảm giá</u>'.html_safe, '', title: '' %>
-                                </li>
-                                <li class="menu-item">
-                                    <%= link_to '<span>'.html_safe + 'Sản Phẩm Mới' + '</span><u class="wpisset-menu-item-badge">Năm 2021</u>'.html_safe, '', title: '' %>
-                                </li> -->
                             </ul>
                             <div class="wpisset-mobile-navigation-title">
                                 <span>HỖ TRỢ KHÁCH HÀNG</span>

@@ -8,79 +8,31 @@
                         <div class="wpisset-secondary-navigation-inner">
                             <div class="wpisset-secondary-navigation-title">
                                 <span>DANH MỤC SẢN PHẨM</span>
-                                <%= link_to 'Xem toàn bộ', category_list_link, title: '' %>
+                                <%= link_to 'Xem toàn bộ', category_link, title: '' %>
                             </div>
                             <ul class="wpisset-secondary-nav-menu">
-                                <% (0..8).each do |category| %>
+                                <% @categories.each do |category| %>
                                     <li class="menu-item menu-item-has-children">
-                                        <%= link_to 'Điện Thoại, Thiết Bị Thông Minh', category_list_link, title: '' %>
+                                        <%= link_to category.get_name, category_list_link(category), title: category.get_name %>
                                         <ul class="sub-menu">
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to 'Điện Thoại Di Động', category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to 'iPhone', category_list_link, title: '' %>
+                                            <% category.get_children.each do |category_child_1| %>
+                                                <% if category_child_1.get_children.count > 0 %>
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <ul class="sub-menu">
+                                                            <% category_child_1.get_children.each do |category_child_2| %>
+                                                                <li class="menu-item">
+                                                                    <%= link_to category_child_2.get_name, category_list_link(category_child_2), title: category_child_2.get_name %>
+                                                                </li>
+                                                            <% end %>
+                                                        </ul>
                                                     </li>
+                                                <% else %>
                                                     <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'SAMSUNG' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
                                                     </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Xiaomi' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Oppo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Huawei' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Máy Tính Bảng, Tablet' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Apple' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'SAMSUNG' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Lenovo' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Huawei' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'HP' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Dell' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item menu-item-has-children">
-                                                <%= link_to '<span>'.html_safe + 'Đồng Hồ Thông Minh' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Apple' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'SAMSUNG' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Xiaomi' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Garmin' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                    <li class="menu-item">
-                                                        <%= link_to '<span>'.html_safe + 'Fitbit' + '</span>'.html_safe, category_list_link, title: '' %>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item">
-                                                <%= link_to '<span>'.html_safe + 'Nhà Thông Minh' + '</span>'.html_safe, category_list_link, title: '' %>
-                                            </li>
+                                                <% end %>
+                                            <% end %>
                                         </ul>
                                     </li>
                                 <% end %>
@@ -181,7 +133,7 @@
                     <div class="wpisset-header-thcncompare-btn wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="SO SÁNH SẢN PHẨM" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
                         <a href="" class="yith-thcncompare-open" title="So sánh sản phẩm"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="36" height="36" viewBox="0 0 36 36" xmlns="//www.w3.org/2000/svg"><g transform="scale(0.75)"><path fill="%23000" d="M42.54,13.8l-1.09,1.7l4.97231e-07,3.2487e-07c4.65585,3.04194 5.96419,9.28224 2.92224,13.9381c-1.84846,2.82916 -4.99281,4.54247 -8.37225,4.56191h-21.59l5.29,-5.3l-1.41,-1.4l-7.72,7.7l7.72,8l1.41,-1.53l-5.29,-5.47h21.59l1.01766e-07,5.12685e-10c6.5942,0.0332207 11.9668,-5.2855 12,-11.8797c0.000202022,-0.0401008 0.000202022,-0.0802023 -1.02537e-09,-0.120303v0l2.73309e-07,-0.000131589c0.00849608,-4.10121 -2.04255,-7.93273 -5.46011,-10.1999Z"></path><path fill="%23000" d="M2,24.09l-2.9211e-07,-3.24611e-05c-0.0496877,-5.52262 4.387,-10.0399 9.90963,-10.0896c0.0301342,-0.000271121 0.0602696,-0.000406025 0.090405,-0.000404707h21.59l-5.29,5.3l1.41,1.4l7.69,-7.7l-7.7,-8l-1.41,1.54l5.3,5.46h-21.59l5.37636e-07,-6.72894e-09c-6.70973,0.0839775 -12.081,5.59137 -11.997,12.3011c0.0504189,4.02844 2.09441,7.76992 5.45699,9.9889l1.09,-1.69l-1.56931e-07,-1.0369e-07c-2.85577,-1.88691 -4.56685,-5.0872 -4.55,-8.51Z"></path></g></svg></a>
                     </div>
-                    <div class="wpisset-header-myaccount-btn wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="ĐĂNG NHẬP TÀI KHOẢN" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
+                    <!--<div class="wpisset-header-myaccount-btn wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="ĐĂNG NHẬP TÀI KHOẢN" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
                         <a href="#wpisset-myaccount-header-login" title="Đăng nhập tài khoản" data-navigation-title="ĐĂNG NHẬP TÀI KHOẢN">
                             <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="36" height="36" viewBox="0 0 36 36" xmlns="//www.w3.org/2000/svg"><g transform="scale(0.75)"><path fill="%23000" d="M14.58,16.83c1.01,5.57 4.71,9.17 9.42,9.17c4.71,0 8.33,-3.51 9.42,-9.16c0.1,-0.54 1,-5.31 1.07,-6.41l2.85805e-07,-6.33774e-06c0.11972,-2.65481 -0.860687,-5.24149 -2.71,-7.15l5.27876e-08,5.42193e-08c-4.18397,-4.29745 -11.0595,-4.38945 -15.357,-0.205472c-0.0926376,0.0901914 -0.183657,0.18203 -0.273015,0.275472l-3.81849e-07,3.96953e-07c-1.82579,1.89801 -2.77873,4.47059 -2.63,7.1c0.0600043,1.08 0.960004,5.85 1.06,6.38Zm3,-12.1l-8.09876e-07,8.44326e-07c3.38725,-3.53134 8.99588,-3.64814 12.5272,-0.260883c0.068669,0.0658672 0.136272,0.132836 0.202784,0.200881l1.16688e-07,1.20033e-07c1.47234,1.51454 2.25393,3.56984 2.16,5.68c0,0.72 -0.64,4.05 -1,6.12c-0.709999,3.64 -3.04,7.53 -7.47,7.53c-4.43,0 -6.82,-4.05 -7.45,-7.54c-0.4,-2.07 -1,-5.41 -1,-6.13l-9.53443e-08,-1.62749e-06c-0.121265,-2.06995 0.620984,-4.09756 2.05,-5.6Z"></path> <path fill="%23000" d="M46.88,38.62c-0.48,-2.8 -2.84,-4.94 -6.37,-5.73l-16.51,-2.89l-16.55,2.91c-3.42,0.71 -5.84,2.91 -6.33,5.76l-1.12,9.33h48Zm-44.74,7.38l0.95,-7c0.41,-2.38 2.73,-3.68 4.74,-4.1l16.17,-2.9l16.12,2.83c1.28,0.29 4.3,1.27 4.78,4.07l1,7.08h-43.76Z"></path></g></svg>
                             <div class="wpisset-header-myaccount-btn-title">Đăng nhập</div>
@@ -195,7 +147,7 @@
                             </div>
                             <div class="wpisset-header-wisthlist-title">Yêu thích</div>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="wpisset-woo-cart-wrap wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="GIỎ HÀNG CỦA BẠN" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
                         <div class="wpisset-woo-cart menu-item-has-children">
                             <a class="wpisset-woo-cart-inner wpisset-middle-xs" href="#wpisset-woo-sub-cart" title="Giỏ hàng của bạn" data-navigation-title="GIỎ HÀNG CỦA BẠN" data-cart-count="4">
@@ -222,33 +174,33 @@
                             <div class="wpisset-category-menu-wrap">
                                 <div class="wpisset-category-menu-title">
                                     <span>DANH MỤC SẢN PHẨM</span>
-                                    <%= link_to 'Xem toàn bộ', category_list_link, title: '', class: 'wpisset-category-menu-view-all' %>
+                                    <%= link_to 'Xem toàn bộ', category_link, title: '', class: 'wpisset-category-menu-view-all' %>
                                 </div>
                                 <ul class="wpisset-category-menu wpisset-sub-menu wpisset-start-xs wpisset-sub-menu-animation-fade">
-                                    <% Menu.get_menus.each do |menu| %>
+                                    <% @categories.each do |category| %>
                                         <li class="wpisset-cat-mega-menu wpisset-cat-mega-menu-4 wpisset-cat-mega-menu-full-height wpisset-cat-mega-menu-bg-image-1 menu-item menu-item-has-children">
-                                            <%= link_to image_tag('/img/icons_menu/laptop.png', alt: '', title: '') + menu.get_name, '', title: '' %>
+                                            <%= link_to image_tag('/img/icons_menu/laptop.png', alt: category.get_name, title: category.get_name) + category.get_name, category_list_link(category), title: category.get_name %>
                                             <ul class="sub-menu">
-                                                <% menu.get_children.each do |menu_children_1| %>
-                                                    <% if menu_children_1.style_show? %>
+                                                <% category.get_children.each do |category_child_1| %>
+                                                    <% if category_child_1.style_show? %>
                                                         <li class="menu-item-heading menu-item-border-bottom menu-item-inline-items menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                                                     <% else %>
                                                         <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
                                                     <% end %>
-                                                        <%= link_to menu_children_1.get_name, category_list_link, title: '' %>
+                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
                                                         <ul class="sub-menu">
-                                                            <% menu_children_1.get_children.each do |menu_children_2| %>
+                                                            <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                                    <%= link_to menu_children_2.get_name, '', title: '' %>
+                                                                    <%= link_to category_child_2.get_name, category_list_link(category_child_2), title: category_child_2.get_name %>
                                                                 </li>
                                                             <% end %>
                                                         </ul>
                                                     </li>
                                                 <% end %>
                                                 <li class="hide-menu-item-heading menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <%= link_to '<span>'.html_safe + 'Hình Ảnh Laptop, Máy Tính Xách Tay' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                    <%= link_to '<span>'.html_safe + 'Hình Ảnh Laptop, Máy Tính Xách Tay' + '</span>'.html_safe, '', title: '' %>
                                                     <div class="wpisset-menu-description">
-                                                        <%= link_to image_tag('/img/tmp_banners/cat-megamenu-laptop-btn-2.png', alt: '', title: '') + '<span>'.html_safe + '' + '</span>'.html_safe, category_list_link, title: '' %>
+                                                        <%= link_to image_tag('/img/tmp_banners/cat-megamenu-laptop-btn-2.png', alt: '', title: '') + '<span>'.html_safe + '' + '</span>'.html_safe, '', title: '' %>
                                                     </div>
                                                 </li>
                                             </ul>

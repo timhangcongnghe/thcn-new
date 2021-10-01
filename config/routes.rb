@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root to: 'frontend/home#index'
   
   get '/danh-sach-chuyen-muc' => 'frontend/category#index', as: :category
-  get '/danh-sach-san-pham' => 'frontend/category#list', as: :category_list
+  get '/:category_alias-cid:category_id' => 'frontend/category#list', as: :category_list
   
-  get '/chi-tiet-san-pham' => 'frontend/product#index', as: :product
+  get '/:product_alias-pid:product_id' => 'frontend/product#index', as: :product
   get '/tim-kiem' => 'frontend/product#search', as: :product_search
   
   get '/gio-hang' => 'frontend/cart#cart', as: :cart
@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   
   get '/loi-404' => 'frontend/error#index', as: :error_404
   
-  get "hinh-anh/:title-:id-:thumb" => "product_images#image", as: :product_image
+  get 'hinh-anh/:title/:id(/:thumb)' => 'product_images#image', as: :product_image
 end

@@ -4,7 +4,13 @@
     <main id="main" class="wpisset-main wpisset-col-xs-12">
         <div class="wpisset_yoast_breadcrumb">
             <p id="breadcrumbs">
-                <span><span><span class="breadcrumb_last" aria-current="page">Trang Chủ</span></span></span>
+                <span>
+                    <span>
+                        <span class="breadcrumb_last" aria-current="page">
+                            Trang Chủ
+                        </span>
+                    </span>
+                </span>
             </p>
         </div>
         <div class="entry-content">
@@ -81,310 +87,6 @@
                     </div>
                 <% end %>
             </div>
-            <!-- <div class="vc_row wpb_row vc_row-fluid wpisset-ele-es-animate-fadein">
-                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-3 vc_col-md-6">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <div class=" wpisset_ele_es_dealproduct wpisset-ele-es-dealproduct-title-variant2 wpisset_ele_es_dealproduct-1073406693 vc_custom_1612542249568">
-                                <div class="wpisset-ele-es-dealproduct-title-wrap" >
-                                    <h2 class="wpisset-ele-es-dealproduct-title"><span>SẢN PHẨM KHUYẾN MÃI</span></h2>
-                                    <div class="wpisset-ele-es-dealproduct-icon"><svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="//www.w3.org/2000/svg" xmlns:xlink="//www.w3.org/1999/xlink"><path d="M10,23.946c-5.421,0 -10,-4.567 -10,-9.974c0,-3.046 1.616,-5.447 1.686,-5.548c0.227,-0.333 0.637,-0.501 1.031,-0.414c0.396,0.083 0.703,0.395 0.778,0.793c0.014,0.068 0.29,1.381 1.421,2.389c0.03,-3.096 0.887,-9.045 6.749,-11.125c0.354,-0.126 0.748,-0.043 1.02,0.214c0.274,0.257 0.38,0.645 0.275,1.004c-0.015,0.053 -1.302,4.594 0.543,6.968c0.494,-1.273 1.41,-3.043 2.934,-4.081c0.276,-0.188 0.628,-0.225 0.938,-0.1c0.31,0.125 0.537,0.396 0.605,0.723c0.3,1.453 0.642,2.397 0.972,3.31c0.563,1.552 1.048,2.892 1.048,5.867c0,5.407 -4.579,9.974 -10,9.974Zm-7.532,-12.571c-0.255,0.732 -0.468,1.63 -0.468,2.597c0,4.326 3.663,7.98 8,7.98c4.337,0 8,-3.654 8,-7.98c0,-2.625 -0.41,-3.757 -0.929,-5.189c-0.197,-0.546 -0.411,-1.134 -0.619,-1.848c-0.852,1.166 -1.336,2.64 -1.476,3.265c-0.07,0.31 -0.282,0.568 -0.573,0.696c-0.292,0.128 -0.627,0.11 -0.901,-0.048c-3.111,-1.781 -3.18,-5.648 -2.871,-8.056c-4.583,3.05 -3.653,9.964 -3.641,10.041c0.05,0.348 -0.087,0.695 -0.359,0.917c-0.273,0.219 -0.644,0.281 -0.972,0.163c-1.58,-0.572 -2.575,-1.59 -3.191,-2.538Z" transform="scale(1.33668)" fill-rule="evenodd" fill="#000"></path></svg></div>
-                                </div>
-                                <div class="wpisset-ele-es-dealproduct wpisset-ele-es-productcarousel">
-                                    <div class="product-type-simple wpisset-ele-es-dealproduct-item thcn sale">
-                                        <div class="wpisset-ele-es-dealproduct-img-wrap">
-                                            <div class="wpisset-ele-es-dealproduct-badge">
-                                                <span class="wpisset-ele-es-dealproduct-badge-small">Tiết kiệm</span> 10%
-                                            </div>
-                                            <%= link_to image_set_tag(@sale_product.get_main_image.image(:thumb650),
-                                                                      {@sale_product.get_main_image.image(:thumb650) => '1000w',
-                                                                       @sale_product.get_main_image.image(:thumb650) => '800w',
-                                                                       @sale_product.get_main_image.image(:thumb650) => '768w',
-                                                                       @sale_product.get_main_image.image(:thumb650) => '600w',
-                                                                       @sale_product.get_main_image.image(:thumb650) => '300w',
-                                                                       @sale_product.get_main_image.image(:thumb650) => '150w'},
-                                                                      title: @sale_product.get_name, alt: @sale_product.get_name, size: '1000x1000', sizes: '(max-width: 1000px) 100vw, 1000px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
-                                                        '', title: @sale_product.get_name %>
-                                        </div>
-                                        <div class="wpisset-ele-es-dealproduct-item-title-wrap">
-                                            <h3 class="wpisset-ele-es-dealproduct-item-title">
-                                                <%= link_to @sale_product.get_name, '', title: @sale_product.get_name %>
-                                            </h3>
-                                        </div>
-                                        <div class="wpisset-ele-es-dealproduct-status-rating">
-                                            <div class="wpisset-ele-es-dealproduct-status in-stock">
-                                                <span>Trạng thái: </span>
-                                                <span>Đang kinh doanh</span>
-                                            </div>
-                                            <div class="wpisset-ele-es-dealproduct-rating">
-                                                <div class="wpisset-woo-loop-rating-starts">
-                                                    <div class="star-rating" role="img" aria-label="Đánh giá 0.0 / 5.0">
-                                                        <span style="width:0%">Đánh giá <strong class="rating">0.0</strong> / 5.0</span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <span class="wpisset-woo-price">
-                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(22870000) %></bdi></span></del>
-                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(@sale_product.product_price) %></bdi></span></ins>
-                                        </span>
-                                        <div class="wpisset-ele-es-dealproduct-countdown">
-                                            <div class="wpisset-ele-es-dealproduct-countdown-content">KHUYẾN MÃI SẼ KẾT THÚC</div>
-                                            <div class="wpisset-countdown-timer-wrap">
-                                                <div class="wpisset-countdown-timer" data-countdown-timer-hours="120" data-cookie-name="set-time-countdown">
-                                                    <div class="wpisset-countdown-item-wrap">
-                                                        <div class="wpisset-countdown-days">00</div>Ngày
-                                                    </div>
-                                                    <div class="wpisset-countdown-item-wrap">
-                                                        <div class="wpisset-countdown-hours">00</div>Giờ
-                                                    </div>
-                                                    <div class="wpisset-countdown-item-wrap">
-                                                        <div class="wpisset-countdown-minutes">00</div>Phút
-                                                    </div>
-                                                    <div class="wpisset-countdown-item-wrap">
-                                                        <div class="wpisset-countdown-seconds">00</div>Giây
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wpisset-ele-es-dealproduct-btn">
-                                            <%= link_to '<span>'.html_safe + 'ĐẶT MUA NGAY' + '</span>'.html_safe, '', title: '', class: 'wpisset-button' %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="wpssiet-es-cs"><style></style></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-8">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <div class="wpisset-disable-compare-btn wpisset_ele_es_producttabs wpisset_ele_es_producttabs-1899667726 vc_custom_1612542257981 wpisset-woo-enable-loop-desc">
-                                <ul class="wpisset-ele-es-producttabs-tabs">
-                                    <li class="tab-link current" data-tab="tab-new">Sản Phẩm Mới</li>
-                                    <li class="tab-link" data-tab="tab-promotion">Sản Phẩm Khuyến Mãi</li>
-                                    <li class="tab-link" data-tab="tab-best-sale">Sản Phẩm Bán Chạy</li>
-                                </ul>
-                                <div class="wpisset-ele-es-producttabs-tab-content">
-                                    <div id="tab-new" class="wpisset-ele-es-producttabs-tab-panel current">
-                                        <div class="thcn columns-4 ">
-                                            <ul class="products columns-4">
-                                                <% (0..7).each_with_index do |product, index| %>
-                                                    <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 7 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                                                        <div class="wpisset-woo-loop-wrapper">
-                                                            <div class="wpisset-woo-loop-inner">
-                                                                <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                                    <%= link_to '<span class="onsale">'.html_safe + 'Mới 2021' + '</span>'.html_safe +
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                </div>
-                                                                <div class="wpisset-woo-loop-content-wrapper">
-                                                                    <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
-                                                                        <div class="wpisset-woo-loop-rating">
-                                                                            <div class="wpisset-woo-loop-rating-wrap">
-                                                                                <div class="wpisset-woo-loop-status in-stock">
-                                                                                    <span>Trạng thái: </span>
-                                                                                    <span>Đang kinh doanh</span>
-                                                                                </div>
-                                                                                <div class="wpisset-woo-loop-rating-inner">
-                                                                                    <div class="wpisset-woo-loop-rating-starts">
-                                                                                        <div class="star-rating" role="img" aria-label="Đánh giá 4.0 / 5.0">
-                                                                                            <span style="width:80%">Đánh giá <strong class="rating">4.0</strong> / 5.0</span>
-                                                                                        </div>
-                                                                                        <span>(1)</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                        <div class="wpisset-woo-loop-desc">
-                                                                            <ul>
-                                                                                <li>Intel Core i3 (Thế hệ 11)</li>
-                                                                                <li>4GB | 128GB SSD</li>
-                                                                                <li>Intel UHD Graphics</li>
-                                                                                <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                                                <li>Windows 10 Home</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="wpisset-woo-loop-nav-price-wrap">
-                                                                        <span class="price">
-                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                <% end %>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div id="tab-promotion" class="wpisset-ele-es-producttabs-tab-panel">
-                                        <div class="thcn columns-4 ">
-                                            <ul class="products columns-4">
-                                                <% (0..7).each_with_index do |product, index| %>
-                                                    <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 7 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                                                        <div class="wpisset-woo-loop-wrapper">
-                                                            <div class="wpisset-woo-loop-inner">
-                                                                <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                                    <%= link_to '<span class="onsale">'.html_safe + 'Khuyến mãi' + '</span>'.html_safe +
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                </div>
-                                                                <div class="wpisset-woo-loop-content-wrapper">
-                                                                    <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
-                                                                        <div class="wpisset-woo-loop-rating">
-                                                                            <div class="wpisset-woo-loop-rating-wrap">
-                                                                                <div class="wpisset-woo-loop-status in-stock">
-                                                                                    <span>Trạng thái: </span>
-                                                                                    <span>Đang kinh doanh</span>
-                                                                                </div>
-                                                                                <div class="wpisset-woo-loop-rating-inner">
-                                                                                    <div class="wpisset-woo-loop-rating-starts">
-                                                                                        <div class="star-rating" role="img" aria-label="Đánh giá 4.0 / 5.0">
-                                                                                            <span style="width:80%">Đánh giá <strong class="rating">4.0</strong> / 5.0</span>
-                                                                                        </div>
-                                                                                        <span>(1)</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                        <div class="wpisset-woo-loop-desc">
-                                                                            <ul>
-                                                                                <li>Intel Core i3 (Thế hệ 11)</li>
-                                                                                <li>4GB | 128GB SSD</li>
-                                                                                <li>Intel UHD Graphics</li>
-                                                                                <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                                                <li>Windows 10 Home</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="wpisset-woo-loop-nav-price-wrap">
-                                                                        <span class="price">
-                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                <% end %>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div id="tab-best-sale" class="wpisset-ele-es-producttabs-tab-panel">
-                                        <div class="thcn columns-4 ">
-                                            <ul class="products columns-4">
-                                                <% (0..7).each_with_index do |product, index| %>
-                                                    <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 7 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                                                        <div class="wpisset-woo-loop-wrapper">
-                                                            <div class="wpisset-woo-loop-inner">
-                                                                <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                                    <%= link_to '<span class="onsale">'.html_safe + 'Bán chạy' + '</span>'.html_safe +
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                                              {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                                               '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                </div>
-                                                                <div class="wpisset-woo-loop-content-wrapper">
-                                                                    <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
-                                                                        <div class="wpisset-woo-loop-rating">
-                                                                            <div class="wpisset-woo-loop-rating-wrap">
-                                                                                <div class="wpisset-woo-loop-status in-stock">
-                                                                                    <span>Trạng thái: </span>
-                                                                                    <span>Đang kinh doanh</span>
-                                                                                </div>
-                                                                                <div class="wpisset-woo-loop-rating-inner">
-                                                                                    <div class="wpisset-woo-loop-rating-starts">
-                                                                                        <div class="star-rating" role="img" aria-label="Đánh giá 4.0 / 5.0">
-                                                                                            <span style="width:80%">Đánh giá <strong class="rating">4.0</strong> / 5.0</span>
-                                                                                        </div>
-                                                                                        <span>(1)</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                                                        <div class="wpisset-woo-loop-desc">
-                                                                            <ul>
-                                                                                <li>Intel Core i3 (Thế hệ 11)</li>
-                                                                                <li>4GB | 128GB SSD</li>
-                                                                                <li>Intel UHD Graphics</li>
-                                                                                <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                                                <li>Windows 10 Home</li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="wpisset-woo-loop-nav-price-wrap">
-                                                                        <span class="price">
-                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                                            <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                <% end %>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="wpssiet-es-cs"><style></style></svg>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="vc_row wpb_row vc_row-fluid wpisset-ele-es-animate-fadein vc_custom_1612943774916">
                 <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class="vc_column-inner">
@@ -423,40 +125,24 @@
                                                                 <div class="wpisset-woo-loop-thumbnail-wrapper">
                                                                     <% if product.is_new? %>
                                                                         <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                                   product.get_main_image.image(:thumb650) => '800w',
-                                                                                                   product.get_main_image.image(:thumb650) => '768w',
-                                                                                                   product.get_main_image.image(:thumb650) => '600w',
-                                                                                                   product.get_main_image.image(:thumb650) => '300w',
-                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
-                                                                                                  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                                   product.get_main_image.image(:thumb650) => '800w',
-                                                                                                   product.get_main_image.image(:thumb650) => '768w',
-                                                                                                   product.get_main_image.image(:thumb650) => '600w',
-                                                                                                   product.get_main_image.image(:thumb650) => '300w',
-                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
-                                                                                                  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                                  {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                   product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                                  {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                   product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
                                                                                     product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                     <% else %>
-                                                                        <%= link_to image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                                   product.get_main_image.image(:thumb650) => '800w',
-                                                                                                   product.get_main_image.image(:thumb650) => '768w',
-                                                                                                   product.get_main_image.image(:thumb650) => '600w',
-                                                                                                   product.get_main_image.image(:thumb650) => '300w',
-                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
-                                                                                                  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                                  {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                                   product.get_main_image.image(:thumb650) => '800w',
-                                                                                                   product.get_main_image.image(:thumb650) => '768w',
-                                                                                                   product.get_main_image.image(:thumb650) => '600w',
-                                                                                                   product.get_main_image.image(:thumb650) => '300w',
-                                                                                                   product.get_main_image.image(:thumb650) => '150w'},
-                                                                                                  title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                        <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                                                                  {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                   product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                                  {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                   product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
                                                                                     product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                     <% end %>
                                                                 </div>
@@ -489,7 +175,7 @@
                                                                     </div>
                                                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                                                         <span class="price">
-                                                                            <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
+                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
                                                                             <ins>
                                                                                 <span class="thcn-Price-amount amount">
                                                                                     <bdi>
@@ -502,10 +188,12 @@
                                                                                 </span>
                                                                             </ins>
                                                                         </span>
+                                                                        <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                                                     </li>
                                                 <% end %>
                                             </ul>
@@ -528,8 +216,7 @@
             <%= render 'frontend/home/computer_accessories_category', products: @computer_accessories, title: 'Phụ Kiện Máy Tính' %>
             <%= render 'frontend/home/monitor_pc_category', category: @monitor_pc, title: 'Màn Hình Máy Tính' %>
             <%= render 'frontend/home/monitor_signage_category', category: @monitor_signage, title: 'Màn Hình Quảng Cáo' %>
-            <%= render 'frontend/home/laser_printer_category', category: @laser_printer, title: 'Máy In Laser' %>
-            <%= render 'frontend/home/inkjet_printer_category', category: @inkjet_printer, title: 'Máy In Phun' %>
+            <%= render 'frontend/home/printer_category', products: @printer, title: 'Máy In' %>
             <%= render 'frontend/home/network_category', products: @network, title: 'Thiết Bị Mạng' %>
             <%= render 'frontend/home/camera_category', category: @camera, title: 'Camera Quan Sát' %>
             
@@ -594,24 +281,28 @@
                                                     <div class="wpisset-woo-loop-wrapper">
                                                         <div class="wpisset-woo-loop-inner">
                                                             <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                                                <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-                                                                                image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                              {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                               product.get_main_image.image(:thumb650) => '800w',
-                                                                                               product.get_main_image.image(:thumb650) => '768w',
-                                                                                               product.get_main_image.image(:thumb650) => '600w',
-                                                                                               product.get_main_image.image(:thumb650) => '300w',
-                                                                                               product.get_main_image.image(:thumb650) => '150w'},
-                                                                                              title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag(product.get_main_image.image(:thumb650),
-                                                                                              {product.get_main_image.image(:thumb650) => '1000w',
-                                                                                               product.get_main_image.image(:thumb650) => '800w',
-                                                                                               product.get_main_image.image(:thumb650) => '768w',
-                                                                                               product.get_main_image.image(:thumb650) => '600w',
-                                                                                               product.get_main_image.image(:thumb650) => '300w',
-                                                                                               product.get_main_image.image(:thumb650) => '150w'},
-                                                                                              title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                                                '', title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                <% if product.is_new? %>
+                                                                    <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
+                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                                {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                                {product.get_main_image.image(:thumb445) => '445w',
+                                                                                                product.get_main_image.image(:thumb193) => '193w'},
+                                                                                                title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                                    product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                <% else %>
+                                                                    <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                                                            {product.get_main_image.image(:thumb445) => '445w',
+                                                                                            product.get_main_image.image(:thumb193) => '193w'},
+                                                                                            title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                                                image_set_tag(product.get_main_image.image_url_url,
+                                                                                            {product.get_main_image.image(:thumb445) => '445w',
+                                                                                            product.get_main_image.image(:thumb193) => '193w'},
+                                                                                            title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                                                product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                <% end %>
                                                             </div>
                                                             <div class="wpisset-woo-loop-content-wrapper">
                                                                 <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
@@ -631,7 +322,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, '', title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                                                    <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                     <div class="wpisset-woo-loop-desc">
                                                                         <ul>
                                                                             <% product.product_short_descipriton_values_array_new_specs.each do |row| %>
@@ -655,8 +346,11 @@
                                                                             </span>
                                                                         </ins>
                                                                     </span>
+                                                                    <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                                                                 </div>
+                                                                <div class="wpisset-woo-loop-nav"></div>
                                                             </div>
+                                                            <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -769,18 +463,14 @@
                                     <% @newest_products.limit(6).each do |product| %>
                                         <div class="product-type-simple wpisset-ele-es-recentviewedproducts-item sale">
                                             <div class="wpisset-ele-es-recentviewedproducts-item-img">
-                                                <%= link_to image_set_tag(product.get_main_image.image(:thumb650),
-                                                                          {product.get_main_image.image(:thumb650) => '1000w',
-                                                                           product.get_main_image.image(:thumb650) => '800w',
-                                                                           product.get_main_image.image(:thumb650) => '768w',
-                                                                           product.get_main_image.image(:thumb650) => '600w',
-                                                                           product.get_main_image.image(:thumb650) => '300w',
-                                                                           product.get_main_image.image(:thumb650) => '150w'},
-                                                                          title: product.get_name, alt: product.get_name, size: '1000x1000', sizes: '(max-width: 1000px) 100vw, 1000px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
-                                                            '', title: product.get_name %>
+                                                <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                                          {product.get_main_image.image(:thumb445) => '445w',
+                                                                           product.get_main_image.image(:thumb193) => '193w'},
+                                                                          title: product.get_name, alt: product.get_name, size: '445w', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),
+                                                            product_link(product), title: product.get_name %>
                                             </div>
                                             <div class="wpisset-ele-es-recentviewedproducts-item-title">
-                                                <%= link_to product.get_name, '', title: product.get_name %>
+                                                <%= link_to product.get_name, product_link(product), title: product.get_name %>
                                             </div>
                                             <div class="wpisset-ele-es-recentviewedproducts-item-price wpisset-woo-price">
                                                 <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->

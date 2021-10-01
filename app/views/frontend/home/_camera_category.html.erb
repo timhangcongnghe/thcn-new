@@ -5,18 +5,20 @@
 				<div class=" wpisset_ele_es_header3 wpisset-ele-es-header3-variant2 wpisset_ele_es_header3-1466549668 vc_custom_1610096811046" >
 					<h2 class="wpisset-ele-es-header3-title"><span><%= link_to title, '', title: '' %></span></h2>
 					<div class="wpisset-ele-es-header3-nav">
-						<%= link_to 'HP', '', title: '' %>
-						<%= link_to 'Brother', '', title: '' %>
-						<%= link_to 'OKI', '', title: '' %>
-						<%= link_to 'Epson', '', title: '' %>
-						<%= link_to 'Ricoh', '', title: '' %>
-						<%= link_to 'Fuji Xerox', '', title: '' %>
+						<%= link_to 'Dahua', '', title: '' %>
+						<%= link_to 'HIKVision', '', title: '' %>
+						<%= link_to 'KBVision', '', title: '' %>
+						<%= link_to 'Ezviz', '', title: '' %>
+						<%= link_to 'Vantech', '', title: '' %>
+						<%= link_to 'Imou', '', title: '' %>
+						<%= link_to 'Camera IP', '', title: '' %>
+						<%= link_to 'Camera Analog', '', title: '' %>
 					</div>
 				</div>
 				<svg class="wpssiet-es-cs"><style></style></svg>
 				<div class="thcn columns-3 ">
 					<ul class="products columns-3">
-						<%= render 'frontend/home/list_products', data: category.get_products_home_page %>
+						<%= render 'frontend/home/list_products', data: category %>
 					</ul>
 				</div>
 			</div>
