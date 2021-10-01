@@ -7,7 +7,9 @@
                 <%= link_to 'Trang Chủ', root_link, title: '' %> <span class="wpisset-sp-breadcrumb-delimiter">&#47;</span>
                 <% if !@category.nil? %>
                     <% @category.self_and_parent_menus.each do |category| %>
-                        <%= link_to category.get_name, category_list_link(category), title: category.get_name %> <span class="wpisset-sp-breadcrumb-delimiter">&#47;</span>
+                        <% if category.parent.present? %>
+                            <%= link_to category.get_name, category_list_link(category), title: category.get_name %> <span class="wpisset-sp-breadcrumb-delimiter">&#47;</span>
+                        <% end %>
                     <% end %>
                 <% end %>
                 <%= @product.get_name %>
@@ -425,14 +427,14 @@
             <div class="wpisset-sp-extented-price-cart">
                 <div class="wpisset-sp-extented-price-cart-wrapper">
                     <div class="wpisset-sp-extented-price-cart-inner">
-                        <div class="wpisset-sp-extented-price-cart-save">
+                        <!-- <div class="wpisset-sp-extented-price-cart-save">
                             <div class="wpisset-sp-extented-price-cart-save-was">
                                 Giảm <span class="thcn-Price-amount amount"><bdi><%= format_price(2000000) %></bdi></span>
                             </div>
                             <div class="wpisset-sp-extented-price-cart-save-total">
                                 Tiết kiệm <span class="thcn-Price-amount amount"><bdi>7%</bdi></span>
                             </div>
-                        </div>
+                        </div> -->
                         <p class="price">
                             <!-- <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
                             <ins>
@@ -452,19 +454,19 @@
                                 <div class="wpisset-sp-add-to-cart-inner-wrap">
                                     <div class="wpisset-sp-add-to-cart-btn-wrap">
                                         <div class="quantity">
-                                            <label class="screen-reader-text" for="">Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)</label>
-                                            <input type="number" id="" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric"/>
+                                            <label class="screen-reader-text" for="">Đặt Mua Ngay <%= @product.get_name %></label>
+                                            <input type="number" id="<%= @product.id %>" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="Đặt Mua Ngay <%= @product.get_name %>" size="4" placeholder="Đặt Mua Ngay <%= @product.get_name %>" inputmode="numeric"/>
                                         </div>
-                                        <button type="submit" name="" value="" class="single_add_to_cart_button button alt">THÊM VÀO GIỎ HÀNG</button>
+                                        <button type="submit" name="" value="Đặt Mua Ngay <%= @product.get_name %>" class="single_add_to_cart_button button alt">THÊM VÀO GIỎ HÀNG</button>
                                     </div>
                                     <div class="wpisset-sp-add-to-cart-extra-btns">
                                         <div class="wpisset-add-to-wishlist wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="DANH SÁCH YÊU THÍCH" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
                                             <svg class="wpisset-woo-loop-nav-icon-border" xmlns="//www.w3.org/2000/svg"><g><ellipse ry="19.5" rx="19.5" cy="20" cx="20" stroke-width="1" stroke="#ebebeb" fill="transparent"/><ellipse class="circle" ry="19.5" rx="19.5" cy="20" cx="20" stroke-width="1" stroke="#111" fill="transparent"/></g></svg>
-                                            <div class="yith-wcwl-add-to-wishlist  wishlist-fragment on-first-load" data-fragment-ref="71" data-fragment-options="">
+                                            <div class="yith-wcwl-add-to-wishlist  wishlist-fragment on-first-load" data-fragment-ref="<%= @product.id %>" data-fragment-options="">
                                                 <div class="yith-wcwl-add-button">
-                                                    <a href="" rel="nofollow" data-product-id="71" data-product-type="simple" data-original-product-id="71" class="add_to_wishlist single_add_to_wishlist" data-title="THÊM VÀO DANH SÁCH YÊU THÍCH">
+                                                    <a href="" title="THÊM <%= @product.get_name %> VÀO DANH SÁCH YÊU THÍCH" rel="nofollow" data-product-id="<%= @product.id %>" data-product-type="simple" data-original-product-id="<%= @product.id %>" class="add_to_wishlist single_add_to_wishlist" data-title="THÊM <%= @product.get_name %> VÀO DANH SÁCH YÊU THÍCH">
                                                         <i class="yith-wcwl-icon fa fa-heart-o"></i>
-                                                        <span>THÊM VÀO DANH SÁCH YÊU THÍCH</span>
+                                                        <span>THÊM <%= @product.get_name %> VÀO DANH SÁCH YÊU THÍCH</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -472,7 +474,9 @@
                                         <div class="wpisset-add-to-compare wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="SO SÁNH SẢN PHẨM" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
                                             <svg class="wpisset-woo-loop-nav-icon-border" xmlns="//www.w3.org/2000/svg"><g><ellipse ry="19.5" rx="19.5" cy="20" cx="20" stroke-width="1" stroke="#ebebeb" fill="transparent"/><ellipse class="circle" ry="19.5" rx="19.5" cy="20" cx="20" stroke-width="1" stroke="#111" fill="transparent"/></g></svg>
                                             <div class="thcn product compare-button">
-                                                <a href="" class="compare button" data-product_id="71" rel="nofollow">SO SÁNH SẢN PHẨM</a>
+                                                <a href="" title="Thêm <%= @product.get_name %> Vào Danh Sách So Sánh" class="compare button" data-product_id="<%= @product.id %>" rel="nofollow">
+                                                    Thêm <%= @product.get_name %> Vào Danh Sách So Sánh
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -568,178 +572,8 @@
                     </div> -->
                 </div>
             </div>
-            <section class="related products">
-                <h2>Máy Tính Xách Tay, Laptop Dell</h2>
-                <ul class="products columns-5">
-                    <% (0..4).each_with_index do |product,index| %>
-                        <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 4 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                            <div class="wpisset-woo-loop-wrapper">
-                                <div class="wpisset-woo-loop-inner">
-                                    <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                        <%= link_to '<span class="onsale">'.html_safe + 'Mới 2021' + '</span>'.html_safe +
-                                                        image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                      title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                        image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                      title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                        '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                    </div>
-                                    <div class="wpisset-woo-loop-content-wrapper">
-                                        <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
-                                            <div class="wpisset-woo-loop-rating">
-                                                <div class="wpisset-woo-loop-rating-wrap">
-                                                    <div class="wpisset-woo-loop-status in-stock">
-                                                        <span>Trạng thái: </span>
-                                                        <span>Đang kinh doanh</span>
-                                                    </div>
-                                                    <div class="wpisset-woo-loop-rating-inner">
-                                                        <div class="wpisset-woo-loop-rating-starts">
-                                                            <div class="star-rating" role="img" aria-label="Đánh giá 5.0 / 5.0">
-                                                                <span style="width:100%">Đánh giá <strong class="rating">5.0</strong> / 5.0</span>
-                                                            </div>
-                                                            <span>(1)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, 
-                                                        '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                            <div class="wpisset-woo-loop-desc">
-                                                <ul>
-                                                    <li>Intel Core i3 (Thế hệ 11)</li>
-                                                    <li>4GB | 128GB SSD</li>
-                                                    <li>Intel UHD Graphics</li>
-                                                    <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                    <li>Windows 10 Home</li>
-                                                </ul>
-                                                <div>
-                                                    <div>
-                                                        <span>
-                                                            QUÀ TẶNG TRỊ GIÁ <%= format_price(1500000) %>: </br>
-                                                            &#8594; <%= link_to 'Chuột không dây', '', title: '' %> (Trị giá <%= format_price(169000) %>)</br>
-                                                            &#8594; <%= link_to 'Tấm lót chuột', '', title: '' %> (Trị giá <%= format_price(49000) %>)</br>
-                                                            &#8594; <%= link_to 'Đế tản nhiệt laptop', '', title: '' %> (Trị giá <%= format_price(99000) %>)</br>
-                                                            &#8594; <%= link_to 'Bộ vệ sinh laptop', '', title: '' %> (Trị giá <%= format_price(39000) %>)</br>
-                                                            &#8594; <%= link_to 'Túi đựng laptop', '', title: '' %> (Trị giá <%= format_price(149000) %>)</br>
-                                                            &#8594; <%= link_to 'Phiếu vệ sinh, bảo dưỡng laptop', '', title: '' %> (Trị giá <%= format_price(999000) %>)
-                                                        </span>
-                                                    </div>
-                                                    <svg><style>.wpisset-icon-content-906647430 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-906647430{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
-                                                    <div><span>Nhập mã THCN300 giảm thêm 3% tối đa <%= format_price(300000) %> khi thanh toán qua VNPAY-QR. <%= link_to 'Xem chi tiết', '', title: '' %></span></div>
-                                                    <svg><style>.wpisset-icon-content-598178898 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-598178898{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wpisset-woo-loop-nav-price-wrap">
-                                            <span class="price">
-                                                <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <% end %>
-                </ul>
-            </section>
-            <section class="related products">
-                <h2>Máy Tính Xách Tay, Laptop Cùng Chuyên Mục</h2>
-                <ul class="products columns-5">
-                    <% (0..4).each_with_index do |product,index| %>
-                        <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 4 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-                            <div class="wpisset-woo-loop-wrapper">
-                                <div class="wpisset-woo-loop-inner">
-                                    <div class="wpisset-woo-loop-thumbnail-wrapper">
-                                        <%= link_to '<span class="onsale">'.html_safe + 'Mới 2021' + '</span>'.html_safe +
-                                                        image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                      title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                        image_set_tag('/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg',
-                                                                      {'/img/tmp_products/laptop-dell-latitude-3320-1000x1000.jpg' => '1000w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-800x800.jpg' => '800w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-768x768.jpg' => '768w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-600x600.jpg' => '600w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-300x300.jpg' => '300w',
-                                                                       '/img/tmp_products/laptop-dell-latitude-3320-150x150.jpg' => '150w'},
-                                                                      title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-                                                        '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                    </div>
-                                    <div class="wpisset-woo-loop-content-wrapper">
-                                        <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
-                                            <div class="wpisset-woo-loop-rating">
-                                                <div class="wpisset-woo-loop-rating-wrap">
-                                                    <div class="wpisset-woo-loop-status in-stock">
-                                                        <span>Trạng thái: </span>
-                                                        <span>Đang kinh doanh</span>
-                                                    </div>
-                                                    <div class="wpisset-woo-loop-rating-inner">
-                                                        <div class="wpisset-woo-loop-rating-starts">
-                                                            <div class="star-rating" role="img" aria-label="Đánh giá 5.0 / 5.0">
-                                                                <span style="width:100%">Đánh giá <strong class="rating">5.0</strong> / 5.0</span>
-                                                            </div>
-                                                            <span>(1)</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + 'Laptop Dell Latitude 3320 (i3 1115G4/4GB RAM/128GB SSD/13.3" FHD/Win 10/Xám)' + '</h2>'.html_safe, 
-                                                        '', title: '', class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
-                                            <div class="wpisset-woo-loop-desc">
-                                                <ul>
-                                                    <li>Intel Core i3 (Thế hệ 11)</li>
-                                                    <li>4GB | 128GB SSD</li>
-                                                    <li>Intel UHD Graphics</li>
-                                                    <li>13.3-Inch Full HD (1920 x 1080)</li>
-                                                    <li>Windows 10 Home</li>
-                                                </ul>
-                                                <div>
-                                                    <div>
-                                                        <span>
-                                                            QUÀ TẶNG TRỊ GIÁ <%= format_price(1500000) %>: </br>
-                                                            &#8594; <%= link_to 'Chuột không dây', '', title: '' %> (Trị giá <%= format_price(169000) %>)</br>
-                                                            &#8594; <%= link_to 'Tấm lót chuột', '', title: '' %> (Trị giá <%= format_price(49000) %>)</br>
-                                                            &#8594; <%= link_to 'Đế tản nhiệt laptop', '', title: '' %> (Trị giá <%= format_price(99000) %>)</br>
-                                                            &#8594; <%= link_to 'Bộ vệ sinh laptop', '', title: '' %> (Trị giá <%= format_price(39000) %>)</br>
-                                                            &#8594; <%= link_to 'Túi đựng laptop', '', title: '' %> (Trị giá <%= format_price(149000) %>)</br>
-                                                            &#8594; <%= link_to 'Phiếu vệ sinh, bảo dưỡng laptop', '', title: '' %> (Trị giá <%= format_price(999000) %>)
-                                                        </span>
-                                                    </div>
-                                                    <svg><style>.wpisset-icon-content-906647430 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-906647430{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
-                                                    <div><span>Nhập mã THCN300 giảm thêm 3% tối đa <%= format_price(300000) %> khi thanh toán qua VNPAY-QR. <%= link_to 'Xem chi tiết', '', title: '' %></span></div>
-                                                    <svg><style>.wpisset-icon-content-598178898 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-598178898{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wpisset-woo-loop-nav-price-wrap">
-                                            <span class="price">
-                                                <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(21990000) %></bdi></span></ins>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <% end %>
-                </ul>
-            </section>
+            <%= render 'frontend/product/related_products', products: @brand_related_products, title: @category.get_name + ' Khác' %>
+            <%= render 'frontend/product/related_products', products: @category_related_products, title: 'Sản Phẩm Cùng Chuyên Mục' %>
         </div>
     </main>
 </div>
