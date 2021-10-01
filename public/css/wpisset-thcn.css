@@ -2270,7 +2270,7 @@ ul.products li.wpisset-woo-has-gallery:hover .wpisset-woo-loop-thumbnail-wrapper
 		width: 45%
 	}
 	.thcn div.product .product_title {
-		font-size: 20px
+		font-size: 18px
 	}
 }
 
@@ -2361,6 +2361,10 @@ body.single-product #inner-content {
 	color: #181c32
 }
 
+.wpisset-single-product-breadcrumb .thcn-breadcrumb a:hover {
+	color: #1bc5bd
+}
+
 .wpisset-single-product-share-btn {
 	font-size: 90%!important;
 	display: inline-flex;
@@ -2410,7 +2414,7 @@ body.single-product #inner-content {
 }
 
 .thcn div.product .product_title {
-	font-size: 20px;
+	font-size: 18px;
 	margin-bottom: .5rem;
 	line-height: 1.4;
 }

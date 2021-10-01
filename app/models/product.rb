@@ -4,6 +4,22 @@ class Product < ApplicationRecord
   belongs_to :brand, class_name: 'Brand'
   has_many :product_images
   has_many :products_values, -> {order 'erp_products_products_values.id'}
+
+  def self.brand_related_products_for_sold_out(product)
+    self.where(category_id: product.category).where(brand_id: product.brand).where.not(id: product).order('erp_products_products.created_at desc')
+  end
+
+  def self.category_related_products_for_sold_out(product)
+    self.where(category_id: product.category).where.not(id: product).order('erp_products_products.created_at desc')
+  end
+
+  def self.brand_related_products_for_not_sold_out(product)
+    self.where(category_id: product.category, is_sold_out: false).where(brand_id: product.brand).where.not(id: product).order('erp_products_products.created_at desc')
+  end
+
+  def self.category_related_products_for_not_sold_out(product)
+    self.where(category_id: product.category, is_sold_out: false).where.not(id: product).order('erp_products_products.created_at desc')
+  end
   
   def self.get_computer_components
     arr = [100, 127, 128, 214, 215, 10, 56, 210, 211]

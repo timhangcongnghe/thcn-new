@@ -1,0 +1,99 @@
+<section class="related products">
+        <h2><%= title %></h2>
+        <ul class="products columns-5">
+            <% products.each_with_index do |product,index| %>
+                <li class="wpisset-post wpisset-woo-has-gallery product type-product status-publish<% if index == 0 %> first<% elsif index == 4 %> last<% else %><% end %> instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
+                    <div class="wpisset-woo-loop-wrapper">
+                        <div class="wpisset-woo-loop-inner">
+                            <div class="wpisset-woo-loop-thumbnail-wrapper">
+                                <% if product.is_new? %>
+                                    <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
+                                                image_set_tag(product.get_main_image.image(),
+                                                            {product.get_main_image.image(:thumb445) => '445w',
+                                                             product.get_main_image.image(:thumb193) => '193w'},
+                                                             title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                image_set_tag(product.get_main_image.image_url_url,
+                                                            {product.get_main_image.image(:thumb445) => '445w',
+                                                             product.get_main_image.image(:thumb193) => '193w'},
+                                                             alt: product.get_name, title: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                <% else %>
+                                    <%= link_to image_set_tag(product.get_main_image.image(),
+                                                        {product.get_main_image.image(:thumb445) => '445w',
+                                                        product.get_main_image.image(:thumb193) => '193w'},
+                                                        title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                image_set_tag(product.get_main_image.image_url_url,
+                                                            {product.get_main_image.image(:thumb445) => '445w',
+                                                            product.get_main_image.image(:thumb193) => '193w'},
+                                                            alt: product.get_name, title: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+                                                product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                <% end %>
+                            </div>
+                            <div class="wpisset-woo-loop-content-wrapper">
+                                <div class="wpisset-woo-loop-content-inner wpisset-woo-enable-loop-desc1">
+                                    <div class="wpisset-woo-loop-rating">
+                                        <div class="wpisset-woo-loop-rating-wrap">
+                                            <div class="wpisset-woo-loop-status in-stock">
+                                                <span>Trạng thái: </span>
+                                                <span>Đang kinh doanh</span>
+                                            </div>
+                                            <div class="wpisset-woo-loop-rating-inner">
+                                                <div class="wpisset-woo-loop-rating-starts">
+                                                    <div class="star-rating" role="img" aria-label="Đánh giá 0.0 / 5.0">
+                                                        <span style="width:0%">Đánh giá <strong class="rating">0.0</strong> / 5.0</span>
+                                                    </div>
+                                                    <span>(0)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, 
+                                                product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+                                    <div class="wpisset-woo-loop-desc">
+                                        <ul>
+                                            <% product.product_short_descipriton_values_array_new_specs.each do |row| %>
+                                                <li><b><%= row[:name] %>: </b><%= row[:values].join(", ") %></li>
+                                            <% end %>
+                                        </ul>
+                                        <div>
+                                            <div>
+                                                <span>
+                                                    QUÀ TẶNG TRỊ GIÁ <%= format_price(1500000) %>: </br>
+                                                    &#8594; <%= link_to 'Chuột không dây', '', title: '' %> (Trị giá <%= format_price(169000) %>)</br>
+                                                    &#8594; <%= link_to 'Tấm lót chuột', '', title: '' %> (Trị giá <%= format_price(49000) %>)</br>
+                                                    &#8594; <%= link_to 'Đế tản nhiệt laptop', '', title: '' %> (Trị giá <%= format_price(99000) %>)</br>
+                                                    &#8594; <%= link_to 'Bộ vệ sinh laptop', '', title: '' %> (Trị giá <%= format_price(39000) %>)</br>
+                                                    &#8594; <%= link_to 'Túi đựng laptop', '', title: '' %> (Trị giá <%= format_price(149000) %>)</br>
+                                                    &#8594; <%= link_to 'Phiếu vệ sinh, bảo dưỡng laptop', '', title: '' %> (Trị giá <%= format_price(999000) %>)
+                                                </span>
+                                            </div>
+                                            <svg><style>.wpisset-icon-content-906647430 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-906647430{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
+                                            <div><span>Nhập mã THCN300 giảm thêm 3% tối đa <%= format_price(300000) %> khi thanh toán qua VNPAY-QR. <%= link_to 'Xem chi tiết', '', title: '' %></span></div>
+                                            <svg><style>.wpisset-icon-content-598178898 img{margin-right:0.5rem;margin-top:0.25rem;max-width:14px !important;}.wpisset-icon-content-598178898{align-items:flex-start;margin-top:0.5rem;margin-bottom:0.5rem;}</style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpisset-woo-loop-nav-price-wrap">
+                                    <span class="price">
+                                        <ins>
+                                            <span class="thcn-Price-amount amount">
+                                                <bdi>
+                                                    <% if product.product_price.nil? %>
+                                                        Đang cập nhật
+                                                    <% else %>
+                                                        <%= format_price(product.product_price) %>
+                                                    <% end %>
+                                                </bdi>
+                                            </span>
+                                        </ins>
+                                    </span>
+                                    <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
+                                </div>
+                            </div>
+                            <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
+                        </div>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+</section>

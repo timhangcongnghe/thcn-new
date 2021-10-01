@@ -8,6 +8,14 @@ module Frontend
 
       @product = Product.find(params[:product_id])
       @category = @product.find_menu
+
+      if @product.is_sold_out?
+        @brand_related_products = Product.brand_related_products_for_sold_out(@product).limit(5)
+        @category_related_products = Product.category_related_products_for_sold_out(@product).limit(5)
+      else
+        @brand_related_products = Product.brand_related_products_for_not_sold_out(@product).limit(5)
+        @category_related_products = Product.category_related_products_for_not_sold_out(@product).limit(5)
+      end
     end
     
     def search
