@@ -214,6 +214,15 @@
                                     </div>
                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                         <span class="price">
+                                            <% if product.listed_price.to_f > 1 %>
+                                                <del aria-hidden="true">
+                                                    <span class="thcn-Price-amount amount">
+                                                        <bdi>
+                                                            <%= format_price(product.listed_price) %>
+                                                        </bdi>
+                                                    </span>
+                                                </del>
+                                            <% end %>
                                             <ins>
                                                 <span class="thcn-Price-amount amount">
                                                     <bdi>
