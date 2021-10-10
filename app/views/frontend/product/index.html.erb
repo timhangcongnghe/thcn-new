@@ -440,7 +440,7 @@
                                 <% if @product.product_discount_percent.to_f >= 1 %>
                                     <div class="wpisset-sp-extented-price-cart-save-total">
                                         Tiết kiệm <span class="thcn-Price-amount amount"><bdi>
-                                            <%= @product.product_discount_percent.to_f %>%
+                                            <%= @product.product_discount_percent.to_f.round(1) %>%
                                         </bdi></span>
                                     </div>
                                 <% end %>
