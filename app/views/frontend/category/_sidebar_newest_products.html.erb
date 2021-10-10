@@ -3,7 +3,7 @@
     <ul class="product_list_widget newest-products-list">
         <% newest_products.limit(3).each do |product| %>
             <li>
-                <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                <%= link_to image_set_tag(product.get_main_image.image(),
                             {product.get_main_image.image(:thumb193) => '193w'},
                             title: product.get_name, alt: product.get_name, size: '193x193', sizes: '(max-width: 193px) 100vw, 193px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
                             '<span class="product-title">'.html_safe + product.get_name + '</span>'.html_safe,
@@ -11,17 +11,20 @@
                 <div class="star-rating" role="img" aria-label="Đánh giá 0.0 / 5.0">
                     <span style="width:0%">Đánh giá <strong class="rating">0.0</strong> / 5.0</span>
                 </div>
-                <ins>
-                    <span class="thcn-Price-amount amount">
-                        <bdi>
-                            <% if product.product_price.nil? %>
-                                Đang cập nhật
-                            <% else %>
-                                <%= format_price(product.product_price) %>
-                            <% end %>
-                        </bdi>
-                    </span>
-                </ins> 
+                <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                    <ins><span class="thcn-Price-amount amount"><bdi>
+                        Đang Cập Nhật Giá
+                    </bdi></span></ins>
+                <% else %>
+                    <ins><span class="thcn-Price-amount amount"><bdi>
+                        <%= format_price(product.product_price) %>
+                    </bdi></span></ins>
+                <% end %>
+                <% if product.product_listed_price.to_f > 1 %>
+                    <del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>
+                        <%= format_price(product.product_listed_price) %>
+                    </bdi></span></del>
+                <% end %>
             </li>
         <% end %>
     </ul>

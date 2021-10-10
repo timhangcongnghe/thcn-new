@@ -15,3 +15,16 @@
 .form-filter-specs {
   margin-bottom: .5rem;
 }
+.text-justify {
+  text-align: justify;
+}
+.category-description a {
+  color: #009ef7;
+}
+.category-description a:hover {
+  opacity: .8;
+}
+.category-description img {
+  width: 100%;
+  height: auto;
+}

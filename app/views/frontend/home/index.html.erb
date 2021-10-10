@@ -4,13 +4,9 @@
     <main id="main" class="wpisset-main wpisset-col-xs-12">
         <div class="wpisset_yoast_breadcrumb">
             <p id="breadcrumbs">
-                <span>
-                    <span>
-                        <span class="breadcrumb_last" aria-current="page">
-                            Trang Chủ
-                        </span>
-                    </span>
-                </span>
+                <span><span><span class="breadcrumb_last" aria-current="page">
+                    Trang Chủ
+                </span></span></span>
             </p>
         </div>
         <div class="entry-content">
@@ -175,18 +171,20 @@
                                                                     </div>
                                                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                                                         <span class="price">
-                                                                            <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del>
-                                                                            <ins>
-                                                                                <span class="thcn-Price-amount amount">
-                                                                                    <bdi>
-                                                                                        <% if product.product_price.nil? %>
-                                                                                            Đang cập nhật
-                                                                                        <% else %>
-                                                                                            <%= format_price(product.product_price) %>
-                                                                                        <% end %>
-                                                                                    </bdi>
-                                                                                </span>
-                                                                            </ins>
+                                                                            <% if product.product_listed_price.to_f > 1 %>
+                                                                                <del><span class="thcn-Price-amount amount"><bdi>
+                                                                                    <%= format_price(product.product_listed_price) %>
+                                                                                </bdi></span></del>
+                                                                            <% end %>
+                                                                            <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                                                    Đang Cập Nhật Giá
+                                                                                </bdi></span></ins>
+                                                                            <% else %>
+                                                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                                                    <%= format_price(product.product_price) %>
+                                                                                </bdi></span></ins>
+                                                                            <% end %>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -331,18 +329,20 @@
                                                                 </div>
                                                                 <div class="wpisset-woo-loop-nav-price-wrap">
                                                                     <span class="price">
-                                                                        <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
-                                                                        <ins>
-                                                                            <span class="thcn-Price-amount amount">
-                                                                                <bdi>
-                                                                                    <% if product.product_price.nil? %>
-                                                                                        Đang cập nhật
-                                                                                    <% else %>
-                                                                                        <%= format_price(product.product_price) %>
-                                                                                    <% end %>
-                                                                                </bdi>
-                                                                            </span>
-                                                                        </ins>
+                                                                        <% if product.product_listed_price.to_f > 1 %>
+                                                                            <del><span class="thcn-Price-amount amount"><bdi>
+                                                                                <%= format_price(product.product_listed_price) %>
+                                                                            </bdi></span></del>
+                                                                        <% end %>
+                                                                        <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                                                            <ins><span class="thcn-Price-amount amount"><bdi>
+                                                                                Đang Cập Nhật Giá
+                                                                            </bdi></span></ins>
+                                                                        <% else %>
+                                                                            <ins><span class="thcn-Price-amount amount"><bdi>
+                                                                                <%= format_price(product.product_price) %>
+                                                                            </bdi></span></ins>
+                                                                        <% end %>
                                                                     </span>
                                                                 </div>
                                                                 <div class="wpisset-woo-loop-nav"></div>
@@ -469,18 +469,20 @@
                                                 <%= link_to product.get_short_name, product_link(product), title: product.get_name %>
                                             </div>
                                             <div class="wpisset-ele-es-recentviewedproducts-item-price wpisset-woo-price">
-                                                <!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
-                                                <ins>
-                                                    <span class="thcn-Price-amount amount">
-                                                        <bdi>
-                                                            <% if product.product_price.nil? %>
-                                                                Đang cập nhật
-                                                            <% else %>
-                                                                <%= format_price(product.product_price) %>
-                                                            <% end %>
-                                                        </bdi>
-                                                    </span>
-                                                </ins>
+                                                <% if product.product_listed_price.to_f > 1 %>
+                                                    <del><span class="thcn-Price-amount amount"><bdi>
+                                                        <%= format_price(product.product_listed_price) %>
+                                                    </bdi></span></del>
+                                                <% end %>
+                                                <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                                    <ins><span class="thcn-Price-amount amount"><bdi>
+                                                        Đang Cập Nhật Giá
+                                                    </bdi></span></ins>
+                                                <% else %>
+                                                    <ins><span class="thcn-Price-amount amount"><bdi>
+                                                        <%= format_price(product.product_price) %>
+                                                    </bdi></span></ins>
+                                                <% end %>
                                             </div>
                                         </div>
                                     <% end %>

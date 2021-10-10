@@ -95,17 +95,20 @@
                             </div>
                         <% end %>
                         <p class="price">
-                            <ins>
-                                <span class="thcn-Price-amount amount">
-                                    <bdi>
-                                        <% if @product.product_price.nil? %>
-                                            Đang cập nhật
-                                        <% else %>
-                                            <%= format_price(@product.product_price) %>
-                                        <% end %>
-                                    </bdi>
-                                </span>
-                            </ins>
+                            <% if @product.product_listed_price.to_f > 1 %>
+                                <del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>
+                                    <%= format_price(@product.product_listed_price) %>
+                                </bdi></span></del>
+                            <% end %>
+                            <% if (@product.product_price.nil?) || (@product.product_price.to_f <= 1) %>
+                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                    Đang Cập Nhật Giá
+                                </bdi></span></ins>
+                            <% else %>
+                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                    <%= format_price(@product.product_price) %>
+                                </bdi></span></ins>
+                            <% end %>
                         </p>
                         <div class="thcn-product-details__short-description">
                             <ul>
@@ -427,27 +430,37 @@
             <div class="wpisset-sp-extented-price-cart">
                 <div class="wpisset-sp-extented-price-cart-wrapper">
                     <div class="wpisset-sp-extented-price-cart-inner">
-                        <!-- <div class="wpisset-sp-extented-price-cart-save">
-                            <div class="wpisset-sp-extented-price-cart-save-was">
-                                Giảm <span class="thcn-Price-amount amount"><bdi><%= format_price(2000000) %></bdi></span>
+                        <% if (@product.product_listed_price.to_f > 1) && (@product.product_price.to_f > 1) && (@product.product_listed_price.to_f > @product.product_price.to_f) %>
+                            <div class="wpisset-sp-extented-price-cart-save">
+                                <div class="wpisset-sp-extented-price-cart-save-was">
+                                    Giảm <span class="thcn-Price-amount amount"><bdi>
+                                        <%= format_price(@product.product_discount_price) %>
+                                    </bdi></span>
+                                </div>
+                                <% if @product.product_discount_percent.to_f >= 1 %>
+                                    <div class="wpisset-sp-extented-price-cart-save-total">
+                                        Tiết kiệm <span class="thcn-Price-amount amount"><bdi>
+                                            <%= @product.product_discount_percent.to_f %>%
+                                        </bdi></span>
+                                    </div>
+                                <% end %>
                             </div>
-                            <div class="wpisset-sp-extented-price-cart-save-total">
-                                Tiết kiệm <span class="thcn-Price-amount amount"><bdi>7%</bdi></span>
-                            </div>
-                        </div> -->
+                        <% end %>
                         <p class="price">
-                            <!-- <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(23990000) %></bdi></span></del> -->
-                            <ins>
-                                <span class="thcn-Price-amount amount">
-                                    <bdi>
-                                        <% if @product.product_price.nil? %>
-                                            Đang cập nhật
-                                        <% else %>
-                                            <%= format_price(@product.product_price) %>
-                                        <% end %>
-                                    </bdi>
-                                </span>
-                            </ins>
+                            <% if @product.product_listed_price.to_f > 1 %>
+                                <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi>
+                                    <%= format_price(@product.product_listed_price) %>
+                                </bdi></span></del>
+                            <% end %>
+                            <% if (@product.product_price.nil?) || (@product.product_price.to_f <= 1) %>
+                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                    Đang Cập Nhật Giá
+                                </bdi></span></ins>
+                            <% else %>
+                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                    <%= format_price(@product.product_price) %>
+                                </bdi></span></ins>
+                            <% end %>
                         </p>
                         <div class="wpisset-sp-add-to-cart-wrap">
                             <form class="cart" action="" method="post" enctype=''>

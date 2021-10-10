@@ -122,6 +122,20 @@ class Product < ApplicationRecord
     end
   end
 
+  # tra ve ket qua gia niem yet
+  def product_listed_price
+    return self.listed_price
+  end
+
+  def product_discount_price
+    return self.product_listed_price - self.product_price
+  end
+
+  def product_discount_percent
+    return 0 if self.listed_price.to_f == 0
+    ((self.product_listed_price.to_f - self.product_price.to_f)/self.product_listed_price.to_f) * 100
+  end
+
   def find_all_menus
 		self.category.nil? ? nil : self.category.menus
 	end

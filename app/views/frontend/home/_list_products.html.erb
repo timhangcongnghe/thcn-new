@@ -55,18 +55,20 @@
 					</div>
 					<div class="wpisset-woo-loop-nav-price-wrap">
 						<span class="price">
-							<!-- <del><span class="thcn-Price-amount amount"><bdi><%= format_price(24990000) %></bdi></span></del> -->
-							<ins>
-								<span class="thcn-Price-amount amount">
-									<bdi>
-										<% if product.product_price.nil? %>
-											Đang cập nhật
-										<% else %>
-											<%= format_price(product.product_price) %>
-										<% end %>
-									</bdi>
-								</span>
-							</ins>
+							<% if product.product_listed_price.to_f > 1 %>
+								<del><span class="thcn-Price-amount amount"><bdi>
+									<%= format_price(product.product_listed_price) %>
+								</bdi></span></del>
+							<% end %>
+							<% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+								<ins><span class="thcn-Price-amount amount"><bdi>
+									Đang Cập Nhật Giá
+								</bdi></span></ins>
+							<% else %>
+								<ins><span class="thcn-Price-amount amount"><bdi>
+									<%= format_price(product.product_price) %>
+								</bdi></span></ins>
+							<% end %>
 						</span>
 					</div>
 				</div>

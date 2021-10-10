@@ -214,26 +214,20 @@
                                     </div>
                                     <div class="wpisset-woo-loop-nav-price-wrap">
                                         <span class="price">
-                                            <% if product.listed_price.to_f > 1 %>
-                                                <del aria-hidden="true">
-                                                    <span class="thcn-Price-amount amount">
-                                                        <bdi>
-                                                            <%= format_price(product.listed_price) %>
-                                                        </bdi>
-                                                    </span>
-                                                </del>
+                                            <% if product.product_listed_price.to_f > 1 %>
+                                                <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi>
+                                                    <%= format_price(product.product_listed_price) %>
+                                                </bdi></span></del>
                                             <% end %>
-                                            <ins>
-                                                <span class="thcn-Price-amount amount">
-                                                    <bdi>
-                                                        <% if product.product_price.nil? %>
-                                                            Đang cập nhật
-                                                        <% else %>
-                                                            <%= format_price(product.product_price) %>
-                                                        <% end %>
-                                                    </bdi>
-                                                </span>
-                                            </ins>
+                                            <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                    Đang Cập Nhật Giá
+                                                </bdi></span></ins>
+                                            <% else %>
+                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                    <%= format_price(product.product_price) %>
+                                                </bdi></span></ins>
+                                            <% end %>
                                         </span>
                                     </div>
                                 </div>
@@ -250,32 +244,11 @@
             </div>
         <% end %>
         <div class="wpisset-thcn-content-wrap">
-            <h2><%= @category.get_name %></h2>
-            <p>Máy tính xách tay (Laptop) mang lại nhiều ưu điểm tiện lợi hơn so với máy tính để bàn truyền thống. Dễ nhận thấy nhất chính là tính di động, bạn hoàn toàn có thể làm việc ở mọi nơi ngay cả khi không có nguồn điện. Các yếu tố khác như dễ dàng cài đặt, kích thước nhỏ gọn, mỏng nhẹ, kết nối đơn giản với các thiết bị ngoại vi khác.</p>
-            <h3>Màn hình Laptop HP</h3>
-            <p>
-                Thay đổi từ 10~18-Inch với các kích thước đường chéo thông dụng thường thấy như 12.5-Inch, 13.3-Inch, 14-Inch, 15.6-Inch, 17.3-Inch. Màn hình mỏng nhẹ, dễ dàng mang theo và tuyệt vời khi duyệt web, phù hợp với cả chơi game, lập báo cáo hay chỉnh sửa hình ảnh.<br>
-                Độ phân giải màn hình cũng có nhiều sự lựa chọn HD, Full HD, 2K WQHD, 4K UHD. Màn hình có độ phân giải thấp phù hợp cho những công việc như: duyệt tài liệu, xử lý văn bản hay đọc sách trực tuyến. Màn hình có độ phân giải cao hơn sẽ giúp xem phim ảnh, chơi game hay thực hiện việc chỉnh sửa video, văn bản có độ chi tiết cao.<br>
-                Màn hình sử dụng đèn LED để cho màu sắc tươi sáng nhưng dễ hao pin, trong khi màn hình IPS cho màu sắc trung thực và góc nhìn rộng hơn. Windows 10 hỗ trợ <%= link_to 'laptop cảm ứng', '' %> thường thấy trong các dòng Laptop HP Elite.
-            </p>
-            <h3>Màn hình Laptop HP</h3>
-            <p>
-                Thay đổi từ 10~18-Inch với các kích thước đường chéo thông dụng thường thấy như 12.5-Inch, 13.3-Inch, 14-Inch, 15.6-Inch, 17.3-Inch. Màn hình mỏng nhẹ, dễ dàng mang theo và tuyệt vời khi duyệt web, phù hợp với cả chơi game, lập báo cáo hay chỉnh sửa hình ảnh.<br>
-                Độ phân giải màn hình cũng có nhiều sự lựa chọn HD, Full HD, 2K WQHD, 4K UHD. Màn hình có độ phân giải thấp phù hợp cho những công việc như: duyệt tài liệu, xử lý văn bản hay đọc sách trực tuyến. Màn hình có độ phân giải cao hơn sẽ giúp xem phim ảnh, chơi game hay thực hiện việc chỉnh sửa video, văn bản có độ chi tiết cao.<br>
-                Màn hình sử dụng đèn LED để cho màu sắc tươi sáng nhưng dễ hao pin, trong khi màn hình IPS cho màu sắc trung thực và góc nhìn rộng hơn. Windows 10 hỗ trợ laptop cảm ứng thường thấy trong các dòng Laptop HP Elite.
-            </p>
-            <h3>Màn hình Laptop HP</h3>
-            <p>
-                Thay đổi từ 10~18-Inch với các kích thước đường chéo thông dụng thường thấy như 12.5-Inch, 13.3-Inch, 14-Inch, 15.6-Inch, 17.3-Inch. Màn hình mỏng nhẹ, dễ dàng mang theo và tuyệt vời khi duyệt web, phù hợp với cả chơi game, lập báo cáo hay chỉnh sửa hình ảnh.<br>
-                Độ phân giải màn hình cũng có nhiều sự lựa chọn HD, Full HD, 2K WQHD, 4K UHD. Màn hình có độ phân giải thấp phù hợp cho những công việc như: duyệt tài liệu, xử lý văn bản hay đọc sách trực tuyến. Màn hình có độ phân giải cao hơn sẽ giúp xem phim ảnh, chơi game hay thực hiện việc chỉnh sửa video, văn bản có độ chi tiết cao.<br>
-                Màn hình sử dụng đèn LED để cho màu sắc tươi sáng nhưng dễ hao pin, trong khi màn hình IPS cho màu sắc trung thực và góc nhìn rộng hơn. Windows 10 hỗ trợ laptop cảm ứng thường thấy trong các dòng Laptop HP Elite.
-            </p>
-            <h3>Màn hình Laptop HP</h3>
-            <p>
-                Thay đổi từ 10~18-Inch với các kích thước đường chéo thông dụng thường thấy như 12.5-Inch, 13.3-Inch, 14-Inch, 15.6-Inch, 17.3-Inch. Màn hình mỏng nhẹ, dễ dàng mang theo và tuyệt vời khi duyệt web, phù hợp với cả chơi game, lập báo cáo hay chỉnh sửa hình ảnh.<br>
-                Độ phân giải màn hình cũng có nhiều sự lựa chọn HD, Full HD, 2K WQHD, 4K UHD. Màn hình có độ phân giải thấp phù hợp cho những công việc như: duyệt tài liệu, xử lý văn bản hay đọc sách trực tuyến. Màn hình có độ phân giải cao hơn sẽ giúp xem phim ảnh, chơi game hay thực hiện việc chỉnh sửa video, văn bản có độ chi tiết cao.<br>
-                Màn hình sử dụng đèn LED để cho màu sắc tươi sáng nhưng dễ hao pin, trong khi màn hình IPS cho màu sắc trung thực và góc nhìn rộng hơn. Windows 10 hỗ trợ laptop cảm ứng thường thấy trong các dòng Laptop HP Elite.
-            </p>
+            <% if @category.description.present? %>
+                <div class="category-description text-justify">
+                    <%= @category.description.html_safe %>
+                </div>
+            <% end %>
         </div>
     </main>
     <div class=" wpisset-col-lg-3 wpisset-col-xs-12 wpisset-sidebar-wrapper wpisset-first-lg">
