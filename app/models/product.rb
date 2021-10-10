@@ -153,6 +153,14 @@ class Product < ApplicationRecord
     return self.short_name
   end
 
+  def get_short_name
+    if self.custom_title.present?
+      return self.custom_title
+    else
+      return self.short_name
+    end
+  end
+
   def get_brand_name
     return self.brand.get_name
   end

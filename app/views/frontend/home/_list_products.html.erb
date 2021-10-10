@@ -44,7 +44,7 @@
 								</div>
 							</div>
 						</div>
-						<%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_name + '</h2>'.html_safe, product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+						<%= link_to '<h2 class="thcn-loop-product__title">'.html_safe + product.get_short_name + '</h2>'.html_safe, product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
 						<div class="wpisset-woo-loop-desc">
 							<ul>
 								<% product.product_short_descipriton_values_array_new_specs.each do |row| %>
