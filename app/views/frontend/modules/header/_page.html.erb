@@ -187,11 +187,11 @@
                                                     <% else %>
                                                         <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
                                                     <% end %>
-                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
                                                         <ul class="sub-menu">
                                                             <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                                    <%= link_to category_child_2.get_name, category_list_link(category_child_2), title: category_child_2.get_name %>
+                                                                    <%= link_to category_child_2.get_short_name, category_list_link(category_child_2) %>
                                                                 </li>
                                                             <% end %>
                                                         </ul>

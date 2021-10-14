@@ -13,7 +13,11 @@ class Category < ApplicationRecord
       row = {}
       row[:name] = property.name
       row[:values] = []
-      values = property.properties_values.order("custom_order ASC").get_property_values_for_filter.map {|pv| pv }
+      if property.use_custom_sort?
+        values = property.properties_values.order("custom_sort ASC").get_property_values_for_filter.map {|pv| pv }
+      else
+        values = property.properties_values.order("custom_order ASC").get_property_values_for_filter.map {|pv| pv }
+      end
       row[:values] += values if !values.empty?
       groups << row if !row[:values].empty?
     end

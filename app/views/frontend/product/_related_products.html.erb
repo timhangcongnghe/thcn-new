@@ -75,22 +75,23 @@
                                 </div>
                                 <div class="wpisset-woo-loop-nav-price-wrap">
                                     <span class="price">
-                                        <ins>
-                                            <span class="thcn-Price-amount amount">
-                                                <bdi>
-                                                    <% if product.product_price.nil? %>
-                                                        Đang cập nhật
-                                                    <% else %>
-                                                        <%= format_price(product.product_price) %>
-                                                    <% end %>
-                                                </bdi>
-                                            </span>
-                                        </ins>
+                                        <% if product.product_listed_price.to_f > 1 %>
+                                            <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi>
+                                                <%= format_price(product.product_listed_price) %>
+                                            </bdi></span></del>
+                                        <% end %>
+                                        <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                            <ins><span class="thcn-Price-amount amount"><bdi>
+                                                Đang Cập Nhật Giá
+                                            </bdi></span></ins>
+                                        <% else %>
+                                            <ins><span class="thcn-Price-amount amount"><bdi>
+                                                <%= format_price(product.product_price) %>
+                                            </bdi></span></ins>
+                                        <% end %>
                                     </span>
-                                    <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                                 </div>
                             </div>
-                            <%= render 'frontend/modules/extension/wpisset_woo_loop_nav', product: product %>
                         </div>
                     </div>
                 </li>

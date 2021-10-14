@@ -116,16 +116,18 @@
                                     <li><b><%= row[:name] %>: </b><%= row[:values].join(", ") %></li>
                                 <% end %>
                                 <% if @product.brand_id? %>
-                                    <li><strong>Thương hiệu: <%= link_to @product.get_brand_name, '', title: @product.get_brand_name, target: '_blank' %></strong></li>
+                                    <li><strong>THƯƠNG HIỆU: </strong><%= link_to @product.get_brand_name, '', title: @product.get_brand_name, target: '_blank' %>
                                 <% end %>
                                 <% if @product.warranty? %>
-                                    <li><strong>Bảo hành: </strong><%= @product.warranty %> tháng</li>
+                                    | <strong>BẢO HÀNH: </strong><%= link_to @product.warranty.to_s + ' Tháng', '', title: '' %></li>
+                                <% else %>
+                                    | <strong>BẢO HÀNH: </strong><%= link_to 'Đang cập nhật', '', title: '' %></li>
                                 <% end %>
                                 <% if @product.weights? %>
                                     <li><strong>Vận chuyển (G.Weight): </strong><%= @product.weights %></li>
                                 <% end %>
                             </ul>
-                            <!-- <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-546887885">
+                            <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-546887885">
                                 <div class="wpisset-icon-content wpisset-icon-content-116432877">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
                                     <span>
@@ -141,12 +143,19 @@
                                 <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-116432877 img{margin-right:.5rem;margin-top:.25rem;max-width:14px!important}.wpisset-icon-content-116432877{align-items:flex-start;margin-top:.5rem;margin-bottom:.5rem}</style></svg>
                                 <div class="wpisset-icon-content wpisset-icon-content-429732693">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
-                                    <span>Nhập mã THCN300 giảm thêm 3% tối đa <%= format_price(300000) %> khi thanh toán qua VNPAY-QR. <%= link_to 'Xem chi tiết', '', title: '' %></span>
+                                    <span>Xem phần mềm <%= link_to 'Xem sản phẩm', '', title: '' %></span>
+                                </div>
+                                <div class="wpisset-icon-content wpisset-icon-content-429732693">
+                                    <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
+                                    <span>Phần mềm hệ điều hành <%= link_to 'Xem sản phẩm', '', title: '' %></span>
+                                </div>
+                                <div class="wpisset-icon-content wpisset-icon-content-429732693">
+                                    <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
+                                    <span>Phần mềm ứng dụng <%= link_to 'Xem sản phẩm', '', title: '' %></span>
                                 </div>
                                 <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-429732693 img{margin-right:.5rem;margin-top:.25rem;max-width:14px!important}.wpisset-icon-content-429732693{align-items:flex-start;margin-top:.5rem;margin-bottom:.5rem}</style></svg>
                             </div>
                             <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-wrap-546887885 .wpisset-icon-content{font-size:95%!important}.wpisset-icon-content-wrap-546887885{color:#ee9901}.wpisset-icon-content-wrap-546887885 a{color:#1bc5bd}.wpisset-icon-content-wrap-546887885 a:hover{color:#1bc5bd}.wpisset-icon-content-wrap-546887885{background-color:#fffcf2}.wpisset-icon-content-wrap-546887885{border-color:#f5d47a}.wpisset-icon-content-wrap-546887885{padding-right:.5rem}.wpisset-icon-content-wrap-546887885{padding-left:.5rem}.wpisset-icon-content-wrap-546887885{border-radius:5px}table.dataTable.compare-list tr .wpisset-icon-content-wrap{display:none!important}.wpssiet-es-cs{display:none}</style></svg>
-                            -->
                         </div>
                         <div class="wpisset-sp-add-to-cart-wrap">
                             <form class="cart" action="" method="post" enctype=''>
@@ -285,32 +294,7 @@
                         <div class="thcn-Tabs-panel thcn-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
                             <h2>MÔ TẢ SẢN PHẨM</h2>
                             <div class="wpisset-detail-description">
-                                <p>Luôn làm việc hiệu quả khi di chuyển với Máy tính xách tay Latitude 3320 di động 13.3" màu xám titan của Dell. Được thiết kế để cung cấp năng lượng cho khối lượng công việc của bạn ở nhà hoặc khi đang di chuyển, máy tính xách tay này có bộ xử lý 4 nhân Intel Core i7 thế hệ thứ 11 2.8GHz và 8GB RAM tích hợp trên bo mạch. Lưu trữ các tệp quan trọng trên SSD M.2 256GB tích hợp. Màn hình IPS Full HD 13.3" và Đồ họa Intel Iris Xe tích hợp cung cấp hình ảnh chính xác. Giữ liên lạc với bạn bè và đồng nghiệp bằng webcam HD, mảng micrô kép và loa kép.</p>
-                                <p>Kết nối với các phụ kiện có dây bằng hai cổng USB 3.2 Gen 1 Type-A và một cổng USB 3.2 Gen 2x2 Type-C với khả năng cung cấp điện và hỗ trợ Chế độ thay thế DisplayPort. Ghép nối với thiết bị ngoại vi không dây và kết nối trực tuyến với Bluetooth 5.1 và Wi-Fi 6. Kết nối với màn hình ngoài bằng cổng USB Type-C hoặc HDMI 1.4b. Một đầu đọc thẻ microSD cũng có mặt. Hỗ trợ công nghệ ExpressCharge, pin 4-cell có thể được sạc lại lên đến 80% chỉ trong một giờ. Dell 13.3" Latitude 3320 chạy trên hệ điều hành Windows 10 Pro 64-bit.</p>
-                                <h3>ExpressConnect</h3>
-                                <p>ExpressConnect tự động tham gia các điểm truy cập mạnh nhất trong văn phòng và ưu tiên băng thông cho các ứng dụng hội nghị, bất cứ nơi nào bạn làm việc.</p>
-                                <h3>ExpressCharge</h3>
-                                <p>Dell Optimizer kéo dài thời gian chạy và cải thiện hiệu suất pin bằng cách điều chỉnh theo kiểu của bạn và sạc lên đến 80% trong một giờ.</p>
-                                <h3>Âm thanh thông minh</h3>
-                                <p>Âm thanh thông minh nâng cao chất lượng âm thanh của bạn và giảm tiếng ồn xung quanh để bạn có thể nghe và được nghe, tạo ra trải nghiệm hội nghị tốt hơn cho tất cả mọi người.</p>
-                                <h3>Phong cách Take-Anywhere</h3>
-                                <p>Latitude 3320 nhỏ và nhẹ để bạn có thể làm việc hiệu quả ở bất cứ đâu và lưu trữ nhanh chóng khi hoàn thành công việc trong ngày.</p>
-                                <h3>Bàn phím được nâng cấp</h3>
-                                <p>Bàn phím tràn cạnh lớn hơn, phím bấm và bàn di chuột mylar cảm giác bằng kính đảm bảo trải nghiệm người dùng được cải thiện so với các mẫu cũ hơn.</p>
-                                <h3>Chức năng nâng cao</h3>
-                                <p>Hoàn thành các tác vụ cần thiết với tấm nền IPS Full HD và các giải pháp kết nối cáp đơn.</p>
-                                <h3>Cổng Aplenty</h3>
-                                <p>Bảo vệ thiết bị của bạn và các thành phần của nó bằng một khe khóa tích hợp và mở rộng khoản đầu tư của bạn với cổng USB 3.2 Gen 2x2 Type-C với Power Delivery và DisplayPort 1.4 qua Chế độ thay thế. Sử dụng thẻ nhớ microSD để truy cập thẻ nhớ tương thích.</p>
-                                <h3>Thiết kế bền vững</h3>
-                                <p>Một thiết kế bền vững tạo ra một môi trường làm việc lành mạnh hơn với sơn nước VOC thấp trên 100% các bộ phận được sơn, 99% bao bì giấy tái chế và 10% vật liệu nhựa tái chế. Máy tính xách tay này cũng được xếp hạng EPEAT Silver.</p>
-                                <h3>Làm lẹ</h3>
-                                <p>Tăng hiệu suất của bạn bằng cách sử dụng bộ xử lý 4 nhân Intel Core i7 thế hệ thứ 11 2.8 GHz.</p>
-                                <h3>Máy khách kết hợp Dell</h3>
-                                <p>Dell Hybrid Client là một phần mềm điện toán khách với quản lý đám mây kết hợp cho phép truy cập liền mạch vào các ứng dụng và dữ liệu cho dù chúng ở trên đám mây, trong trung tâm dữ liệu hay được lưu trữ cục bộ.</p>
-                                <h3>Pin mở rộng</h3>
-                                <p>Pin 4-cell mang lại tuổi thọ pin dài và sử dụng công nghệ mật độ thấp để giảm kích thước và tiết kiệm chi phí.</p>
-                                <h3>Chế độ chờ hiện đại</h3>
-                                <p>Hỗ trợ ở chế độ chờ hiện đại cung cấp khả năng sẵn sàng bật tức thì, cải thiện tuổi thọ pin và chuyển đổi nhanh hơn giữa các trạng thái bật và tắt nguồn.</p>
+                                <%= @product.description.html_safe %>
                             </div>
                             <div class="wpisset-sp-custom-tags">
                                 <span class="wpisset-tagged-as">
@@ -350,39 +334,18 @@
                         <div id="reviews" class="thcn-Reviews">
                             <div id="comments">
                                 <h2 class="thcn-Reviews-title">Đánh Giá Sản Phẩm</h2>
-                                <ol class="commentlist">
-                                    <% (0..4).each do |review| %>
-                                        <li class="review byuser comment-author-admin bypostauthor even thread-even depth-1">
-                                            <div class="comment_container">
-                                                <%= image_set_tag '/img/icons/avatar.jpg', {'/img/icons/avatar-2x.jpg' => '2x'}, alt: '', title: '', size: '100x100', loading: 'lazy', class: 'avatar avatar-100 photo' %>
-                                                <div class="comment-text">
-                                                    <div class="star-rating" role="img" aria-label="Đánh giá 5.0 / 5.0">
-                                                        <span style="width:100%">Đánh giá <strong class="rating">5.0</strong> / 5.0</span>
-                                                    </div>
-                                                    <p class="meta">
-                                                        <strong class="thcn-review__author">Nguyễn Ngọc Sơn</strong>
-                                                        <span class="thcn-review__dash">&ndash;</span>
-                                                        <time class="thcn-review__published-date" datetime="08-08-2021">08-08-2021</time>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>Máy tính xách tay hoạt động kỳ diệu, đã có nó trong một vài tuần nay. Chạy tuyệt vời, đáng tin cậy, không có vấn đề cho đến nay. Các biện pháp phòng ngừa cho tuổi thọ của sản phẩm. Vận chuyển và giao hàng cũng rất đơn giản.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    <% end %>
-                                </ol>
+                                <p class="woocommerce-noreviews">Chưa có đánh giá cho sản phẩm này.</p>
                             </div>
                             <div id="review_form_wrapper">
                                 <div id="review_form">
                                     <div id="respond" class="comment-respond">
                                         <span id="reply-title" class="comment-reply-title">
-                                            Đánh Giá Sản Phẩm <small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Hủy Đánh Giá</a></small>
+                                            Viết Đánh Giá Cho Sản Phẩm <small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Hủy Đánh Giá</a></small>
                                         </span>
                                         <form action="" method="post" id="commentform" class="comment-form" novalidate>
-                                            <p class="comment-notes"><span>Email sẽ không được công bố. Các đánh giá được duyệt phải có số điện thoại hoặc email đã từng mua sản phẩm.</span></p>
+                                            <p class="comment-notes"><span>Email và số điện thoại sẽ được ẩn. Đánh giá hợp lệ phải có lịch sử mua hàng tại Tìm Hàng Công Nghệ.</span></p>
                                             <div class="comment-form-rating">
-                                                <label for="rating">Chọn đánh giá của bạn&nbsp;<span class="required">*</span></label>
+                                                <label for="rating">Điểm đánh giá&nbsp;<span class="required">*</span></label>
                                                 <select name="rating" id="rating" required>
                                                     <option value="">Đánh giá&hellip;</option>
                                                     <option value="5">Rất hài lòng</option>
@@ -407,10 +370,6 @@
                                             <p class="comment-form-phone">
                                                 <label for="">Số điện thoại&nbsp;<span class="required">*</span></label>
                                                 <input id="" name="" type="text" value="" size="30" required />
-                                            </p>
-                                            <p class="comment-form-cookies-consent">
-                                                <input id="" name="" type="checkbox" value="yes" />
-                                                <label for="">Lưu lại Họ tên, Email, Số điện thoại trên website cho lần đánh giá kế tiếp.</label>
                                             </p>
                                             <p class="form-submit">
                                                 <input name="submit" type="submit" id="" class="submit" value="GỬI ĐÁNH GIÁ" />

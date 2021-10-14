@@ -103,6 +103,24 @@ class Menu < ApplicationRecord
   def get_name
     return self.name
   end
+
+  # tra ve ten menu rut gon
+  def get_short_name
+    if self.short_name.present?
+      return self.short_name
+    else
+      return self.get_name
+    end
+  end
+
+  # tra ve ten menu danh cho the title
+  def get_custom_title
+    if self.custom_title.present?
+      return self.custom_title
+    else
+      return self.get_name
+    end
+  end
   
   # lay danh sach menu thoa get active va khong co parent id
   def self.get_categories

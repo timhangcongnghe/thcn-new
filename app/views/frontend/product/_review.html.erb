@@ -1,0 +1,79 @@
+<div class="thcn-Tabs-panel thcn-Tabs-panel--reviews panel entry-content wc-tab" id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
+    <div id="reviews" class="thcn-Reviews">
+        <div id="comments">
+            <h2 class="thcn-Reviews-title">Đánh Giá Sản Phẩm</h2>
+            <ol class="commentlist">
+                <% (0..4).each do |review| %>
+                    <li class="review byuser comment-author-admin bypostauthor even thread-even depth-1">
+                        <div class="comment_container">
+                            <%= image_set_tag '/img/icons/avatar.jpg', {'/img/icons/avatar-2x.jpg' => '2x'}, alt: '', title: '', size: '100x100', loading: 'lazy', class: 'avatar avatar-100 photo' %>
+                            <div class="comment-text">
+                                <div class="star-rating" role="img" aria-label="Đánh giá 5.0 / 5.0">
+                                    <span style="width:100%">Đánh giá <strong class="rating">5.0</strong> / 5.0</span>
+                                </div>
+                                <p class="meta">
+                                    <strong class="thcn-review__author">Nguyễn Ngọc Sơn</strong>
+                                    <span class="thcn-review__dash">&ndash;</span>
+                                    <time class="thcn-review__published-date" datetime="08-08-2021">08-08-2021</time>
+                                </p>
+                                <div class="description">
+                                    <p>Máy tính xách tay hoạt động kỳ diệu, đã có nó trong một vài tuần nay. Chạy tuyệt vời, đáng tin cậy, không có vấn đề cho đến nay. Các biện pháp phòng ngừa cho tuổi thọ của sản phẩm. Vận chuyển và giao hàng cũng rất đơn giản.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <% end %>
+            </ol>
+        </div>
+        <div id="review_form_wrapper">
+            <div id="review_form">
+                <div id="respond" class="comment-respond">
+                    <span id="reply-title" class="comment-reply-title">
+                        Đánh Giá Sản Phẩm <small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Hủy Đánh Giá</a></small>
+                    </span>
+                    <form action="" method="post" id="commentform" class="comment-form" novalidate>
+                        <p class="comment-notes"><span>Email sẽ không được công bố. Các đánh giá được duyệt phải có số điện thoại hoặc email đã từng mua sản phẩm.</span></p>
+                        <div class="comment-form-rating">
+                            <label for="rating">Chọn đánh giá của bạn&nbsp;<span class="required">*</span></label>
+                            <select name="rating" id="rating" required>
+                                <option value="">Đánh giá&hellip;</option>
+                                <option value="5">Rất hài lòng</option>
+                                <option value="4">Hài lòng</option>
+                                <option value="3">Bình thường</option>
+                                <option value="2">Tạm được</option>
+                                <option value="1">Không thích</option>
+                            </select>
+                        </div>
+                        <p>
+                            <label for="">Nhập nội dung đánh giá (Tối thiểu 80 ký tự)&nbsp;<span class="required">*</span></label>
+                            <textarea id="" name="" cols="45" rows="8" required></textarea>
+                        </p>
+                        <p class="comment-form-author">
+                            <label for="">Họ tên&nbsp;<span class="required">*</span></label>
+                            <input id="" name="" type="text" value="" size="30" required />
+                        </p>
+                        <p class="comment-form-email">
+                            <label for="">Email&nbsp;<span class="required">*</span></label>
+                            <input id="" name="" type="email" value="" size="30" required />
+                        </p>
+                        <p class="comment-form-phone">
+                            <label for="">Số điện thoại&nbsp;<span class="required">*</span></label>
+                            <input id="" name="" type="text" value="" size="30" required />
+                        </p>
+                        <p class="comment-form-cookies-consent">
+                            <input id="" name="" type="checkbox" value="yes" />
+                            <label for="">Lưu lại Họ tên, Email, Số điện thoại trên website cho lần đánh giá kế tiếp.</label>
+                        </p>
+                        <p class="form-submit">
+                            <input name="submit" type="submit" id="" class="submit" value="GỬI ĐÁNH GIÁ" />
+                            <input type='hidden' name='' id='' value='' />
+                            <input type='hidden' name='' id='' value='' />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5"></div> -->
+        <div class="clear"></div>
+    </div>
+</div>
