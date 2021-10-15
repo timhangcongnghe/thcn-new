@@ -15,7 +15,7 @@
                     <% @newest_products.limit(6).each do |product| %>
                         <div class="product-type-simple wpisset-woo-recent-viewed-item sale">
                             <div class="wpisset-woo-recent-viewed-item-img">
-                                <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                <%= link_to image_set_tag(product.get_main_image.image,
                                                           {product.get_main_image.image(:thumb445) => '445w',
                                                            product.get_main_image.image(:thumb193) => '193w'},
                                                           title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),

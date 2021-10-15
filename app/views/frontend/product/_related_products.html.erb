@@ -8,21 +8,21 @@
                             <div class="wpisset-woo-loop-thumbnail-wrapper">
                                 <% if product.is_new? %>
                                     <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-                                                image_set_tag(product.get_main_image.image(),
+                                                image_set_tag(product.get_main_image.image,
                                                             {product.get_main_image.image(:thumb445) => '445w',
                                                              product.get_main_image.image(:thumb193) => '193w'},
                                                              title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                image_set_tag(product.get_main_image.image_url_url,
+                                                image_set_tag(product.get_main_image.image,
                                                             {product.get_main_image.image(:thumb445) => '445w',
                                                              product.get_main_image.image(:thumb193) => '193w'},
                                                              alt: product.get_name, title: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
                                                 product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                 <% else %>
-                                    <%= link_to image_set_tag(product.get_main_image.image(),
+                                    <%= link_to image_set_tag(product.get_main_image.image,
                                                         {product.get_main_image.image(:thumb445) => '445w',
                                                         product.get_main_image.image(:thumb193) => '193w'},
                                                         title: product.get_name, alt: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                image_set_tag(product.get_main_image.image_url_url,
+                                                image_set_tag(product.get_main_image.image,
                                                             {product.get_main_image.image(:thumb445) => '445w',
                                                             product.get_main_image.image(:thumb193) => '193w'},
                                                             alt: product.get_name, title: product.get_name, size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),

@@ -127,7 +127,7 @@
                                     <li><strong>Vận chuyển (G.Weight): </strong><%= @product.weights %></li>
                                 <% end %>
                             </ul>
-                            <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-546887885">
+                            <!-- <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-546887885">
                                 <div class="wpisset-icon-content wpisset-icon-content-116432877">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
                                     <span>
@@ -143,18 +143,18 @@
                                 <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-116432877 img{margin-right:.5rem;margin-top:.25rem;max-width:14px!important}.wpisset-icon-content-116432877{align-items:flex-start;margin-top:.5rem;margin-bottom:.5rem}</style></svg>
                                 <div class="wpisset-icon-content wpisset-icon-content-429732693">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
-                                    <span>Xem phần mềm <%= link_to 'Xem sản phẩm', '', title: '' %></span>
+                                    <span>Phần mềm diệt virus <%= link_to 'xem sản phẩm', '', title: '' %></span>
                                 </div>
                                 <div class="wpisset-icon-content wpisset-icon-content-429732693">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
-                                    <span>Phần mềm hệ điều hành <%= link_to 'Xem sản phẩm', '', title: '' %></span>
+                                    <span>Phần mềm hệ điều hành <%= link_to 'xem sản phẩm', '', title: '' %></span>
                                 </div>
                                 <div class="wpisset-icon-content wpisset-icon-content-429732693">
                                     <%= image_tag '/img/icons/shopping_tag.png', alt: '', title: '' %>
-                                    <span>Phần mềm ứng dụng <%= link_to 'Xem sản phẩm', '', title: '' %></span>
+                                    <span>Phụ kiện dành cho laptop <%= link_to 'xem sản phẩm', '', title: '' %></span>
                                 </div>
                                 <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-429732693 img{margin-right:.5rem;margin-top:.25rem;max-width:14px!important}.wpisset-icon-content-429732693{align-items:flex-start;margin-top:.5rem;margin-bottom:.5rem}</style></svg>
-                            </div>
+                            </div> -->
                             <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-wrap-546887885 .wpisset-icon-content{font-size:95%!important}.wpisset-icon-content-wrap-546887885{color:#ee9901}.wpisset-icon-content-wrap-546887885 a{color:#1bc5bd}.wpisset-icon-content-wrap-546887885 a:hover{color:#1bc5bd}.wpisset-icon-content-wrap-546887885{background-color:#fffcf2}.wpisset-icon-content-wrap-546887885{border-color:#f5d47a}.wpisset-icon-content-wrap-546887885{padding-right:.5rem}.wpisset-icon-content-wrap-546887885{padding-left:.5rem}.wpisset-icon-content-wrap-546887885{border-radius:5px}table.dataTable.compare-list tr .wpisset-icon-content-wrap{display:none!important}.wpssiet-es-cs{display:none}</style></svg>
                         </div>
                         <div class="wpisset-sp-add-to-cart-wrap">
@@ -278,7 +278,7 @@
                 </div>
                 <div class="thcn-tabs wc-tabs-wrapper">
                     <ul class="tabs wc-tabs" role="tablist">
-                        <% if @product.description? %>
+                        <% if @product.description.present? %>
                             <li class="description_tab" id="tab-title-description" role="tab" aria-controls="tab-description">
                                 <a href="#tab-description">Mô Tả Sản Phẩm</a>
                             </li>
@@ -290,7 +290,7 @@
                             <a href="#tab-reviews">Đánh Giá (4)</a>
                         </li>
                     </ul>
-                    <% if @product.description? %>
+                    <% if @product.description.present? %>
                         <div class="thcn-Tabs-panel thcn-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
                             <h2>MÔ TẢ SẢN PHẨM</h2>
                             <div class="wpisset-detail-description">
@@ -458,90 +458,87 @@
                     </div>
                     <div class="wpisset-woo-product-extra-content">
                         <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-1177157228">
-                            <div class="wpisset-icon-content wpisset-icon-content-297025123">
-                                <%= image_tag '/img/icons/box-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Cam kết hàng chính hãng 100%' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/san-pham-chinh-hang.png', alt: 'Sản phẩm chính hãng 100%', title: 'Sản phẩm chính hãng 100%' %>
+                                <%= link_to '<strong>'.html_safe + 'Sản phẩm chính hãng 100%' + '</strong>'.html_safe, '', title: 'Sản phẩm chính hãng 100%' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-297025123 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-297025123{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-1090033015">
-                                <%= image_tag '/img/icons/truck-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Đổi trả trong vòng 10 ngày' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/doi-tra-hang.png', alt: 'Đổi trả hàng trong 7 ngày', title: 'Đổi trả hàng trong 7 ngày' %>
+                                <%= link_to '<strong>'.html_safe + 'Đổi trả hàng trong 7 ngày' + '</strong>'.html_safe, '', title: 'Đổi trả hàng trong 7 ngày' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-1090033015 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-1090033015{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-333813810">
-                                <%= image_tag '/img/icons/gift-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Miễn phí giao hàng khu vực TP. Hồ Chí Minh' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/giao-hang-nhanh.png', alt: 'Giao hàng nhanh (TP. Hồ Chí Minh)', title: 'Giao hàng nhanh (TP. Hồ Chí Minh)' %>
+                                <%= link_to '<strong>'.html_safe + 'Giao hàng nhanh (TP. Hồ Chí Minh)' + '</strong>'.html_safe, '', title: 'Giao hàng nhanh (TP. Hồ Chí Minh)' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-333813810 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-333813810{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-1090033015">
-                                <%= image_tag '/img/icons/truck-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Đổi trả trong vòng 10 ngày' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/giao-hang-toan-quoc.png', alt: 'Giao hàng trên toàn quốc', title: 'Giao hàng trên toàn quốc' %>
+                                <%= link_to '<strong>'.html_safe + 'Giao hàng trên toàn quốc' + '</strong>'.html_safe, '', title: 'Giao hàng trên toàn quốc' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-1090033015 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-1090033015{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-333813810">
-                                <%= image_tag '/img/icons/gift-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Miễn phí giao hàng khu vực TP. Hồ Chí Minh' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/bao-hanh-tan-noi.png', alt: 'Bảo hành tận nơi cho doanh nghiệp', title: 'Bảo hành tận nơi cho doanh nghiệp' %>
+                                <%= link_to '<strong>'.html_safe + 'Bảo hành tận nơi cho doanh nghiệp' + '</strong>'.html_safe, '', title: 'Bảo hành tận nơi cho doanh nghiệp' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-333813810 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-333813810{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
                         </div>
                         <svg class="wpssiet-es-cs"><style>table.dataTable.compare-list tr .wpisset-icon-content-wrap{display: none !important;}.wpssiet-es-cs{display: none;}</style></svg>
                     </div>
                     <div class="wpisset-woo-product-extra-content">
                         <div class="wpisset-icon-content-wrap wpisset-icon-content-wrap-1177157228">
-                            <div class="wpisset-icon-content wpisset-icon-content-297025123">
-                                <%= image_tag '/img/icons/box-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Cam kết hàng chính hãng 100%' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/dich-vu-cong-nghe-thong-tin.png', alt: 'Dịch vụ công nghệ thông tin', title: 'Dịch vụ công nghệ thông tin' %>
+                                <%= link_to '<strong>'.html_safe + 'Dịch vụ công nghệ thông tin' + '</strong>'.html_safe, '', title: 'Dịch vụ công nghệ thông tin' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-297025123 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-297025123{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-1090033015">
-                                <%= image_tag '/img/icons/truck-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Đổi trả trong vòng 10 ngày' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/giai-phap-tich-hop-he-thong.png', alt: 'Giải pháp tích hợp hệ thống', title: 'Giải pháp tích hợp hệ thống' %>
+                                <%= link_to '<strong>'.html_safe + 'Giải pháp tích hợp hệ thống' + '</strong>'.html_safe, '', title: 'Giải pháp tích hợp hệ thống' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-1090033015 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-1090033015{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-333813810">
-                                <%= image_tag '/img/icons/gift-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Miễn phí giao hàng khu vực TP. Hồ Chí Minh' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/dich-vu-giai-phap-phan-mem.png', alt: 'Dịch vụ giải pháp phần mềm', title: 'Dịch vụ giải pháp phần mềm' %>
+                                <%= link_to '<strong>'.html_safe + 'Dịch vụ giải pháp phần mềm' + '</strong>'.html_safe, '', title: 'Dịch vụ giải pháp phần mềm' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-333813810 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-333813810{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-297025123">
-                                <%= image_tag '/img/icons/box-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Cam kết hàng chính hãng 100%' + '</strong>'.html_safe %></span>
+                            <div class="wpisset-icon-content wpisset-icon-content-services">
+                                <%= image_tag '/img/main-icons/giai-phap-man-hinh-chuyen-dung.png', alt: 'Giải pháp màn hình chuyên dụng', title: 'Giải pháp màn hình chuyên dụng' %>
+                                <%= link_to '<strong>'.html_safe + 'Giải pháp màn hình chuyên dụng' + '</strong>'.html_safe, '', title: 'Giải pháp màn hình chuyên dụng' %>
                             </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-297025123 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-297025123{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
-                            <div class="wpisset-icon-content wpisset-icon-content-1090033015">
-                                <%= image_tag '/img/icons/truck-product.png', alt: '', title: '' %>
-                                <span><%= link_to '<strong>'.html_safe + 'Đổi trả trong vòng 10 ngày' + '</strong>'.html_safe %></span>
-                            </div>
-                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-1090033015 img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-1090033015{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
+                            <svg class="wpssiet-es-cs"><style>.wpisset-icon-content-services img{margin-right:0.75rem;margin-top:0;max-width:56px !important;}.wpisset-icon-content-297025123{align-items:center;margin-top:1rem;margin-bottom:1rem;}</style></svg>
                         </div>
                         <svg class="wpssiet-es-cs"><style>table.dataTable.compare-list tr .wpisset-icon-content-wrap{display: none !important;}.wpssiet-es-cs{display: none;}</style></svg>
                     </div>
-                    <!-- <div id="wpisset-woo-product-sidebar" class="wpisset-woo-product-sidebar wpisset-sidebar">
-                        <div class="widget-odd widget-last widget-first widget-1 wpisset-widget-border widget thcn widget_recently_viewed_products">
-                            <h4 class="wpisset-widgettitle"><span>SẢN PHẨM MỚI</span></h4>
-                            <ul class="product_list_widget">
-                                <% (0..2).each do |product| %>
-                                    <li>
-                                        <%= link_to image_set_tag('/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg',
-                                                                              {'/img/tmp_products/pc-dell-optiplex-7090-mff-1000x1000.jpg' => '1000w',
-                                                                               '/img/tmp_products/pc-dell-optiplex-7090-mff-800x800.jpg' => '800w',
-                                                                               '/img/tmp_products/pc-dell-optiplex-7090-mff-768x768.jpg' => '768w',
-                                                                               '/img/tmp_products/pc-dell-optiplex-7090-mff-600x600.jpg' => '600w',
-                                                                               '/img/tmp_products/pc-dell-optiplex-7090-mff-300x300.jpg' => '300w',
-                                                                               '/img/tmp_products/pc-dell-optiplex-7090-mff-150x150.jpg' => '150w'},
-                                                                              title: '', alt: '', size: '800x800', sizes: '(max-width: 800px) 100vw, 800px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                    '<span class="product-title">'.html_safe + 'PC Dell OptiPlex 7090 MFF (i5 11500T/8GB RAM/256GB SSD/WLAN/Win 10/Đen)' + '</span>'.html_safe,
-                                            '', title: '' %>
-                                        <div class="star-rating" role="img" aria-label="Đánh giá 4.0 / 5.0">
-                                            <span style="width:80%">Đánh giá <strong class="rating">4.0</strong> / 5.0</span>
-                                        </div>
-                                        <del aria-hidden="true"><span class="thcn-Price-amount amount"><bdi><%= format_price(24990000) %></bdi></span></del>
-                                        <ins><span class="thcn-Price-amount amount"><bdi><%= format_price(22990000) %></bdi></span></ins>
-                                    </li>
-                                <% end %>
-                            </ul>
+                    <% if @category_newest_related_products.count > 0 %>
+                        <div id="wpisset-woo-product-sidebar" class="wpisset-woo-product-sidebar wpisset-sidebar">
+                            <div class="widget-odd widget-last widget-first widget-1 wpisset-widget-border widget thcn widget_recently_viewed_products">
+                                <h4 class="wpisset-widgettitle"><span><%= @category.get_name %> Mới</span></h4>
+                                <ul class="product_list_widget">
+                                    <% @category_newest_related_products.each do |product| %>
+                                        <li>
+                                            <%= link_to image_set_tag(product.get_main_image.image,
+                                                                                {product.get_main_image.image(:thumb445) => '445w',
+                                                                                 product.get_main_image.image(:thumb193) => '193w'},
+                                                                                title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+                                                        '<span class="product-title">'.html_safe + product.get_name + '</span>'.html_safe,
+                                                product_link(product), title: product.get_name %>
+                                            <div class="star-rating" role="img" aria-label="Đánh giá 0.0 / 5.0">
+                                                <span style="width:0%">Đánh giá <strong class="rating">0.0</strong> / 5.0</span>
+                                            </div>
+                                            <% if (product.product_price.nil?) || (product.product_price.to_f <= 1) %>
+                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                    Đang Cập Nhật Giá
+                                                </bdi></span></ins>
+                                            <% else %>
+                                                <ins><span class="thcn-Price-amount amount"><bdi>
+                                                    <%= format_price(product.product_price) %>
+                                                </bdi></span></ins>
+                                            <% end %>
+                                            <% if product.product_listed_price.to_f > 1 %>
+                                                <del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>
+                                                    <%= format_price(product.product_listed_price) %>
+                                                </bdi></span></del>
+                                            <% end %>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            </div>
                         </div>
-                    </div> -->
+                    <% end %>
                 </div>
             </div>
             <%= render 'frontend/product/related_products', products: @brand_related_products, title: @category.get_name + ' Khác' %>

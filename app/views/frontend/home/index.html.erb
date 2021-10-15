@@ -63,14 +63,19 @@
                                             <div class="wpisset-ele-es-banner1-item-wrap">
                                                 <div class="wpisset-ele-es-banner1-item-bg">
                                                     <div class="wpisset-ele-es-banner1-item-img">
-                                                        <%= image_tag '/img/tmp_banners/banner1-2-phone.jpg', alt: '', title: '' %>
+                                                        <%= image_tag '/img/main-banners/banner-iphone-13-pro-max.jpg', alt: '', title: '' %>
                                                     </div>
                                                 </div>
                                                 <div class="wpisset-ele-es-banner1-item-content">
-                                                    <div class="wpisset-ele-es-banner1-item-content-title">iPhone 12 Pro Max<br>256GB Màu Bạc</div>
+                                                    <div class="wpisset-ele-es-banner1-item-content-title">iPhone 13<br>Pro Max 128GB</div>
                                                     <div class="wpisset-ele-es-banner1-item-content-content">
-                                                        <br><span class="wpisset-ele-es-banner-desc">ĐẶT HÀNG TRƯỚC</span>
-                                                        <br><span class="wpisset-ele-es-banner-price"><%= format_price(31990000) %><del><%= format_price(33490000) %></del></span>
+                                                        <span class="wpisset-ele-es-banner-desc">Ưu Đãi Đặt Trước</span><br>
+                                                        <span class="wpisset-ele-es-banner-price">
+                                                            <%= format_price(32490000) %>
+                                                        </span><br>
+                                                        <span class="wpisset-ele-es-banner-price">
+                                                            <del><%= format_price(33990000) %></del>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,21 +126,21 @@
                                                                 <div class="wpisset-woo-loop-thumbnail-wrapper">
                                                                     <% if product.is_new? %>
                                                                         <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                    image_set_tag(product.get_main_image.image,
                                                                                                   {product.get_main_image.image(:thumb445) => '445w',
                                                                                                    product.get_main_image.image(:thumb193) => '193w'},
                                                                                                   title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                    image_set_tag(product.get_main_image.image,
                                                                                                   {product.get_main_image.image(:thumb445) => '445w',
                                                                                                    product.get_main_image.image(:thumb193) => '193w'},
                                                                                                   title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
                                                                                     product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                     <% else %>
-                                                                        <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                                        <%= link_to image_set_tag(product.get_main_image.image,
                                                                                                   {product.get_main_image.image(:thumb445) => '445w',
                                                                                                    product.get_main_image.image(:thumb193) => '193w'},
                                                                                                   title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                    image_set_tag(product.get_main_image.image,
                                                                                                   {product.get_main_image.image(:thumb445) => '445w',
                                                                                                    product.get_main_image.image(:thumb193) => '193w'},
                                                                                                   title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
@@ -279,21 +284,21 @@
                                                             <div class="wpisset-woo-loop-thumbnail-wrapper">
                                                                 <% if product.is_new? %>
                                                                     <%= link_to '<span class="onsale">'.html_safe + 'Mới' + '</span>'.html_safe +
-                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                    image_set_tag(product.get_main_image.image,
                                                                                                 {product.get_main_image.image(:thumb445) => '445w',
                                                                                                 product.get_main_image.image(:thumb193) => '193w'},
                                                                                                 title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                    image_set_tag(product.get_main_image.image_url_url,
+                                                                                    image_set_tag(product.get_main_image.image,
                                                                                                 {product.get_main_image.image(:thumb445) => '445w',
                                                                                                 product.get_main_image.image(:thumb193) => '193w'},
                                                                                                 title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
                                                                                     product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
                                                                 <% else %>
-                                                                    <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                                    <%= link_to image_set_tag(product.get_main_image.image,
                                                                                             {product.get_main_image.image(:thumb445) => '445w',
                                                                                             product.get_main_image.image(:thumb193) => '193w'},
                                                                                             title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-                                                                                image_set_tag(product.get_main_image.image_url_url,
+                                                                                image_set_tag(product.get_main_image.image,
                                                                                             {product.get_main_image.image(:thumb445) => '445w',
                                                                                             product.get_main_image.image(:thumb193) => '193w'},
                                                                                             title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
@@ -459,7 +464,7 @@
                                     <% @newest_products.limit(6).each do |product| %>
                                         <div class="product-type-simple wpisset-ele-es-recentviewedproducts-item sale">
                                             <div class="wpisset-ele-es-recentviewedproducts-item-img">
-                                                <%= link_to image_set_tag(product.get_main_image.image_url_url,
+                                                <%= link_to image_set_tag(product.get_main_image.image,
                                                                           {product.get_main_image.image(:thumb445) => '445w',
                                                                            product.get_main_image.image(:thumb193) => '193w'},
                                                                           title: product.get_name, alt: product.get_name, size: '445w', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-full size-full wp-post-image'),

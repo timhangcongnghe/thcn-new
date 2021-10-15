@@ -9,6 +9,8 @@ module Frontend
       @product = Product.find(params[:product_id])
       @category = @product.find_menu
 
+      @category_newest_related_products = Product.category_newest_related_products(@product).limit(3)
+
       if @product.is_sold_out?
         @brand_related_products = Product.brand_related_products_for_sold_out(@product).limit(5)
         @category_related_products = Product.category_related_products_for_sold_out(@product).limit(5)

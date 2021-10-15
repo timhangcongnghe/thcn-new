@@ -250,7 +250,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-banner1-item-content-title {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.2;
 	color: #181c32;
 	margin-bottom: .5rem
@@ -558,7 +558,6 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-banner-price>del {
-	margin-left: .5rem;
 	color: #181c32
 }
 
@@ -7489,7 +7488,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 	border: 1px solid #d7d7d7;
 	padding: 0 1rem;
 	background-color: #fafafa;
-	margin-bottom: 1rem
+	margin-bottom: .5rem
 }
 
 .wpisset-icon-content {
@@ -7505,7 +7504,7 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-icon-content a:hover {
-	text-decoration: underline
+	opacity: .8;
 }
 
 .wpisset-social-icons {
