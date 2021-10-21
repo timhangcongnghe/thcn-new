@@ -12,6 +12,12 @@
 .wpisset-detail-description h3 {
   margin: .5rem 0;
 }
+.wpisset-detail-description a {
+  color: #009ef7;
+}
+.wpisset-detail-description a:hover {
+  opacity: .8;
+}
 .form-filter-specs {
   margin-bottom: .5rem;
 }

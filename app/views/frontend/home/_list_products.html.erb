@@ -15,15 +15,17 @@
 												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
 									product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
 					<% else %>
-						<%= link_to image_set_tag(product.get_main_image.image,
-												  {product.get_main_image.image(:thumb445) => '445w',
-												   product.get_main_image.image(:thumb193) => '193w'},
-												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
-									image_set_tag(product.get_main_image.image,
-												  {product.get_main_image.image(:thumb445) => '445w',
-												   product.get_main_image.image(:thumb193) => '193w'},
-												  title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
-									product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+						<% if product.product_images.count > 0 %>
+							<%= link_to image_set_tag(product.get_main_image.image,
+													{product.get_main_image.image(:thumb445) => '445w',
+													product.get_main_image.image(:thumb193) => '193w'},
+													title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'attachment-thcn_thumbnail size-thcn_thumbnail') + 
+										image_set_tag(product.get_main_image.image,
+													{product.get_main_image.image(:thumb445) => '445w',
+													product.get_main_image.image(:thumb193) => '193w'},
+													title: product.get_name, alt: product.get_name, size: '445x445', sizes: '(max-width: 445px) 100vw, 445px', loading: 'lazy', class: 'wp-post-image wp-post-image-secondary'),
+										product_link(product), title: product.get_name, class: 'thcn-LoopProduct-link thcn-loop-product__link' %>
+							<% end %>
 					<% end %>
 				</div>
 				<div class="wpisset-woo-loop-content-wrapper">

@@ -630,7 +630,7 @@
 	margin: 0;
 	padding: .5rem 0;
 	font-size: 95%;
-	color: #1bc5bd
+	color: #009ef7
 }
 
 .thcn-products-header .wpisset-sp-breadcrumb-delimiter {
@@ -642,7 +642,7 @@
 }
 
 .thcn-products-header .thcn-breadcrumb a:hover {
-	color: #1bc5bd
+	color: #009ef7
 }
 
 .page-description p,
@@ -741,7 +741,7 @@
 }
 
 .wpisset-woo-loop-wrapper:hover .wpisset-woo-loop-inner .wpisset-woo-loop-content-wrapper .thcn-loop-product__link .thcn-loop-product__title {
-	 color: #1bc5bd;
+	 color: #009ef7;
 }
 
 .wpisset-woo-loop-wrapper:hover .wpisset-woo-loop-inner .wpisset-woo-loop-thumbnail-wrapper a img {
@@ -1176,7 +1176,7 @@
 }
 
 .wpisset-woo-loop-status>span:last-child {
-	color: #1bc5bd;
+	color: #009ef7;
 }
 
 .wpisset-woo-loop-desc {
@@ -2094,7 +2094,7 @@ ul.products li.wpisset-woo-has-gallery:hover .wpisset-woo-loop-thumbnail-wrapper
 
 .thcn .thcn-widget-layered-nav-list .thcn-widget-layered-nav-list__item:hover label,
 .thcn .thcn-widget-layered-nav-list .thcn-widget-layered-nav-list__item:hover span {
-	color: #1bc5bd;
+	color: #009ef7;
 	cursor: pointer;
 }
 
@@ -3075,7 +3075,7 @@ body.single-product #inner-content {
 
 .thcn div.product .thcn-tabs .panel {
 	display: block!important;
-	margin-bottom: 1rem;
+	margin-bottom: 0;
 	position: relative
 }
 
