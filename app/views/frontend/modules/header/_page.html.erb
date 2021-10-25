@@ -18,7 +18,15 @@
                                             <% category.get_children.each do |category_child_1| %>
                                                 <% if category_child_1.get_children.count > 0 %>
                                                     <li class="menu-item menu-item-has-children">
-                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <% if !category_child_1.not_create_link? %>
+                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
+                                                                <span><%= category_child_1.get_short_name %></span>
+                                                            <% else %>
+                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                            <% end %>
+                                                        <% else %>
+                                                            <span><%= category_child_1.get_short_name %></span>
+                                                        <% end %>
                                                         <ul class="sub-menu">
                                                             <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item">
@@ -29,7 +37,15 @@
                                                     </li>
                                                 <% else %>
                                                     <li class="menu-item">
-                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <% if !category_child_1.not_create_link? %>
+                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
+                                                                <span><%= category_child_1.get_short_name %></span>
+                                                            <% else %>
+                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                            <% end %>
+                                                        <% else %>
+                                                            <span><%= category_child_1.get_short_name %></span>
+                                                        <% end %>
                                                     </li>
                                                 <% end %>
                                             <% end %>
@@ -179,7 +195,11 @@
                                 <ul class="wpisset-category-menu wpisset-sub-menu wpisset-start-xs wpisset-sub-menu-animation-fade">
                                     <% @categories.each do |category| %>
                                         <li class="wpisset-cat-mega-menu wpisset-cat-mega-menu-4 wpisset-cat-mega-menu-full-height wpisset-cat-mega-menu-bg-image-1 menu-item menu-item-has-children">
-                                            <%= link_to image_tag('/img/icons_menu/laptop.png', alt: category.get_name, title: category.get_name) + category.get_name, category_list_link(category), title: category.get_name %>
+                                            <% if category.menu_icon.present? %>
+                                                <%= link_to image_tag(category.menu_icon.icon, alt: category.get_name, title: category.get_name) + category.get_name, category_list_link(category), title: category.get_name %>
+                                            <% else %>
+                                                <%= link_to image_tag('/img/icons_menu/laptop.png', alt: category.get_name, title: category.get_name) + category.get_name, category_list_link(category), title: category.get_name %>
+                                            <% end %>
                                             <ul class="sub-menu">
                                                 <% category.get_children.each do |category_child_1| %>
                                                     <% if category_child_1.style_show? %>
@@ -187,7 +207,15 @@
                                                     <% else %>
                                                         <li class="menu-item-heading menu-item-border-bottom menu-item menu-item-has-children">
                                                     <% end %>
-                                                        <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                        <% if !category_child_1.not_create_link? %>
+                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
+                                                                <span><%= category_child_1.get_short_name %></span>
+                                                            <% else %>
+                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                            <% end %>
+                                                        <% else %>
+                                                            <span><%= category_child_1.get_short_name %></span>
+                                                        <% end %>
                                                         <ul class="sub-menu">
                                                             <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
@@ -209,9 +237,6 @@
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                         <%= link_to image_tag('/img/icons_menu/bell.png', alt: '', title: '') + 'Sản Phẩm Khuyến Mãi', '', title: '' %>
                                     </li>
-                                    <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                        <%= link_to image_tag('/img/icons_menu/star.png', alt: '', title: '') + 'Sản Phẩm Mới' + '<u class="wpisset-menu-item-badge" style="background-color:#1bc5bd">Năm 2021</u>'.html_safe, '', title: '' %>
-                                    </li> -->
                                 </ul>
                             </div>
                             <div class="wpisset-main-navigation-bottom-wrap">

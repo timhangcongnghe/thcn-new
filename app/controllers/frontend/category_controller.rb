@@ -11,11 +11,24 @@ module Frontend
       @newest_products = Product.get_newest_products
 
       @category = Menu.find(params[:category_id])
+      
+      if !@category.not_create_link?
+        if (@category.is_redirect?) && (@category.redirect_id.present?)
+          redirect_to category_list_path(category_id: @category.redirect_id, category_alias: Menu.find(@category.redirect_id).alias, reid: @category, rename: @category.alias), status: 301
+        end
+      end
+
+      if @category.not_create_link?
+        redirect_to root_link, status: 301
+      end
+
+      if params[:re_id].present?
+        @redirect_category = Menu.find(params[:re_id])
+      end
+
       @products = Kaminari.paginate_array(@category.get_products_for_categories(params)).page(params[:page]).per(36)
 
       @related_categories = @category.get_children
-
-      
     end
   end
 end

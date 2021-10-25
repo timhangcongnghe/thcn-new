@@ -18,7 +18,7 @@
                         <li class="thcn-widget-layered-nav-list__item wc-layered-nav-term ">
                             <input type="checkbox" value="<%= category.get_name + ' ' + value[:value] %>" name="<%= name %>[<%= value[:property_id] %>][]" id="<%= id %><%= value[:id] %>">
                             <label for="<%= id %><%= value[:id] %>"><%= value[:value] %></label>
-                            <span class="count">(<%= value.product_count_by_menu_brand(@category) %>)</span>
+                            <span class="count">(<%= value.product_count_by_menu(@category) %>)</span>
                         </li>
                     <% end %>
                 <% end %>

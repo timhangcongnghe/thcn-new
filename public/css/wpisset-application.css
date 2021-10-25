@@ -1677,6 +1677,7 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 }
 
 .wpisset-cat-mega-menu>.sub-menu>.menu-item.menu-item-heading>a,
+.wpisset-cat-mega-menu>.sub-menu>.menu-item.menu-item-heading>span,
 .wpisset-cat-mega-menu>.sub-menu>.menu-item>a[href="#"],
 .wpisset-mega-menu>.sub-menu>.menu-item>.sub-menu>.menu-item.menu-item-heading>span>a,
 .wpisset-mega-menu>.sub-menu>.menu-item>.sub-menu>.menu-item>span>a[href="#"] {
@@ -4256,7 +4257,8 @@ body.thcn-page.wpisset-wpb #inner-content {
 	top: calc(-1px - 12px)
 }
 
-.wpisset-category-menu .sub-menu>li>a {
+.wpisset-category-menu .sub-menu>li>a,
+.wpisset-category-menu .sub-menu>li>span {
 	display: flex;
 	align-items: center;
 	color: #181c32;
@@ -4336,7 +4338,8 @@ body.thcn-page.wpisset-wpb #inner-content {
 	flex-basis: 33.3%
 }
 
-.wpisset-category-menu>.wpisset-cat-mega-menu>.sub-menu>.menu-item a {
+.wpisset-category-menu>.wpisset-cat-mega-menu>.sub-menu>.menu-item a,
+.wpisset-category-menu>.wpisset-cat-mega-menu>.sub-menu>.menu-item span {
 	padding: 0 0 .5rem 0
 }
 

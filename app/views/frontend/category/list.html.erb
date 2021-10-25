@@ -1,4 +1,8 @@
-<% title @category.get_custom_title %>
+<% if @redirect_category.present? %>
+    <% title @category.get_custom_title + ' ' + @redirect_category.get_short_name %>
+<% else %>
+    <% title @category.get_custom_title %>
+<% end %>
 
 <div class="wpisset-row wpisset-shop-wide">
     <div class="wpisset-woo-shop-desc wpisset-col-xs-12">
@@ -11,14 +15,14 @@
                             <% if !@category.parent.nil? %>
                                 <div class=" wpisset_ele_es_productcategory1 wpisset_ele_es_productcategory1-429113875" >
                                     <div class="wpisset-ele-es-productcategory1 wpisset-ele-es-productcategory1-col-5">
-                                        <% @category.parent.get_children.each do |category| %>
+                                        <% @category.parent.get_children.where(not_create_link: false).each do |category| %>
                                             <div class="wpisset-ele-es-productcategory1-item-wrap">
                                                 <a href="<%= category_list_link(category) %>" title="<%= category.get_name %>" class="wpisset-ele-es-productcategory1-item wpisset-ele-es-productcategory1-icon">
                                                     <div class="wpisset-ele-es-productcategory1-item-img">
                                                         <%= image_tag '/img/tmp_banners/category-apple-macbook.jpg', alt: category.get_name, title: category.get_name %>
                                                     </div>
                                                     <div class="wpisset-ele-es-productcategory1-item-content">
-                                                        <span class="wpisset-ele-es-productcategory1-item-title"><%= category.get_name %></span>
+                                                        <span class="wpisset-ele-es-productcategory1-item-title"><%= category.get_short_name %></span>
                                                     </div>
                                                     <span class="wpisset-ele-es-productcategory1-item-bh"></span>
                                                     <span class="wpisset-ele-es-productcategory1-item-bv"></span>
@@ -41,19 +45,21 @@
                                                             </div>
                                                             <% if category.get_children.count > 0 %>
                                                                 <div class="wpisset-ele-es-categorybanner4-menu">
-                                                                    <div class="wpisset-ele-es-categorybanner4-menu-title"><%= category.get_name %></div>
+                                                                    <div class="wpisset-ele-es-categorybanner4-menu-title"><%= category.get_short_name %></div>
                                                                     <ul class="wpisset-categorybanner4-menu">
-                                                                        <% category.get_children.each do |category_child| %>
+                                                                        <% category.get_children.where(not_create_link: false).each do |category_child| %>
                                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
-                                                                                <%= link_to category_child.get_name, category_list_link(category_child), title: category_child.get_name, aria: {current: 'page'} %>
+                                                                                <%= link_to category_child.get_short_name, category_list_link(category_child), title: category_child.get_name, aria: {current: 'page'} %>
                                                                             </li>
                                                                         <% end %>
                                                                     </ul>
                                                                 </div>
                                                             <% end %>
-                                                            <div class="wpisset-ele-es-categorybanner4-desc-wrap">
-                                                                <%= link_to 'Xem Toàn Bộ ' + category.get_name, category_list_link(category), title: category.get_name, class: 'wpisset-ele-es-categorybanner4-desc' %>
-                                                            </div>
+                                                            <% if !(category.is_redirect?) && !(category.redirect_id.present?) %>
+                                                                <div class="wpisset-ele-es-categorybanner4-desc-wrap">
+                                                                    <%= link_to 'Xem Toàn Bộ ' + category.get_short_name, category_list_link(category), title: category.get_name, class: 'wpisset-ele-es-categorybanner4-desc' %>
+                                                                </div>
+                                                            <% end %>
                                                             <span class="wpisset-ele-es-categorybanner4-bh"></span><span class="wpisset-ele-es-categorybanner4-bv"></span>
                                                         </div>
                                                     </div>
@@ -74,7 +80,7 @@
     </div>
     <main class="wpisset-main wpisset-col-lg-9 wpisset-col-xs-12 wpisset-thcn-content wpisset-thcn-loop-content" data-shop-grid-columns="4" data-shop-grid-desc="0" data-shop-grid-big-columns="2" data-shop-grid-big-desc="1" data-shop-list-columns="1" data-shop-list-desc="1">
         <header class="thcn-products-header">
-            <h1 class="thcn-products-header__title page-title"><%= @category.get_name %></h1>
+            <h1 class="thcn-products-header__title page-title"><%= @category.get_name %><% if @redirect_category.present? %> <%= @redirect_category.get_short_name %><% end %></h1>
             <nav class="thcn-breadcrumb">
                 <%= link_to 'Trang Chủ', root_link, title: '' %> <span class="wpisset-sp-breadcrumb-delimiter">&#47;</span>
                 <% @category.self_and_parent_menus.each do |category| %>

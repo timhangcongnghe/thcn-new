@@ -18,7 +18,15 @@
                                             <% category.get_children.each do |category_child_1| %>
                                                 <% if category_child_1.get_children.count > 0 %>
                                                     <li class="menu-item menu-item-has-children">
-                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <% if !category_child_1.not_create_link? %>
+                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
+                                                                <span><%= category_child_1.get_short_name %></span>
+                                                            <% else %>
+                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                            <% end %>
+                                                        <% else %>
+                                                            <span><%= category_child_1.get_short_name %></span>
+                                                        <% end %>
                                                         <ul class="sub-menu">
                                                             <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item">
@@ -29,7 +37,15 @@
                                                     </li>
                                                 <% else %>
                                                     <li class="menu-item">
-                                                        <%= link_to category_child_1.get_name, category_list_link(category_child_1), title: category_child_1.get_name %>
+                                                        <% if !category_child_1.not_create_link? %>
+                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
+                                                                <span><%= category_child_1.get_short_name %></span>
+                                                            <% else %>
+                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
+                                                            <% end %>
+                                                        <% else %>
+                                                            <span><%= category_child_1.get_short_name %></span>
+                                                        <% end %>
                                                     </li>
                                                 <% end %>
                                             <% end %>

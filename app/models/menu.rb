@@ -4,6 +4,9 @@ class Menu < ApplicationRecord
   has_many :children, -> {order(custom_order: :asc)}, class_name: 'Menu', foreign_key: 'parent_id'
   has_and_belongs_to_many :categories, class_name: 'Category'
   belongs_to :brand, class_name: 'Brand'
+  belongs_to :redirect, class_name: 'Menu', foreign_key: 'redirect_id', optional: true
+
+  mount_uploader :menu_icon, MenuImageUploader
 
   def self_and_parent_menus(options={})
     arr = [self]
