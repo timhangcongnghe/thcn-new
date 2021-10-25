@@ -8,43 +8,35 @@
                         <div class="wpisset-mobile-navigation-inner">
                             <div class="wpisset-mobile-navigation-title">
                                 <span>DANH MỤC SẢN PHẨM</span>
-                                <%= link_to 'Xem toàn bộ', category_link, title: '' %>
+                                <%= link_to 'Xem toàn bộ', category_link, title: 'Danh mục sản phẩm' %>
                             </div>
                             <ul class="wpisset-mobile-nav-menu">
                                 <% @categories.each do |category| %>
                                     <li class="menu-item menu-item-has-children">
-                                        <%= link_to category.get_name, category_list_link(category), title: category.get_name %>
+                                        <%= link_to category.get_short_name, category_list_link(category), title: category.get_name %>
                                         <ul class="sub-menu">
                                             <% category.get_children.each do |category_child_1| %>
                                                 <% if category_child_1.get_children.count > 0 %>
                                                     <li class="menu-item menu-item-has-children">
-                                                        <% if !category_child_1.not_create_link? %>
-                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
-                                                                <span><%= category_child_1.get_short_name %></span>
-                                                            <% else %>
-                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
-                                                            <% end %>
+                                                        <% if category_child_1.not_create_link? %>
+                                                            <%= link_to category_child_1.get_short_name, 'javascript:void(0)', title: category_child_1.get_name %>
                                                         <% else %>
-                                                            <span><%= category_child_1.get_short_name %></span>
+                                                            <%= link_to category_child_1.get_short_name, category_list_link(category_child_1), title: category_child_1.get_name %>
                                                         <% end %>
                                                         <ul class="sub-menu">
                                                             <% category_child_1.get_children.each do |category_child_2| %>
                                                                 <li class="menu-item">
-                                                                    <%= link_to category_child_2.get_name, category_list_link(category_child_2), title: category_child_2.get_name %>
+                                                                    <%= link_to category_child_2.get_short_name, category_list_link(category_child_2), title: category_child_2.get_name %>
                                                                 </li>
                                                             <% end %>
                                                         </ul>
                                                     </li>
                                                 <% else %>
                                                     <li class="menu-item">
-                                                        <% if !category_child_1.not_create_link? %>
-                                                            <% if (category_child_1.is_redirect?) && (category_child_1.redirect_id.present?) %>
-                                                                <span><%= category_child_1.get_short_name %></span>
-                                                            <% else %>
-                                                                <%= link_to category_child_1.get_short_name, category_list_link(category_child_1) %>
-                                                            <% end %>
+                                                        <% if category_child_1.not_create_link? %>
+                                                            <%= link_to category_child_1.get_short_name, 'javascript:void(0)', title: category_child_1.get_name %>
                                                         <% else %>
-                                                            <span><%= category_child_1.get_short_name %></span>
+                                                            <%= link_to category_child_1.get_short_name, category_list_link(category_child_1), title: category_child_1.get_name %>
                                                         <% end %>
                                                     </li>
                                                 <% end %>
@@ -55,71 +47,88 @@
                             </ul>
                             <div class="wpisset-mobile-navigation-title">
                                 <span>HỖ TRỢ KHÁCH HÀNG</span>
-                                <%= link_to 'Xem toàn bộ', '', title: '' %>
+                                <%= link_to 'Xem toàn bộ', '', title: 'Hỗ trợ khách hàng' %>
                             </div>
                             <ul class="wpisset-mobile-nav-menu">
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Hướng dẫn mua hàng' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/customer-guide.png', alt: 'Hướng dẫn mua hàng', title: 'Hướng dẫn mua hàng') + 'Hướng dẫn mua hàng', 
+                                        shopping_guide_link, title: 'Hướng dẫn mua hàng' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Hướng dẫn thanh toán' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/customer-guide.png', alt: 'Hướng dẫn thanh toán', title: 'Hướng dẫn thanh toán') + 'Hướng dẫn thanh toán', 
+                                        '', title: 'Hướng dẫn thanh toán' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Gửi yêu cầu bảo hành' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/customer-guide.png', alt: 'Gửi yêu cầu bảo hành', title: 'Gửi yêu cầu bảo hành') + 'Gửi yêu cầu bảo hành', 
+                                        '', title: 'Gửi yêu cầu bảo hành' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'In hóa đơn điện tử' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/customer-guide.png', alt: 'In hóa đơn điện tử', title: 'In hóa đơn điện tử') + 'In hóa đơn điện tử', 
+                                        '', title: 'In hóa đơn điện tử' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Góp ý & Khiếu nại' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/customer-guide.png', alt: 'Góp ý & Khiếu nại', title: 'Góp ý & Khiếu nại') + 'Góp ý & Khiếu nại', 
+                                        '', title: 'Góp ý & Khiếu nại' %>
                                 </li>
                             </ul>
                             <div class="wpisset-mobile-navigation-title">
                                 <span>CHÍNH SÁCH CHUNG</span>
-                                <%= link_to 'Xem toàn bộ', '', title: '' %>
+                                <%= link_to 'Xem toàn bộ', '', title: 'Chính sách chung' %>
                             </div>
                             <ul class="wpisset-mobile-nav-menu">
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Chính sách, quy định chung' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: 'Chính sách, quy định chung', title: 'Chính sách, quy định chung') + 'Chính sách, quy định chung', 
+                                        '', title: 'Chính sách, quy định chung' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Chính sách vận chuyển' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: 'Chính sách vận chuyển', title: 'Chính sách vận chuyển') + 'Chính sách vận chuyển', 
+                                        '', title: 'Chính sách vận chuyển' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Chính sách bảo hành' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: 'Chính sách bảo hành', title: 'Chính sách bảo hành') + 'Chính sách bảo hành', 
+                                        '', title: 'Chính sách bảo hành' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Chính sách đổi trả, hoàn tiền' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: 'Chính sách đổi trả, hoàn tiền', title: 'Chính sách đổi trả, hoàn tiền') + 'Chính sách đổi trả, hoàn tiền', 
+                                        '', title: 'Chính sách đổi trả, hoàn tiền' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Chính sách hàng chính hãng' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: 'Chính sách hàng chính hãng', title: 'Chính sách hàng chính hãng') + 'Chính sách hàng chính hãng', 
+                                        '', title: 'Chính sách hàng chính hãng' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Bảo mật thông tin khách hàng' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/policy.png', alt: '', title: '') + 'Bảo mật thông tin khách hàng', 
+                                        '', title: 'Bảo mật thông tin khách hàng' %>
                                 </li>
                             </ul>
                             <div class="wpisset-mobile-navigation-title">
                                 <span>LIÊN KẾT CHUNG</span>
-                                <%= link_to 'Xem toàn bộ', '', title: '' %>
+                                <%= link_to 'Xem toàn bộ', '', title: 'Liên kết chung' %>
                             </div>
                             <ul class="wpisset-mobile-nav-menu">
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Giới thiệu công ty' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Giới thiệu công ty', title: 'Giới thiệu công ty') + 'Giới thiệu công ty', 
+                                        about_link, title: 'Giới thiệu công ty' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Thông tin liên hệ' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Thông tin liên hệ', title: 'Thông tin liên hệ') + 'Thông tin liên hệ', 
+                                        contact_link, title: 'Thông tin liên hệ' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Tin tức công nghệ' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Tin tức công nghệ', title: 'Tin tức công nghệ') + 'Tin tức công nghệ', 
+                                        '', title: 'Tin tức công nghệ' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Thông tin khuyến mãi' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Thông tin khuyến mãi', title: 'Tin khuyến mãi') + 'Tin khuyến mãi', 
+                                        '', title: 'Thông tin khuyến mãi' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Sản phẩm bán chạy' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Sản phẩm bán chạy', title: 'Sản phẩm bán chạy') + 'Sản phẩm bán chạy', 
+                                        '', title: 'Sản phẩm bán chạy' %>
                                 </li>
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <%= link_to image_tag('/img/icons_menu/help.png', alt: '', title: '') + '<span> '.html_safe + 'Sản phẩm mới ra mắt' + '</span>'.html_safe, '', title: '' %>
+                                    <%= link_to image_tag('/img/main-icons/link.png', alt: 'Sản phẩm mới', title: 'Sản phẩm mới') + 'Sản phẩm mới', 
+                                        '', title: 'Sản phẩm mới ra mắt' %>
                                 </li>
                             </ul>
                         </div>
@@ -127,11 +136,12 @@
                 </div>
                 <div class="wpisset-mob-logo-container wpisset-start-xs wpisset-col-xs-4">
                     <div class="wpisset-mobile-logo">
-                        <%= link_to image_tag('/img/thcn-logo.png', alt: '', title: ''), root_link, title: '', class: 'wpisset-remove-font-size' %>
+                        <%= link_to image_tag('/img/thcn-logo.png', alt: 'Logo Tìm Hàng Công Nghệ - TimHangCongNghe.Com', title: 'Logo Tìm Hàng Công Nghệ - TimHangCongNghe.Com'), 
+                            root_link, title: 'Logo Tìm Hàng Công Nghệ - TimHangCongNghe.Com', class: 'wpisset-remove-font-size' %>
                     </div>
                 </div>
                 <div class="wpisset-mob-search-container wpisset-search-container wpisset-center-xs wpisset-col-xs-4">
-                    <form role="search" method="get" class="wpisset-header-product-search" action="//eletra.lpdthemesdemo2.com/">
+                    <form role="search" method="get" class="wpisset-header-product-search" action="">
                         <div class="wpisset-searchform-product-cat-wrap"></div>
                         <div class="wpisset-searchform-product-input-wrap">
                             <label class="screen-reader-text" for="">Tìm kiếm:</label>
@@ -142,13 +152,13 @@
                     </form>
                 </div>
                 <div class="wpisset-mob-icons-container wpisset-end-xs wpisset-col-xs-4">
-                    <div class="wpisset-header-myaccount-btn wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="ĐĂNG NHẬP TÀI KHOẢN" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
+                    <div class="wpisset-header-myaccount-btn wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="ĐĂNG NHẬP TÀI KHOẢN" data-cursor-color="#d9214e" data-cursor-text-color="#fff">
                         <a href="#wpisset-myaccount-header-login" title="Đăng nhập tài khoản" data-navigation-title="ĐĂNG NHẬP TÀI KHOẢN">
                             <svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="36" height="36" viewBox="0 0 36 36" xmlns="//www.w3.org/2000/svg"><g transform="scale(0.75)"><path fill="%23000" d="M14.58,16.83c1.01,5.57 4.71,9.17 9.42,9.17c4.71,0 8.33,-3.51 9.42,-9.16c0.1,-0.54 1,-5.31 1.07,-6.41l2.85805e-07,-6.33774e-06c0.11972,-2.65481 -0.860687,-5.24149 -2.71,-7.15l5.27876e-08,5.42193e-08c-4.18397,-4.29745 -11.0595,-4.38945 -15.357,-0.205472c-0.0926376,0.0901914 -0.183657,0.18203 -0.273015,0.275472l-3.81849e-07,3.96953e-07c-1.82579,1.89801 -2.77873,4.47059 -2.63,7.1c0.0600043,1.08 0.960004,5.85 1.06,6.38Zm3,-12.1l-8.09876e-07,8.44326e-07c3.38725,-3.53134 8.99588,-3.64814 12.5272,-0.260883c0.068669,0.0658672 0.136272,0.132836 0.202784,0.200881l1.16688e-07,1.20033e-07c1.47234,1.51454 2.25393,3.56984 2.16,5.68c0,0.72 -0.64,4.05 -1,6.12c-0.709999,3.64 -3.04,7.53 -7.47,7.53c-4.43,0 -6.82,-4.05 -7.45,-7.54c-0.4,-2.07 -1,-5.41 -1,-6.13l-9.53443e-08,-1.62749e-06c-0.121265,-2.06995 0.620984,-4.09756 2.05,-5.6Z"></path><path fill="%23000" d="M46.88,38.62c-0.48,-2.8 -2.84,-4.94 -6.37,-5.73l-16.51,-2.89l-16.55,2.91c-3.42,0.71 -5.84,2.91 -6.33,5.76l-1.12,9.33h48Zm-44.74,7.38l0.95,-7c0.41,-2.38 2.73,-3.68 4.74,-4.1l16.17,-2.9l16.12,2.83c1.28,0.29 4.3,1.27 4.78,4.07l1,7.08h-43.76Z"></path></g></svg>
                             <div class="wpisset-header-myaccount-btn-title">Đăng nhập</div>
                         </a>
                     </div>
-                    <div class="wpisset-woo-cart-wrap wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="GIỎ HÀNG CỦA BẠN" data-cursor-color="#ee2d41" data-cursor-text-color="#fff">
+                    <div class="wpisset-woo-cart-wrap wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="GIỎ HÀNG CỦA BẠN" data-cursor-color="#d9214e" data-cursor-text-color="#fff">
                         <div class="wpisset-woo-cart menu-item-has-children">
                             <a class="wpisset-woo-cart-inner wpisset-middle-xs" href="#wpisset-woo-sub-cart" title="Giỏ hàng của bạn" data-navigation-title="GIỎ HÀNG CỦA BẠN" data-cart-count="4">
                                 <div class="wpisset-woo-cart-icon-wrap">

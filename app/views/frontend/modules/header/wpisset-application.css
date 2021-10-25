@@ -239,7 +239,7 @@ input[type=submit] {
 
 .wpisset-button:hover,
 input[type=submit]:hover {
-	background-color: #ee2d41;
+	background-color: #d9214e;
 	color: #fff
 }
 
@@ -808,7 +808,7 @@ video {
 blockquote {
 	margin: 1rem 0;
 	padding: 0 0 0 1rem;
-	border-left: 3px solid #ee9d01;
+	border-left: 3px solid #f1bc00;
 	font-style: italic
 }
 
@@ -1109,7 +1109,7 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 .wpisset-author-box {
 	margin-bottom: 2rem;
 	padding: 3rem;
-	background-color: #ee2d41;
+	background-color: #d9214e;
 	color: rgba(255, 255, 255, .8);
 	display: flex;
 	flex-wrap: wrap
@@ -1286,7 +1286,7 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 }
 
 .comment:hover .avatar {
-	border-color: #ee9d01
+	border-color: #f1bc00
 }
 
 .wpisset-comment-author-wrap {
@@ -1943,8 +1943,8 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 	padding-right: 1.5rem
 }
 
-.wpisset-menu>.menu-item-has-children.menu-item-focus>span>a>span,
-.wpisset-menu>.menu-item-has-children>span>a:hover>span {
+.wpisset-menu>.menu-item-has-children.menu-item-focus>span>a,
+.wpisset-menu>.menu-item-has-children>span>a:hover {
 	background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='16px' height='9.338px' fill='%23959595' viewBox='0 0 16 9.338' enable-background='new 0 0 16 9.338' xml:space='preserve'%3E%3Cpath d='M8,9.338c-0.187,0-0.365-0.078-0.491-0.216L0.19,1.125c-0.248-0.272-0.23-0.693,0.041-0.942s0.692-0.23,0.94,0.041L8,7.686 l6.829-7.461c0.247-0.271,0.669-0.29,0.94-0.041c0.271,0.249,0.289,0.67,0.041,0.942L8.491,9.122C8.365,9.26,8.187,9.338,8,9.338z' /%3E%3C/svg%3E");
 	background-position: right 0 center;
 	background-repeat: no-repeat;
@@ -2203,7 +2203,7 @@ body.wpisset-sidebar-left:not(.wpisset-no-sidebar) .wpisset-search-post {
 }
 
 .wpisset-footer-newsletter {
-	/* background-color: #ee2d41; */
+	/* background-color: #d9214e; */
 	color: #fff;
 	padding: 0.5rem 0
 }
@@ -2485,7 +2485,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 
 .entry-content .has-secondary-background-color,
 .entry-content .wp-block-pullquote.is-style-solid-color.has-secondary-background-color {
-	background-color: #ee9d01
+	background-color: #f1bc00
 }
 
 .entry-content .has-dark-gray-background-color,
@@ -2516,7 +2516,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 .entry-content .wp-block-pullquote blockquote.has-secondary-color p,
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color p {
-	color: #ee9d01!important
+	color: #f1bc00!important
 }
 
 .entry-content .has-dark-gray-color,
@@ -2583,7 +2583,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -2640,7 +2640,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -2696,7 +2696,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 	right: 50%;
 	width: 16px;
 	height: 16px;
-	background: linear-gradient(90deg, #ee9d01 50%, #0095E8 50%);
+	background: linear-gradient(90deg, #f1bc00 50%, #0095E8 50%);
 	content: '';
 	-webkit-transform: translateX(8px) translateY(8px) rotateZ(0);
 	transform: translateX(8px) translateY(8px) rotateZ(0);
@@ -2729,7 +2729,7 @@ body.wpisset-no-sidebar.single-post .entry-content>.alignfull {
 }
 
 .wpisset-pullquote-theme-custom-styles-1:hover p:after {
-	border-color: #ee9d01
+	border-color: #f1bc00
 }
 
 .entry-content .has-drop-cap:not(:focus):first-letter {
@@ -3557,7 +3557,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 	padding: .5625rem 1rem .5625rem .75rem;
 	padding: .5625rem .875rem .5625rem .75rem;
 	line-height: 1;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	display: flex;
 	align-items: center;
 	height: 100%
@@ -3610,7 +3610,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #181c32;
 	width: 1.125rem;
 	height: 1.125rem;
@@ -3644,7 +3644,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #181c32;
 	width: 1.125rem;
 	height: 1.125rem;
@@ -3687,7 +3687,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 .wpisset-promo-banner {
-	background-color: #ee2d41;
+	background-color: #d9214e;
 	position: relative;
 	width: 100%;
 	z-index: 1
@@ -3715,12 +3715,12 @@ body.thcn-page.wpisset-wpb #inner-content {
 	padding: .25rem 1rem;
 	border-radius: 1rem;
 	font-size: 95%;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #181c32
 }
 
 .wpisset-promo-banner-right-column .wpisset-button:hover {
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #181c32
 }
 
@@ -3741,7 +3741,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 
 .wpisset-cookies-notice-wrap {
 	position: relative;
-	background-color: #ee2d41;
+	background-color: #d9214e;
 	color: #fff;
 	text-align: center;
 	padding: .75rem 3rem;
@@ -3750,7 +3750,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 #wpisset-cookie-notice a {
-	color: #ee9d01;
+	color: #f1bc00;
 	position: relative
 }
 
@@ -3767,7 +3767,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 	-webkit-transform-origin: 100% 0;
 	-ms-transform-origin: 100% 0;
 	transform-origin: 100% 0;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	will-change: transform
 }
 
@@ -3965,7 +3965,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 .wpisset-header-nav-variant3 .wpisset-main-navigation-bottom {
-	background-color: #ee2d41
+	background-color: #d9214e
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item>span>a {
@@ -3978,7 +3978,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item.wpisset-selected-menu-item>span>a {
-	color: #ee9d01
+	color: #f1bc00
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item>span>a:hover {
@@ -3986,7 +3986,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item.wpisset-selected-menu-item>span>a:hover {
-	color: #ee9d01
+	color: #f1bc00
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item:first-child>span>a {
@@ -4015,7 +4015,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item.wpisset-selected-menu-item>span>a:hover>span:after {
-	background-color: #ee9d01
+	background-color: #f1bc00
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item>span>a:hover>span:after {
@@ -4035,7 +4035,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 #wpisset-menu-variant3 .wpisset-menu>.menu-item-has-children.menu-item-focus>span>a>span,
-#wpisset-menu-variant3 .wpisset-menu>.menu-item-has-children>span>a:hover>span {
+#wpisset-menu-variant3 #fd7e14 {
 	background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='16px' height='9.338px' fill='%23ffffff' viewBox='0 0 16 9.338' enable-background='new 0 0 16 9.338' xml:space='preserve'%3E%3Cpath d='M8,9.338c-0.187,0-0.365-0.078-0.491-0.216L0.19,1.125c-0.248-0.272-0.23-0.693,0.041-0.942s0.692-0.23,0.94,0.041L8,7.686 l6.829-7.461c0.247-0.271,0.669-0.29,0.94-0.041c0.271,0.249,0.289,0.67,0.041,0.942L8.491,9.122C8.365,9.26,8.187,9.338,8,9.338z' /%3E%3C/svg%3E");
 	background-position: right 0 center;
 	background-repeat: no-repeat;
@@ -4157,7 +4157,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 .wpisset-category-menu-wrap .wpisset-category-menu-title a:hover {
-	background-color: #ee2d41
+	background-color: #d9214e
 }
 
 .wpisset-category-menu {
@@ -4387,7 +4387,7 @@ body.thcn-page.wpisset-wpb #inner-content {
 }
 
 .wpisset-secondary-menu li:nth-child(odd) a {
-	border-top-color: #ee9d01
+	border-top-color: #f1bc00
 }
 
 .wpisset-secondary-menu li.menu-item-arrow-btn>a {
@@ -4677,8 +4677,8 @@ body:not(.single-post) .article-footer:after {
 	border-radius: 6px;
 	height: 12px;
 	width: 12px;
-	background: #ee9d01;
-	background: linear-gradient(90deg, #ee9d01 50%, #0095E8 50%);
+	background: #f1bc00;
+	background: linear-gradient(90deg, #f1bc00 50%, #0095E8 50%);
 	content: '';
 	top: 0;
 	right: 0;
@@ -4807,7 +4807,7 @@ body.single-post .wpisset-article-header-img {
 	right: 50%;
 	width: 16px;
 	height: 16px;
-	background: linear-gradient(90deg, #ee9d01 50%, #0095E8 50%);
+	background: linear-gradient(90deg, #f1bc00 50%, #0095E8 50%);
 	content: '';
 	-webkit-transform: translateX(8px) translateY(-8px) rotateZ(0);
 	transform: translateX(8px) translateY(-8px) rotateZ(0);
@@ -5094,7 +5094,7 @@ body.single-post .wpisset-article-header-img {
 	display: block;
 	width: calc(100% + 2px);
 	height: 1px;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	-webkit-transition: .36s ease-out, background-color 1ms;
 	-o-transition: .36s ease-out, background-color 1ms;
 	transition: .36s ease-out, background-color 1ms;
@@ -5160,7 +5160,7 @@ body.single-post .wpisset-article-header-img {
 	display: block;
 	height: 100%;
 	width: 1px;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	-webkit-transition: .12s ease-out, background-color 1ms;
 	-o-transition: .12s ease-out, background-color 1ms;
 	transition: .12s ease-out, background-color 1ms;
@@ -5452,8 +5452,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 	border-radius: 6px;
 	height: 12px;
 	width: 12px;
-	background: #ee9d01;
-	background: linear-gradient(90deg, #ee9d01 50%, #0095E8 50%);
+	background: #f1bc00;
+	background: linear-gradient(90deg, #f1bc00 50%, #0095E8 50%);
 	content: '';
 	bottom: 0;
 	right: 0;
@@ -6065,7 +6065,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 }
 
 .wpisset-woo-cart-buttons div:last-child a.wpisset-button {
-	background-color: #ee2d41
+	background-color: #d9214e
 }
 
 .wpisset-woo-cart-product-price-wrap {
@@ -6145,7 +6145,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 }
 
 .wpisset-woo-sub-cart-title>span {
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #181c32;
 	width: 1.125rem;
 	height: 1.125rem;
@@ -6281,7 +6281,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 }
 
 .wpisset-woo-recent-viewed-menu-item:hover .wpisset-woo-recent-viewed-menu-item-img img {
-	border-color: #ee9d01
+	border-color: #f1bc00
 }
 
 .wpisset-woo-recent-viewed-menu-item-title {
@@ -6333,7 +6333,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 }
 
 .wpisset-woo-recent-viewed-menu-title-btn a:hover {
-	background-color: #ee2d41
+	background-color: #d9214e
 }
 
 .wpisset-woo-recent-viewed-menu-item .wpisset-woo-price {
@@ -6742,14 +6742,14 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content #inner-content .wpiss
 
 .wpisset-mc4wp-custom-form-1 p input[type=email]:focus {
 	outline: 0;
-	-webkit-box-shadow: inset 0 0 0 2px #ee9d01;
-	box-shadow: inset 0 0 0 2px #ee9d01
+	-webkit-box-shadow: inset 0 0 0 2px #f1bc00;
+	box-shadow: inset 0 0 0 2px #f1bc00
 }
 
 .wpisset-mc4wp-custom-form-1 p input[type=submit] {
 	border-top-right-radius: 1.25rem;
 	border-bottom-right-radius: 1.25rem;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	color: #fff
 }
 
@@ -7183,7 +7183,7 @@ body.wpisset-hide-default-cursor * {
 	bottom: 2rem;
 	right: 4rem;
 	border-radius: 50%;
-	background-color: #ee9d01;
+	background-color: #f1bc00;
 	cursor: pointer;
 	justify-content: center;
 	align-items: center;
