@@ -1269,7 +1269,7 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 }
 
 .wpisset-ele-es-banner5-content .wpisset-ele-es-banner5-content-text-1 {
-	margin-bottom: 1rem
+	margin-bottom: .5rem
 }
 
 .wpisset-ele-es-banner5 .wpisset-ele-es-banner5-content-text-2 {
@@ -1940,7 +1940,8 @@ body.admin-bar .wpisset-sticky-navigation-active2~#content .wpb-sticky-column {
 
 .wpisset-ele-es-icons3-item-content>.wpisset-ele-es-icons3-item-title {
 	font-size: 24px;
-	margin-bottom: 1rem;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
 	position: relative
 }
 

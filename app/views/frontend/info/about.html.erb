@@ -1,8 +1,15 @@
-<% title 'Giới Thiệu Về Tìm Hàng Công Nghệ' %>
+<% title @page_title.html_safe %>
 <div class="wpisset-row wpisset-main-grid">
     <main id="main" class="wpisset-main wpisset-col-xs-12">
         <div class="wpisset_yoast_breadcrumb">
-            <p id="breadcrumbs"><span><span><a href="http://eletra.lpdthemesdemo2.com/">Home</a> » <span class="breadcrumb_last" aria-current="page">About</span></span></span></p>
+            <p id="breadcrumbs">
+                <span>
+                    <span>
+                        <%= link_to 'Trang Chủ', root_link, title: '' %> » 
+                        <span class="breadcrumb_last" aria-current="page">Giới Thiệu</span>
+                    </span>
+                </span>
+            </p>
         </div>
         <div class="entry-content">
             <div class="vc_row wpb_row vc_row-fluid wpb-fullwide-row">
@@ -12,10 +19,57 @@
                             <div class=" wpisset_ele_es_banner6 wpisset_ele_es_banner6-603667244 vc_custom_1610709651580" >
                                 <div class="wpisset-ele-es-banner6">
                                     <div class="wpisset-ele-es-banner6-bg">
-                                        <div class="wpisset-ele-es-banner6-imgs"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/about-header-1.jpg"></div>
+                                        <div class="wpisset-ele-es-banner6-imgs">
+                                            <%= image_tag '/img/gioi-thieu/banner-01.jpg', alt: '', title: '' %>
+                                        </div>
                                     </div>
                                     <div class="wpisset-ele-es-banner6-container"></div>
-                                    <a href="https://www.youtube.com/watch?v=65JrtwtTOdc" class="wpisset-ele-es-banner6-label wpisset-ele-es-banner6-video"><span class="wpisset-ele-es-banner6-label-wrap"><span class="wpisset-ele-es-banner6-label-inner"><span class="wpisset-ele-es-banner6-label-chars-holder"><span class="wpisset-ele-es-banner6-label-chars"><span class="wpisset-ele-es-banner6-label-char">P</span><span class="wpisset-ele-es-banner6-label-char">l</span><span class="wpisset-ele-es-banner6-label-char">a</span><span class="wpisset-ele-es-banner6-label-char">y</span><span class="wpisset-ele-es-banner6-label-char"> </span><span class="wpisset-ele-es-banner6-label-char">V</span><span class="wpisset-ele-es-banner6-label-char">i</span><span class="wpisset-ele-es-banner6-label-char">d</span><span class="wpisset-ele-es-banner6-label-char">e</span><span class="wpisset-ele-es-banner6-label-char">o</span><span class="wpisset-ele-es-banner6-label-char"> </span><span class="wpisset-ele-es-banner6-label-char">-</span><span class="wpisset-ele-es-banner6-label-char"> </span><span class="wpisset-ele-es-banner6-label-char">A</span><span class="wpisset-ele-es-banner6-label-char">b</span><span class="wpisset-ele-es-banner6-label-char">o</span><span class="wpisset-ele-es-banner6-label-char">u</span><span class="wpisset-ele-es-banner6-label-char">t</span><span class="wpisset-ele-es-banner6-label-char"> </span><span class="wpisset-ele-es-banner6-label-char">E</span><span class="wpisset-ele-es-banner6-label-char">l</span><span class="wpisset-ele-es-banner6-label-char">e</span><span class="wpisset-ele-es-banner6-label-char">t</span><span class="wpisset-ele-es-banner6-label-char">r</span><span class="wpisset-ele-es-banner6-label-char">a</span><span class="wpisset-ele-es-banner6-label-char"> </span><span class="wpisset-ele-es-banner6-label-char">T</span><span class="wpisset-ele-es-banner6-label-char">h</span><span class="wpisset-ele-es-banner6-label-char">e</span><span class="wpisset-ele-es-banner6-label-char">m</span><span class="wpisset-ele-es-banner6-label-char">e</span></span></span><span class="wpisset-ele-es-banner6-label-icon"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/play-icon-banner6.png"></span></span></span></a> 
+                                    <a href="" class="wpisset-ele-es-banner6-label wpisset-ele-es-banner6-video">
+                                        <span class="wpisset-ele-es-banner6-label-wrap">
+                                            <span class="wpisset-ele-es-banner6-label-inner">
+                                            <span class="wpisset-ele-es-banner6-label-chars-holder">
+                                                <span class="wpisset-ele-es-banner6-label-chars">
+                                                    <span class="wpisset-ele-es-banner6-label-char">G</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">I</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ớ</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">I</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">T</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">H</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">I</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ệ</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">U</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">V</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ề</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">T</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ì</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">M</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">H</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">À</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">N</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">G</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">C</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ô</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">N</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">G</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">N</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">G</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">H</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char">Ệ</span>
+                                                    <span class="wpisset-ele-es-banner6-label-char"> </span>
+                                                </span>
+                                            </span>
+                                            <span class="wpisset-ele-es-banner6-label-icon">
+                                                <%= image_tag '/img/main-icons/play-icon-banner.png', alt: '', title: '' %>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    </a> 
                                 </div>
                             </div>
                             <svg class="wpssiet-es-cs">
@@ -36,20 +90,92 @@
                         <div class="wpb_wrapper">
                             <div class="wpb_text_column wpb_content_element " >
                                 <div class="wpb_wrapper">
-                                    <p><span class="wpisset-custom-title" style="color: #111111;font-size: 36px;font-weight: 300;line-height: 1.2;">Say Hello to Eletra.</span> <span class="wpisset-custom-title wpisset-ele-es-custom-text-animate" style="color: #0473db;font-size: 36px;font-weight: 300;line-height: 1.2;">Hello!</span></p>
+                                    <p><span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Giới Thiệu Chung</span></p>
                                 </div>
                             </div>
-                            <div class="wpb_text_column wpb_content_element p-has-drop-cap" >
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
                                 <div class="wpb_wrapper">
-                                    <p>Empower human-centered we must stand up emerging revolutionary co-creation rubric. Bandwidth think tank collaborative consumption green space boots on the ground revolutionary. Academic academic, to replicable improve the world; impact state of play shared vocabulary collaborative cities. Overcome injustice green space social intrapreneurship policymaker compassion the. Black lives matter low-hanging.</p>
+                                    <p>Tìm Hàng Công Nghệ là trang thương mại điện tử do Công Ty TNHH Giải Pháp Công Nghệ Thông Tin Và Truyền Thông Hoàng Khang (Tên gọi tắt: Hoang Khang Incotech) đầu tư, quản lý và phát triển thương hiệu.</p>
+                                    <p>Công ty Hoang Khang Incotech tiền thân là một cửa hàng thiết bị chuyên cung cấp các sản phẩm công nghệ thông tin (CNTT). Qua thời gian hoạt động, Công ty đã nhận được nhiều sự tín nhiệm của các đơn vị tổ chức trong nước, ngoài nước và các tổ chức phi chính phủ sau khi hoàn thành các công trình, dự án.</p>
+                                    <p>Với mong muốn khẳng định là một nhà tích hợp hệ thống uy tín, năm 2008 Công Ty TNHH Giải Pháp Công Nghệ Thông Tin Và Truyền Thông Hoàng Khang được thành lập theo tiêu chí: Cung cấp cho khách hàng các giải pháp ứng dụng, dịch vụ đầu cuối liên quan đến CNTT và truyền thông theo hướng chuyên nghiệp, chất lượng và tận tâm.</p>
+                                    <p>Từ 2008 đến nay, Hoang Khang Incotech được nhiều khách hàng đánh giá cao khả năng hợp tác và làm việc thông qua các dự án CNTT và truyền thông. Khảo sát và tư vấn lập đề án theo yêu cầu khách hàng.</p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element " >
+                                <div class="wpb_wrapper">
+                                    <p>
+                                        <span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Sứ Mệnh & Tầm Nhìn</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
+                                <div class="wpb_wrapper">
+                                    <p>Hoang Khang Incotech cùng khách hàng ứng dụng CNTT và truyền thông vào hoạt động kinh doanh, đời sống để mang lại hiệu quả cao nhất, góp phần phát triển bền vững và thịnh vượng.</p>
+                                    <p style="color:#fd7e14;font-style:italic;font-weight:bold;">"Trở thành nhà cung cấp giải pháp và dịch vụ chuyên nghiệp hàng đầu tại Việt Nam thông qua việc mang công nghệ tiên tiến có chọn lọc trên thế giới vào thị trường Việt Nam. Giúp khách hàng thỏa mãn nhu cầu khai thác ứng dụng công nghệ hiệu quả, đem lại giá trị tối đa và gia tăng cơ hội phát triển vươn tầm thế giới."</p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element " >
+                                <div class="wpb_wrapper">
+                                    <p>
+                                        <span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Giá Trị Cốt Lõi</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
+                                <div class="wpb_wrapper">
+                                    <p>Giá trị cốt lõi của công ty chúng tôi kà chữ <strong>"TÂM"</strong> trong hoạt động kinh doanh:</p>
+                                    <p> - Vì khách hàng: Chúng tôi mang đến giải pháp toàn diện với phương châm "Sản phẩm chất lượng, công nghệ đổi mới, dịch vụ uy tín, nhân lực giỏi chuyên môn và tận tâm phục vụ".</p>
+                                    <p> - Vì cộng đồng: Chung tay góp sức tham gia công tác xã hội, chú trọng an sinh phát triển bền vững.</p>
+                                    <p> - Vì tổ chức: Chúng tôi là một tập thể đoàn kết, cùng phát triển.</p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element " >
+                                <div class="wpb_wrapper">
+                                    <p>
+                                        <span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Cơ Cấu Tổ Chức</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
+                                <div class="wpb_wrapper">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element " >
+                                <div class="wpb_wrapper">
+                                    <p>
+                                        <span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Hành Trình Phát Triển</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
+                                <div class="wpb_wrapper">
+                                    <p>Tháng 11/2008: Thành lập công ty TNHH Giải Pháp Công Nghệ Thông Tin Và Truyền Thông Hoàng Khang.</p>
+                                    <p>Năm 2010:</p>
+                                    <p> - Cung cấp lắp đặt mạng nội bộ các trụ sở BHXH (Bảo Hiểm Xã Hội TP. Hồ Chí Minh).</p>
+                                    <p> - Tham gia tư vấn thiết kế thi công, lập dự toán hạng mục CNTT. Thuộc dự án Xây dựng mở rộng Bệnh viện Răng Hàm Mặt Trung Ương TP. Hồ Chí Minh.</p>
+                                    <p>Tháng 07/2012: Bổ sung thành viên góp vốn. Tăng vốn đăng ký hoạt động kinh doanh.</p>
+                                    <p>Tháng 06/2017: Ra mắt website thương mại điện tử Tìm Hàng Công Nghệ (timhangcongnghe.com)</p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element " >
+                                <div class="wpb_wrapper">
+                                    <p>
+                                        <span class="wpisset-custom-title" style="color:#181c32;font-size:24px;font-weight:400;line-height:1.2">Lĩnh Vực Kinh Doanh</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wpb_text_column wpb_content_element p-has-drop-cap text-justify" >
+                                <div class="wpb_wrapper">
+                                    <p>Cung cấp các sản phẩm tin học như: Máy tính xách tay, laptop; Máy tính để bàn; Máy chủ, server; Máy tính trạm, workstation và các thiết bị ứng dụng, thiết bị ngoại vi khác.</p>
+                                    <p>Cung cấp các phần mềm cài đặt hệ điều hành, ứng dụng, đồ họa, thiết kế, quản lý từ các hãng lớn trên thế giới.</p>
+                                    <p>Cung cấp các giải pháp dành cho doanh nghiệp như: Thiết bị mạng, hội nghị truyền hình, màn hình tương tác, giải pháp phòng họp, giải pháp tổng đài,...</p>
+                                    <p>Thiết kế và xây dựng giải pháp tổng thể (Hệ thống mạng LAN, WAN; Hệ thống camera giám sát; Hệ thống kiểm soát an ninh, máy chấm công, kiểm soát ra vào; Hệ thống màn hình quảng cáo...)</p>
+                                    <p>Dịch vụ bảo hành, bảo trì, thi công, lắp đặt, di dời thiết bị tận nơi, tất cả cả các ngày trong tuần.</p>
+                                    <p>Tư vấn và đào tạo cho khách hàng về sản phẩm.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-2 vc_hidden-sm vc_hidden-xs">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
                     </div>
                 </div>
             </div>
@@ -70,17 +196,19 @@
                                 <div class="wpisset-ele-es-icons3">
                                     <div class="wpisset-ele-es-icons3-item">
                                         <div class="wpisset-ele-es-icons3-item-holder">
-                                            <div class="wpisset-ele-es-icons3-item-icon"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/about-revenue.png"></div>
+                                            <div class="wpisset-ele-es-icons3-item-icon">
+                                                <%= image_tag '/img/gioi-thieu/icon-01.png', alt: '', title: '' %>
+                                            </div>
                                             <div class="wpisset-ele-es-icons3-item-content">
-                                                <h3 class="wpisset-ele-es-icons3-item-title">€7.5M</h3>
-                                                <span class="wpisset-ele-es-icons3-item-desc"><span>Gross annual revenues</span></span> 
+                                                <h3 class="wpisset-ele-es-icons3-item-title">Tận Tâm Phục Vụ</h3>
+                                                <span class="wpisset-ele-es-icons3-item-desc">Tìm Hàng Công Nghệ đặt sự hài lòng của khách hàng là nền tảng cốt lõi để phục vụ.</span> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <svg class="wpssiet-es-cs">
-                                <style>.wpisset_ele_es_icons3-2030614383 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:36px;}.wpisset_ele_es_icons3-2030614383 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
+                                <style>.wpisset_ele_es_icons3-2030614383 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:24px;}.wpisset_ele_es_icons3-2030614383 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
                             </svg>
                         </div>
                     </div>
@@ -92,17 +220,19 @@
                                 <div class="wpisset-ele-es-icons3">
                                     <div class="wpisset-ele-es-icons3-item">
                                         <div class="wpisset-ele-es-icons3-item-holder">
-                                            <div class="wpisset-ele-es-icons3-item-icon"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/about-products.png"></div>
+                                            <div class="wpisset-ele-es-icons3-item-icon">
+                                                <%= image_tag '/img/gioi-thieu/icon-02.png', alt: '', title: '' %>
+                                            </div>
                                             <div class="wpisset-ele-es-icons3-item-content">
-                                                <h3 class="wpisset-ele-es-icons3-item-title">15,987</h3>
-                                                <span class="wpisset-ele-es-icons3-item-desc"><span>Products for sale</span></span> 
+                                                <h3 class="wpisset-ele-es-icons3-item-title">Trung Thực</h3>
+                                                <span class="wpisset-ele-es-icons3-item-desc">Luôn đặt chữ TÍN lên hàng đầu. Sự trung thực trong kinh doanh là chân lý.</span> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <svg class="wpssiet-es-cs">
-                                <style>.wpisset_ele_es_icons3-8103403 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:36px;}.wpisset_ele_es_icons3-8103403 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
+                                <style>.wpisset_ele_es_icons3-8103403 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:24px;}.wpisset_ele_es_icons3-8103403 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
                             </svg>
                         </div>
                     </div>
@@ -114,17 +244,19 @@
                                 <div class="wpisset-ele-es-icons3">
                                     <div class="wpisset-ele-es-icons3-item">
                                         <div class="wpisset-ele-es-icons3-item-holder">
-                                            <div class="wpisset-ele-es-icons3-item-icon"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/about-customer.png"></div>
+                                            <div class="wpisset-ele-es-icons3-item-icon">
+                                                <%= image_tag '/img/gioi-thieu/icon-03.png', alt: '', title: '' %>
+                                            </div>
                                             <div class="wpisset-ele-es-icons3-item-content">
-                                                <h3 class="wpisset-ele-es-icons3-item-title">12,567</h3>
-                                                <span class="wpisset-ele-es-icons3-item-desc"><span>Satisfied customers</span></span> 
+                                                <h3 class="wpisset-ele-es-icons3-item-title">Chất Lượng</h3>
+                                                <span class="wpisset-ele-es-icons3-item-desc">Tìm Hàng Công Nghệ cam kết về chất lượng sản phẩm và dịch vụ.</span> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <svg class="wpssiet-es-cs">
-                                <style>.wpisset_ele_es_icons3-950519631 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:36px;}.wpisset_ele_es_icons3-950519631 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
+                                <style>.wpisset_ele_es_icons3-950519631 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:24px;}.wpisset_ele_es_icons3-950519631 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
                             </svg>
                         </div>
                     </div>
@@ -136,17 +268,19 @@
                                 <div class="wpisset-ele-es-icons3">
                                     <div class="wpisset-ele-es-icons3-item">
                                         <div class="wpisset-ele-es-icons3-item-holder">
-                                            <div class="wpisset-ele-es-icons3-item-icon"><img alt="" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/about-buyers.png"></div>
+                                            <div class="wpisset-ele-es-icons3-item-icon">
+                                                <%= image_tag '/img/gioi-thieu/icon-04.png', alt: '', title: '' %>
+                                            </div>
                                             <div class="wpisset-ele-es-icons3-item-content">
-                                                <h3 class="wpisset-ele-es-icons3-item-title">876K</h3>
-                                                <span class="wpisset-ele-es-icons3-item-desc"><span>Active buyers for 2020</span></span> 
+                                                <h3 class="wpisset-ele-es-icons3-item-title">Khách Hàng</h3>
+                                                <span class="wpisset-ele-es-icons3-item-desc">Khách hàng là giá trị cốt lõi lớn nhất của Tìm Hàng Công Nghệ.</span> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <svg class="wpssiet-es-cs">
-                                <style>.wpisset_ele_es_icons3-1911301444 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:36px;}.wpisset_ele_es_icons3-1911301444 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
+                                <style>.wpisset_ele_es_icons3-1911301444 .wpisset-ele-es-icons3-item-content &gt; .wpisset-ele-es-icons3-item-title{font-size:24px;}.wpisset_ele_es_icons3-1911301444 .wpisset-ele-es-icons3-item-icon{max-width:150px;}</style>
                             </svg>
                         </div>
                     </div>
@@ -160,54 +294,144 @@
                                 <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
-                                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="">
-                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Shop with an expert" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                                    <img alt="Shopping &amp; product advice." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_723298885.jpg"> 
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Hướng Dẫn Mua Hàng">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Hướng Dẫn Mua Hàng" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-01.jpg', alt: 'Hướng Dẫn Mua Hàng', title: 'Hướng Dẫn Mua Hàng' %>
                                                     <div class="wpisset-ele-es-banner5-content">
-                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Shopping &amp; product advice.</h3>
-                                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Shop with an expert</span></span> 
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Hỗ Trợ Khách Hàng</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Hướng Dẫn Mua Hàng</span> 
                                                     </div>
                                                 </div>
                                             </a>
-                                            <svg class="wpssiet-es-cs">
-                                                <style></style>
-                                            </svg>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
-                                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-1498472497 vc_custom_1611043764584" title="">
-                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Schedule a service" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                                    <img alt="Tech support and repair." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_734722624.jpg"> 
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Hướng Dẫn Thanh Toán">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Hướng Dẫn Thanh Toán" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-02.jpg', alt: 'Hướng Dẫn Thanh Toán', title: 'Hướng Dẫn Thanh Toán' %>
                                                     <div class="wpisset-ele-es-banner5-content">
-                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Tech support and repair.</h3>
-                                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Schedule a service</span></span> 
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Hỗ Trợ Khách Hàng</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Hướng Dẫn Thanh Toán</span> 
                                                     </div>
                                                 </div>
                                             </a>
-                                            <svg class="wpssiet-es-cs">
-                                                <style></style>
-                                            </svg>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-0 vc_col-lg-4 vc_col-sm-offset-3">
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
                                     <div class="vc_column-inner">
                                         <div class="wpb_wrapper">
-                                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-178798007 vc_custom_1611043774676" title="">
-                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Scheduled delivery" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                                    <img alt="Delivery and store pickup." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1722465847.jpg"> 
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Gửi Yêu Cầu Bảo Hành">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Gửi Yêu Cầu Bảo Hành" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-04.jpg', alt: 'Gửi Yêu Cầu Bảo Hành', title: 'Gửi Yêu Cầu Bảo Hành' %>
                                                     <div class="wpisset-ele-es-banner5-content">
-                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Delivery and store pickup.</h3>
-                                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Scheduled delivery</span></span> 
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Hỗ Trợ Khách Hàng</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Gửi Yêu Cầu Bảo Hành</span> 
                                                     </div>
                                                 </div>
                                             </a>
-                                            <svg class="wpssiet-es-cs">
-                                                <style></style>
-                                            </svg>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="In Hóa Đơn Điện Tử">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="In Hóa Đơn Điện Tử" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-05.jpg', alt: 'In Hóa Đơn Điện Tử', title: 'In Hóa Đơn Điện Tử' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Hỗ Trợ Khách Hàng</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">In Hóa Đơn Điện Tử</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Chính Sách, Quy Định Chung">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Chính Sách, Quy Định Chung" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-03.jpg', alt: 'Chính Sách, Quy Định Chung', title: 'Chính Sách, Quy Định Chung' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Chính Sách Chung</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Chính Sách, Quy Định Chung</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Chính Sách Vận Chuyển">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Chính Sách Vận Chuyển" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-06.jpg', alt: 'Chính Sách Vận Chuyển', title: 'Chính Sách Vận Chuyển' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Chính Sách Chung</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Chính Sách Vận Chuyển</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Chính Sách Bảo Hành">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Chính Sách Bảo Hành" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-07.jpg', alt: 'Chính Sách Bảo Hành', title: 'Chính Sách Bảo Hành' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Chính Sách Chung</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Chính Sách Bảo Hành</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Chính Sách Đổi Trả, Hoàn Tiền">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Chính Sách Đổi Trả, Hoàn Tiền" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-08.jpg', alt: 'Chính Sách Đổi Trả, Hoàn Tiền', title: 'Chính Sách Đổi Trả, Hoàn Tiền' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Chính Sách Chung</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Chính Sách Đổi Trả, Hoàn Tiền</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <a href="" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-542011236 vc_custom_1611043756719" title="Bảo Mật Thông Tin Khách Hàng">
+                                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Bảo Mật Thông Tin Khách Hàng" data-cursor-color="#031d42" data-cursor-text-color="#fff">
+                                                    <%= image_tag '/img/gioi-thieu/guide-09.jpg', alt: 'Bảo Mật Thông Tin Khách Hàng', title: 'Bảo Mật Thông Tin Khách Hàng' %>
+                                                    <div class="wpisset-ele-es-banner5-content">
+                                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Chính Sách Chung</h3>
+                                                        <span class="wpisset-ele-es-banner5-content-text-2">Bảo Mật Thông Tin Khách Hàng</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <svg class="wpssiet-es-cs"><style></style></svg>
                                         </div>
                                     </div>
                                 </div>
@@ -216,155 +440,6 @@
                     </div>
                 </div>
             </div>
-            <div class="vc_row wpb_row vc_row-fluid wpb-row-stretch wpisset-ele-es-animate-fadein vc_custom_1612958451806">
-                <div class="wpb_column vc_column_container vc_col-sm-2 vc_hidden-sm vc_hidden-xs">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-8">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <div class=" wpisset_ele_es_header4 wpisset_ele_es_header4-1188040150 vc_custom_1610625436633" >
-                                <div class="wpisset-ele-es-header4">
-                                    <h2 class="wpisset-ele-es-header4-title">Eletra Electronics</h2>
-                                </div>
-                                <div class="wpisset-ele-es-header4-sep1"></div>
-                                <div class="wpisset-ele-es-header4-element"></div>
-                                <div class="wpisset-ele-es-header4-sep2"></div>
-                                <div class="wpisset-ele-es-header4-desc"><span>Unbeatable customer service</span></div>
-                            </div>
-                            <svg class="wpssiet-es-cs">
-                                <style></style>
-                            </svg>
-                            <div class="wpb_text_column wpb_content_element " >
-                                <div class="wpb_wrapper">
-                                    <p>And collaborate; game-changer game-changer efficient strategy. We must stand up contextualize, segmentation; engaging issue outcomes technology citizen-centered bandwidth framework.</p>
-                                    <p>Org.nr 123456789-0<br/> CEO: Johnathan Brown </p>
-                                    <p>Eletra Electronics OY<br/> Ruoholahdenranta 3,<br/> 00180 Helsinki, Finland </p>
-                                    <p>VAT No: FI123456789</p>
-                                    <hr/>
-                                    <h4>Are you a customer and thinking about something?</h4>
-                                    <p>Have a look at customer service or contact us directly. We are open 24/7 at. 10-18.</p>
-                                    <p><strong>Customer service</strong><br/> <a href="mailto:support@eletrawptheme.com">support@eletrawptheme.com</a><br/> <a href="tel:+353-1234567890">+353 1234567890</a> </p>
-                                    <p><strong>Expert advice on medicines</strong><br/> <a href="mailto:recept@eletrawptheme.com">recept@eletrawptheme.com</a><br/> <a href="tel:+353-1234567890">+353 1234567890</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-2 vc_hidden-sm vc_hidden-xs">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="vc_row wpb_row vc_row-fluid wpb-fullwide-row wpisset-ele-es-animate-fadein vc_custom_1612958463959">
-                <div class="wpb_column vc_column_container vc_col-sm-12">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_sep_color_grey" ><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="vc_row wpb_row vc_row-fluid wpisset-ele-es-animate-fadein vc_custom_1612958468812">
-                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-1872363374 vc_custom_1611043824847" title="">
-                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Protection plans" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                    <img alt="Product support and repair." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_723298879.jpg"> 
-                                    <div class="wpisset-ele-es-banner5-content">
-                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Product support and repair.</h3>
-                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Protection plans</span></span> 
-                                    </div>
-                                </div>
-                            </a>
-                            <svg class="wpssiet-es-cs">
-                                <style></style>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-356040230 vc_custom_1611043836153" title="">
-                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="In-home service" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                    <img alt="Installation and services." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_721556179.jpg"> 
-                                    <div class="wpisset-ele-es-banner5-content">
-                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Installation and services.</h3>
-                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Safety and in-home service</span></span> 
-                                    </div>
-                                </div>
-                            </a>
-                            <svg class="wpssiet-es-cs">
-                                <style></style>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-offset-0 vc_col-lg-4 vc_col-sm-offset-3">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <a href="/shop" class=" wpisset-ele-es-banner5 wpisset-ele-es-banner5-362968485 vc_custom_1611043843809" title="">
-                                <div class="wpisset-ele-es-banner5-wrapper wpisset-cursor-anim-element wpisset-cursor-anim-element-2" data-cursor-text="Privacy policy" data-cursor-color="#031d42" data-cursor-text-color="#ffffff">
-                                    <img alt="Legal and privacy policies." src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1398389999.jpg"> 
-                                    <div class="wpisset-ele-es-banner5-content">
-                                        <h3 class="wpisset-ele-es-banner5-content-text-1">Legal and privacy policies.</h3>
-                                        <span class="wpisset-ele-es-banner5-content-text-2"><span>Privacy policy</span></span> 
-                                    </div>
-                                </div>
-                            </a>
-                            <svg class="wpssiet-es-cs">
-                                <style></style>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="vc_row wpb_row vc_row-fluid wpisset-ele-es-animate-fadein vc_custom_1612958475655">
-                <div class="wpb_column vc_column_container vc_col-sm-2 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-8">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper">
-                            <div class="wpb_text_column wpb_content_element vc_custom_1612958514467" >
-                                <div class="wpb_wrapper"> <span class="wpisset-custom-title wpisset-ele-es-custom-text-animate" style="color: #111111;font-size: 24px;font-weight: 500;line-height: 1.2;">Award Winning.</span> </div>
-                            </div>
-                            <div class=" wpisset_ele_es_logos wpisset_ele_es_logos-1558974385 wpisset-ele-es-logos-col-3">
-                                <div class="wpisset-ele-es-logos-row">
-                                    <div class="wpisset-ele-es-logos-item wpisset-cursor-anim-element wpisset-cursor-anim-element-3" data-cursor-text="Mobile Mag" data-cursor-color="#031d42" data-cursor-text-color="#ffffff" data-cursor-subtitle="Best high st retailer">
-                                        <div class="wpisset-ele-es-logos-item-img"><img width="500" height="500" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_509200549.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_509200549.jpg 500w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_509200549-300x300.jpg 300w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_509200549-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px"/></div>
-                                        <a class="wpisset-ele-es-logos-item-link" href="http://eletra.lpdthemesdemo.com/shop"></a> 
-                                    </div>
-                                    <div class="wpisset-ele-es-logos-item wpisset-cursor-anim-element wpisset-cursor-anim-element-3" data-cursor-text="Retail Week" data-cursor-color="#031d42" data-cursor-text-color="#ffffff" data-cursor-subtitle="Retailer of the year">
-                                        <div class="wpisset-ele-es-logos-item-img"><img width="500" height="500" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1458704915.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1458704915.jpg 500w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1458704915-300x300.jpg 300w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1458704915-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px"/></div>
-                                        <a class="wpisset-ele-es-logos-item-link" href="http://eletra.lpdthemesdemo.com/shop"></a> 
-                                    </div>
-                                    <div class="wpisset-ele-es-logos-item wpisset-cursor-anim-element wpisset-cursor-anim-element-3" data-cursor-text="What Mobile" data-cursor-color="#031d42" data-cursor-text-color="#ffffff" data-cursor-subtitle="Category Winner 2020">
-                                        <div class="wpisset-ele-es-logos-item-img"><img width="500" height="500" src="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1787717450.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1787717450.jpg 500w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1787717450-300x300.jpg 300w, http://eletra.lpdthemesdemo2.com/wp-content/uploads/2021/01/shutterstock_1787717450-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px"/></div>
-                                        <a class="wpisset-ele-es-logos-item-link" href="http://eletra.lpdthemesdemo.com/shop"></a> 
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="wpssiet-es-cs">
-                                <style></style>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="wpb_column vc_column_container vc_col-sm-2 vc_hidden-md vc_hidden-sm vc_hidden-xs">
-                    <div class="vc_column-inner">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="entry-content-clear"></div>
         </div>
     </main>
 </div>
