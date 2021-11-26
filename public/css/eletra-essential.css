@@ -7655,7 +7655,8 @@ a.wpisset-ele-es-infobanner1-desc:hover span:after {
 }
 
 .wpisset-ele-es-animate-fadein {
-	opacity: 0
+	opacity: 0;
+	padding-top: .5rem;
 }
 
 .mfp-bg {

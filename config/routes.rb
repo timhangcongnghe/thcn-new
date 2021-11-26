@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/san-pham-thuong-hieu' => 'frontend/brand#detail', as: :brand_detail
   
   get '/huong-dan-mua-hang' => 'frontend/guide#shopping', as: :shopping_guide
+  get '/huong-dan-thanh-toan' => 'frontend/guide#payment', as: :shopping_payment
   
   get '/danh-nhap' => 'frontend/account#login', as: :account_login
   get '/dang-ky' => 'frontend/account#register', as: :account_register

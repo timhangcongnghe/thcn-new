@@ -71,6 +71,10 @@ module ApplicationHelper
   def shopping_guide_link
     shopping_guide_path
   end
+
+  def shopping_payment_link
+    shopping_payment_path
+  end
   # END Guide
   
   # START 404
